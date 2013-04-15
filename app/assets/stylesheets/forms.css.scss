@@ -1,0 +1,186 @@
+// Matches btn-small
+input.small[type="text"],
+input.small[type="password"],
+input.small[type="datetime"],
+input.small[type="datetime-local"],
+input.small[type="date"],
+input.small[type="month"],
+input.small[type="time"],
+input.small[type="week"],
+input.small[type="number"],
+input.small[type="email"],
+input.small[type="url"],
+input.small[type="search"],
+input.small[type="tel"],
+input.small[type="color"] {
+  height: 16px;
+  padding: 4px 6px;
+  font-size: 12px;
+  line-height: 16px;
+}
+
+.malmo-form {
+  input[type="file"] {
+    font-size: 13px;
+    line-height: 22px;
+  }
+
+  label {
+    font-size: emize(13);
+  }
+
+  .radio.inline, .checkbox.inline {
+    margin-right: 1em;
+  }
+
+  // Fluid horizontal forms, use a @media query w/a breakpoint to make it vertical
+  .form-horizontal {
+    .control-group {
+      margin-bottom: 1em;
+      @include box-sizing(border-box);
+    }
+    .control-label {
+      @include box-sizing(border-box);
+      text-align: left;
+      width: 30%;
+      margin-left: 0;
+      margin-right: 0;
+      padding-left: 0;
+      padding-right: 0;
+    }
+    .controls {
+      @include box-sizing(border-box);
+      margin-right: 0;
+      margin-left: 30%;
+      padding-left: 0;
+      padding-right: 0;
+      padding-top: 1px;
+      // overflow: hidden;
+    }
+  }
+
+  form {
+    .help-inline, .help {
+      color: black;
+      padding-left: 0;
+    }
+    .help-inline {
+      font-size: emize(13);
+    }
+    .help {
+      margin: 0 0 1em;
+      font-size: emize(15);
+      line-height: emize(19, 15);
+      font-family: $serif;
+    }
+  }
+
+  form, .form-data {
+    font-family: $sansSerif;
+    table {
+      td, th {
+        &.error, &.success {
+          border-width: 1px 0;
+        }
+      }
+    }
+
+    h2.form-group-title {
+      font-size: emize(13);
+      border-bottom: $border;
+      margin: 2em 0 0;
+      padding-bottom: .2em;
+    }
+
+    .box {
+      p {
+        &.notice, &.warning, &.error, &.flash {
+          margin: .8em .8em;
+        }
+      }
+    }
+
+    .control-group.warning, .field_with_errors {
+      padding: 0;
+      background: transparent;
+      border: none;
+      font-size: emize(13, 13);
+      label, .checkbox {
+         color: black;
+      }
+      .control-label {
+        color: $warningColor;
+      }
+      input, input:focus {
+        border: $warningBorder;
+        background: none;
+      }
+      .help-inline {
+        color: $warningColor;
+        display: block;
+      }
+    }
+    .help-inline.warning {
+      display: block;
+      margin-bottom: 1em;
+      color: $warningColor;
+      background: transparent;
+      border: none;
+      // font-size: emize(13, 17);
+    }
+  }
+
+  .input-wide {
+    width: 90%;
+  }
+
+  // Autocomplete list with images
+  ul.ui-autocomplete.image-list {
+    max-height: 30em;
+    overflow-y: auto;
+    overflow-x: hidden;
+    li a {
+      height: 36px;
+      padding-right: 1.5em;
+      clear: left;
+      overflow: hidden;
+      white-space: nowrap;
+      img {
+        float: left;
+        height: 32px;
+        width: 32px;
+      }
+      p {
+        margin-left: 38px;
+      }
+    }
+  }
+
+  // Used for pseudo labels
+  .control-group {
+    div.control-label {
+      font-size: emize(13);
+      line-height: 1.4em;
+    }
+  }
+  // Used for show views w/form layout
+  .control-group.readonly {
+    margin-bottom: 0;
+    .control-label {
+      margin-top: 0;
+      padding: .8em 0;
+    }
+    .controls {
+      font-size: emize(13);
+      line-height: 1.4em;
+      margin-top: 0;
+      padding: .8em 0;
+      .change {
+        margin-left: 1em;
+        margin-right: .2em;
+        float: right;
+        display: inline-block;
+      }
+    }
+  }
+}

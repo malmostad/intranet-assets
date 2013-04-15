@@ -1,0 +1,38 @@
+#malmo-masthead {
+  #nav-search-trigger {
+    a {
+      span {
+        line-height: 1 !important;
+      }
+    }
+  }
+  > nav#masthead-others > ul > li a {
+    cursor: pointer;
+  }
+  #nav-more a  {
+    padding-right: 1em !important;
+    .icon-caret-down {
+      display: none;
+    }
+  }
+}
+
+.table-wrapper {
+  overflow: hidden;
+  width: auto;
+}
+
+@import "font-awesome-ie7";
+
+.icon-plus, .icon-trash {
+  zoom: expression();
+}
+
+.form-horizontal .control-label {
+  width: 160px;
+}
+.form-horizontal .controls {
+  display: inline-block;
+  padding-left: 20px;
+  margin-left: 0;
+}

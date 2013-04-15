@@ -1,0 +1,96 @@
+.box {
+  position: relative;
+  @include radius(3px);
+  border: $border;
+  margin-bottom: 1.4em;
+  .box-title {
+    @include radius(2px 2px 0 0);
+    font-size: emize(13);
+    line-height: emize(18, 13);
+    font-family: $sansSerif;
+    font-weight: normal;
+    margin: 0 0 .6em;
+    padding: .3em .6em .5em;
+    background: $boxTitleBackground;
+    color: $boxTitleColor;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  &.light .box-title {
+    background-color: $backgroundLight;
+    color: black;
+  }
+
+  .box-content {
+    overflow: hidden;
+    margin: .6em;
+    padding: 0;
+  }
+
+  .box-instructions {
+    display: none;
+    margin: .5em .9em .7em;
+    padding: .5em .7em;
+    border: $border;
+    @include radius(3px);
+    h2.no-entries {
+      font-size: emize(22);
+      font-weight: normal;
+      line-height: 1.2;
+      margin: 0 0 .1em;
+    }
+    p {
+      font-size: emize(15);
+      line-height: emize(19, 15);
+      padding: 0;
+      margin: 0 0 .5em;
+    }
+    &.show {
+      display: block;
+    }
+  }
+  .toggle-instructions {
+    position: absolute;
+    right: 26px;
+    top: 2px;
+    width: 14px;
+    height: 18px;
+    padding: 2px 0 0 7px;
+    line-height: 1;
+    border: 1px solid transparent;
+    font-family: $sansSerif;
+    font-size: emize(15);
+    font-weight: bold;
+    color: darken($boxTitleColor, 20%);
+    @include radius(3px);
+  }
+
+  .box-menu {
+    position: absolute;
+    right: 4px;
+    top: 2px;
+    .dropdown-toggle {
+      display: block;
+      width: 20px;
+      height: 20px;
+      padding: 0 0 0 1px;
+      font-size: emize(16);
+      line-height: 1.2;
+      color: white;
+      border: 1px solid transparent;
+      @include opacity(.5);
+      @include radius(3px);
+    }
+  }
+
+  .toggle-instructions:hover,
+  .dropdown-toggle:hover,
+  .open a.dropdown-toggle {
+    cursor: pointer;
+    background-color: $boxTriggersHightligt;
+    border: $borderDark;
+    color: white;
+    @include opacity(1);
+  }
+}

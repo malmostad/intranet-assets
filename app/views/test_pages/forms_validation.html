@@ -1,0 +1,68 @@
+<section class="body-copy">
+  <h1>Test Case: Form Validation</h1>
+</section>
+
+<form class="form-horizontal" action="#" method="post"  style="max-width: 35em">
+  <section>
+    <p class="help">
+      Some instructions to the form may, or may not, be necessary. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+      quis nostrud exercitation.
+    </p>
+    <p class="warning">
+      Please correct the marked fields below.
+    </p>
+
+    <div class="control-group">
+      <label for="person-name-1" class="control-label">Name:*</label>
+      <div class="controls">
+        <input type="text" id="person-name-1" name="person-name" class="input-wide" value="Joan Doe"/>
+      </div>
+    </div>
+    <div class="control-group warning">
+      <label for="email-1" class="control-label">Email address:*</label>
+      <div class="controls">
+        <input type="email" id="email-1" name="email" class="input-wide"/>
+        <span class="help-inline">Please enter your email address</span>
+      </div>
+    </div>
+
+    <div class="control-group warning">
+      <div class="control-label">Colors:*</div>
+      <div class="controls">
+        <label class="checkbox">
+          <input type="checkbox" name="color" value="red"/>
+          Red
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="color" value="green"/>
+          Green
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="color" value="blue"/>
+          Blue
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="color" value="yellow"/>
+          Yellow
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="color" value="pink"/>
+          Pink
+        </label>
+        <label class="checkbox">
+          <input type="checkbox" name="color" value="black"/>
+          Black
+        </label>
+        <span class="help-inline">Please select a color</span>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <input type="submit" value="Save" class="btn btn-primary"/>
+        <input type="button" value="Cancel" class="btn"/>
+      </div>
+    </div>
+  </section>
+</form>

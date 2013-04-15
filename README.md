@@ -1,4 +1,2 @@
-Assets
-======
+# Assets 3.0
 
-Common assets used by Malmö stad's web applications.

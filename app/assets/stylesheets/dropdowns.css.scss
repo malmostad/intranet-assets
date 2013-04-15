@@ -1,0 +1,42 @@
+a.dropdown-toggle {
+  font-family: $sansSerif;
+  color: black;
+  .icon-caret-down {
+    line-height: 1;
+    margin-left: .2em;
+  }
+}
+
+.dropdown-menu {
+  position: absolute;
+  right: 4px;
+  top: 22px;
+  padding: 0;
+  margin: 0;
+  background: white;
+  width: 18em;
+  font-size: emize(13);
+  font-family: $sansSerif;
+  border: $borderDark;
+  li a {
+    display: block;
+    padding: .4em 1em;
+    cursor: pointer;
+    color: black;
+    &:hover, &:active, &:focus {
+      background: $backgroundDark;
+      @include linear-gradient($backgroundDark, $backgroundDark, 0, 100%);
+      color: white;
+      outline: none;
+      border: none;
+    }
+  }
+
+  // Round first/last inner elements to not get overshots
+  li:first-child a {
+    @include radius(5px 5px 0 0);
+  }
+  li:last-child a {
+    @include radius(0 0 5px 5px);
+  }
+}

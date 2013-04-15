@@ -1,0 +1,43 @@
+// ☺ (utf-8 hack for sass compile)
+// Used for web apps that only includes the masthead.
+// Will only style elements inside the #malmo-masthead
+// Note that styles in the web app itself can interfere the masthead
+@import "variables";
+@import "mixins";
+@import "functions";
+
+#malmo-masthead {
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+  @import "bootstrap";
+  @import "bootstrap_overrides";
+  @import "elements";
+  @import "dropdowns";
+}
+
+@import "masthead";
+@import "media_queries";
+@import "font-awesome";
+@import "fonts";
+
+body {
+  margin-top: 72px !important;
+}
+
+// Hard overrides for legacy Assets 2.0
+body header#malmo-masthead {
+  a {
+    font-family: $sansSerif !important;
+    color: white !important;
+    text-decoration: none !important;
+  }
+  a.dropdown-toggle .icon-caret-down {
+    font-family: FontAwesome !important;
+  }
+  .dropdown-menu a {
+    color: black !important;
+    &:hover {
+      color: white !important;
+    }
+  }
+}

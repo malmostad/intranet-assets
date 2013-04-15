@@ -1,0 +1,191 @@
+// Retina logo
+@media only screen and ( -webkit-min-device-pixel-ratio: 2 ) {
+  #malmo-masthead .nav-logo {
+    background-image: url("logo-x2.png");
+  }
+}
+
+@media ( max-width: 56em ) {
+  #malmo-masthead > nav#masthead-others {
+    display: none !important;
+  }
+}
+
+// Switch to collapsed top nav
+@media ( max-width: 51em ) {
+  #malmo-masthead {
+    position: absolute;
+    min-width: 0;
+    @include clearfix();
+    @include box-shadow(none);
+    #masthead-search {
+      position: static;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      padding-left: .8em;
+      padding-right: .8em;
+      @include box-shadow(0 10px 60px 0 black);
+      @include radius(0);
+      input[type=text] {
+        width: 55%;
+      }
+    }
+    > nav {
+      display: none;
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 1px solid $narrowNavBottomBorderColor;
+      @include box-shadow(0 10px 60px 0 black);
+      @include clearfix();
+      ul li {
+        float: none;
+        width: 100%;
+        a,
+        a:hover,
+        a:focus {
+          padding: emize(22) emize(13) emize(22) emize(13);
+          @include linear-gradient($narrowNavBackground, $narrowNavBackground);
+          border-width: 1px 0 0;
+          border-top-color: $narrowNavBorderColor;
+          color: $narrowNavColor;
+          @include radius(0);
+          .icon-caret-down {
+            display: none;
+          }
+        }
+        a:hover,
+        a:focus {
+          @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+        }
+      }
+    }
+    #nav-menu-trigger {
+      display: block;
+      margin-right: -1px;
+      a {
+        padding: emize(13) emize(14) emize(15) emize(12);
+        margin-right: 0;
+        span {
+          padding-left: .3em;
+        }
+      }
+    }
+    #nav-search-trigger a {
+      padding: emize(13) emize(8) emize(15) emize(14);
+      margin-right: 0;
+      span {
+        margin-left: 0;
+      }
+    }
+
+    #nav-my-department, #nav-my-workingfield, #nav-more {
+      .dropdown-toggle {
+        display: none;
+        cursor: default;
+        background: $narrowNavBackground;
+      }
+      ul.dropdown-menu {
+        position: static;
+        display: block;
+        @include box-shadow(none);
+        @include radius(0);
+        border: none;
+        width: 100%;
+        &:after, &:before {
+          content: none;
+        }
+
+        > li {
+          > a {
+            @include linear-gradient($narrowNavBackground, $narrowNavBackground);
+            @include radius(0);
+            padding-top: emize(18);
+            padding-bottom: emize(18);
+            border-top-width: 1px;
+            border-top-color: $narrowNavBorderColor;
+            border-top-style: solid;
+          }
+          > a:hover,
+          > a:focus {
+            @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+          }
+        }
+      }
+    }
+  }
+
+  // Add on of the class selectors to the body
+  // to get an active nav item
+  .malmo-masthead-dashboard #nav-dashboard,
+  .malmo-masthead-my-department #nav-my-department,
+  .malmo-masthead-my-workingfield #nav-my-workingfield,
+  .malmo-masthead-our-organization #nav-our-organization,
+  .malmo-masthead-hrutan #nav-hrutan,
+  .malmo-masthead-more #nav-more {
+    a, a:hover {
+      border-top-color: $narrowNavBorderColor;
+      background: $narrowNavBackgroundHiglight;
+      @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+    }
+  }
+
+  body.development:after,
+  body.test:after {
+    font-size: 13px;
+  }
+}
+
+// In case the nav was hidden by click event in narrower width
+@media ( min-width: 51.1em ) {
+  #malmo-masthead > nav {
+    display: block !important;
+  }
+}
+@media ( max-width: 38em ) {
+  footer.bigfoot {
+    ul, ul.list-3 {
+      @include columns(12);
+    }
+  }
+}
+
+@media ( max-width: 34em ) {
+  #malmo-masthead {
+    nav {
+      font-size: emize(15, 13);
+      li a {
+        padding: emize(18) emize(12) !important;
+      }
+    }
+    #nav-menu-trigger, #nav-search-trigger {
+      font-size: emize(15, 13);
+      a {
+        padding: emize(11) emize(14) emize(13) emize(12);
+      }
+    }
+    #nav-search-trigger {
+      a span {
+        font-size: emize(14);
+        line-height: .5;
+        padding-left: 0;
+      }
+    }
+  }
+  body.development:after,
+  body.test:after {
+    font-size: 9px;
+  }
+}
+
+@media ( max-width: 28em ) {
+  #malmo-masthead {
+    .nav-logo {
+      width: 1.8em;
+      height: 2em;
+      overflow: hidden;
+      background-position: 10px 6px;
+      background-size: 26px;
+    }
+  }
+}

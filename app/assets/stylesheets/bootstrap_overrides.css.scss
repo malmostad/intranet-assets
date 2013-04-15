@@ -1,0 +1,35 @@
+// NOTE: More bootstrap related form styles in forms.css.scss and dropdowns.css.scss
+
+// Green instead of blue for primary button
+.btn-primary {
+  background-color: $btnPrimaryBackground;
+  background-image: -moz-linear-gradient(top, $btnPrimaryBackground, $btnPrimaryBackgroundDark);
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from($btnPrimaryBackground), to($btnPrimaryBackgroundDark));
+  background-image: -webkit-linear-gradient(top, $btnPrimaryBackground, $btnPrimaryBackgroundDark);
+  background-image: -o-linear-gradient(top, $btnPrimaryBackground, $btnPrimaryBackgroundDark);
+  background-image: linear-gradient(to bottom, $btnPrimaryBackground, $btnPrimaryBackgroundDark);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#{ie-hex-str($btnPrimaryBackground)}", endColorstr="#{ie-hex-str($btnPrimaryBackgroundDark)}", GradientType=0);
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary.disabled,
+.btn-primary[disabled] {
+  background-color: $btnPrimaryBackgroundDark;
+}
+
+
+// Text on Bootstrap buttons is too low
+.btn {
+  padding: 3px 12px 5px;
+  font-family: $sansSerif;
+}
+.btn-mini {
+  padding: 1px 6px;
+}
+.btn-small {
+  padding: 2px 10px;
+}
+.btn-large {
+  padding: 10px 19px 12px;
+}

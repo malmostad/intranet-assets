@@ -1,0 +1,85 @@
+body {
+  padding: 0;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-top: 4.5em !important;
+  font-size: 100%;
+  font-family: $serif;
+  background-color: $bodyBackground;
+  color: $bodyColor;
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+}
+
+// HTML5 elements
+article, aside, details, figcaption, figure, footer, header, hgroup, nav, section {
+  display: block;
+  margin: 0;
+  padding: 0;
+}
+
+form {
+  margin: 0;
+}
+
+a {
+  color: $linkColor;
+  text-decoration: none;
+  &:hover {
+  }
+}
+
+img, img a {
+  border: none;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+ul, ol, menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    margin: 0;
+    padding: 0;
+  }
+}
+blockquote {
+  font-style: italic;
+}
+.table-wrapper {
+  width: 100%;
+  overflow: auto;
+}
+
+table {
+  border-collapse: collapse;
+  th {
+    text-align: left;
+    vertical-align: top;
+  }
+  th, td {
+    vertical-align: top;
+    font-family: $sansSerif;
+    font-size: emize(13);
+    padding: .3em .5em;
+    border-top: $border;
+    border-bottom: $border;
+    border-collapse: collapse;
+  }
+  &.large {
+    th, td {
+      font-size: emize(13);
+      padding: .4em .6em;
+    }
+  }
+}
+
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+  margin-top: 0;
+}
