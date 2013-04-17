@@ -1,6 +1,6 @@
 Intranet Assets
 ===============
-City of Malmö’s Intranet Assets are served from a central asset host and are consumed by web applications on the organizations intranet. The assets contains a common base of UI elements such as a masthead, footer, form styling, page layouts, styling for articles, widgets, and UI components.
+City of Malmö’s Intranet Assets are served from a central asset host and are consumed by web applications on the organizations intranet. The assets contains a common base for the UI such as a masthead, footer, form styling, page layouts, styling for articles, widgets, and UI components.
 
 Purpose of the intranet assets:
 
@@ -22,12 +22,12 @@ For more information, contact kominteamet@malmo.se.
 A web server optimized to serve static files. Ruby is not needed on the server.
 
 ## Development Setup
-The assets are developed using Sprockets and the Asset Pipeline in a stripped down Ruby on Rails-application. The application is only used for development, testing, build and deployment. Only static files are deployed to the server. You can use the application as a local asset host when you are developing or adapting other applications to the global assets.
+The assets are developed using Sprockets and the Asset Pipeline in a stripped down Ruby on Rails-application. The application is only used for development, testing, build and deployment. You can use the application as a local asset host when you are developing or adapting other applications to the global assets.
 
 To install the required Ruby gems, run:
 
 ```
-$ bundle install
+$ bundle install
 ```
 
 Start the local asset server:
@@ -35,6 +35,8 @@ Start the local asset server:
 ```
 $ rails s -p 3001
 ```
+
+You might need to map a domain name to your local host like `www.local.malmo.se` to debug and test some of the Javascript code.
 
 Use the local views in the asset application for the visual part of the development. You can also point another locally installed web application your started asset server.
 
@@ -48,9 +50,10 @@ $ cap production deploy
 
 The compression levels for CSS and Javascript files are configured in `config/environments/` for development, staging and production.
 
-Adapt the Capistrano deployment configuration:
-1. Copy `config/deploy.yml.example` and change the settings.
+To adapt the Capistrano deployment configuration:
+
+1. Copy `config/deploy.yml.example` to `config/deploy.yml` and change the settings.
 2. Edit `config/deploy.rb` and the environment files in the `config/deploy/` directory if necessary.
 
-## Licence
-Licensed under GPL v3.0. The directory `vendor` contains third party code that may be released under other licenses stated in the top of each file.
+## License
+Released under GPL v3.0. The `vendor` directory contains third party code that may be released under other licenses stated in the top of each file.
