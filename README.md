@@ -1,11 +1,12 @@
 Intranet Assets
 ===============
-City of Malmö’s Intranet Assets are served from a central asset host and are consumed by web applications on the organizations intranet. The assets contains a common base for the UI such as a masthead, footer, form styling, page layouts, styling for articles, widgets, and UI components.
+City of Malmö’s intranet assets are served from a central asset host and are consumed by web applications on the organizations intranet. The assets contains a common base for the UI such as a masthead, footer, form styling, page layouts, styling for articles, widgets, and components. The assets assume that the application that uses them has a responsive design.
 
 Purpose of the intranet assets:
 
 * It gives all web applications a consistent UI for the user.
 * Common changes are deployed in one place and the changes are reflected immediately in all web applications.
+* It decreases the load time for the end user since the majority of stylesheet and Javascript code will be cached in the browser instead of being fetch from each application.
 * It speeds up development.
 
 Apart from the common assets consumed by all applications, each application contains it’s own unique assets for additional features not included in the common assets. The application specific assets are served by the applications themselves.
@@ -56,4 +57,6 @@ To adapt the Capistrano deployment configuration:
 2. Edit `config/deploy.rb` and the environment files in the `config/deploy/` directory if necessary.
 
 ## License
-Released under GPL v3.0. The `vendor` directory contains third party code that may be released under other licenses stated in the top of each file.
+Released under GPL v3.0.
+
+The `vendor` directory contains third party code that may be released under other licenses stated in the start of each file.
