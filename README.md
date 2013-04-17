@@ -10,7 +10,7 @@ Purpose of the intranet assets:
 
 Apart from the common assets consumed by all applications, each application contains it’s own unique assets for additional features not included in the common assets. The application specific assets are served by the applications themselves.
 
-Documentation of the [usage of the assets](wiki/Usage-of-The-Assets) in an application to be built or adapted for The City of Malmö and [development guidelines for the assets](wiki/development) are found on a separate wiki pages.
+You might want to read the [Usage of The Assets](https://github.com/malmostad/intranet-assets/wiki/Usage-of-The-Assets) in an application to be built or adapted for The City of Malmö and [Development Guidelines](https://github.com/malmostad/intranet-assets/wiki/Development) in the wiki.
 
 For more information, contact kominteamet@malmo.se.
 
