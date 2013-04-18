@@ -34,7 +34,7 @@ end
 
 before "deploy", "deploy:continue", "build"
 before "build", "build:masthead"
-after "deploy", "deploy:create_symlink", "deploy:cleanup", "build:cleanup", "repo:tag"
+after "deploy", "deploy:create_symlink", "deploy:cleanup", "build:cleanup"
 
 namespace :deploy do
   desc "Deploy assets to server"
@@ -74,20 +74,6 @@ namespace :build do
   task :cleanup do
     run_locally("rake assets:clean:all")
     run_locally("rm public/assets.tar.bz2")
-  end
-end
-
-namespace :repo do
-  desc "Create a tag in SCM"
-  task :tag do
-    if scm.to_s == "subversion"
-      tag = Capistrano::CLI.ui.ask "Tag the deploy in Subversion? [y/n]: "
-      if tag.downcase == 'y' || tag.downcase == 'yes'
-        url = "#{repository_root}tags/internal-3.0-deploy_#{rails_env}_#{release_name}"
-        run_locally("svn copy . #{url} -m 'Deployed to #{server_address} #{releases_path}/#{release_name}'")
-        puts "Tag created at #{url}"
-      end
-    end
   end
 end
 
