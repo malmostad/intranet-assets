@@ -44,6 +44,11 @@ Use the local views in the asset application for the visual part of the developm
 ## Build and Deployment
 Capistrano is used for build and deployment to the server. Sass and Javascript files are concatenated and minified. Run the deployment script by including the environment name in the command:
 
+To change the Capistrano deployment configuration:
+
+1. Copy `config/deploy.yml.example` to `config/deploy.yml` and change the settings.
+2. Edit `config/deploy.rb` and the environment files in the `config/deploy/` directory if necessary.
+
 ```
 $ cap staging deploy
 $ cap production deploy
@@ -51,12 +56,7 @@ $ cap production deploy
 
 The compression levels for CSS and Javascript files are configured in `config/environments/` for development, staging and production.
 
-To adapt the Capistrano deployment configuration:
-
-1. Copy `config/deploy.yml.example` to `config/deploy.yml` and change the settings.
-2. Edit `config/deploy.rb` and the environment files in the `config/deploy/` directory if necessary.
-
 ## License
-Released under GPL v3.0.
+Released under GPL version 3.
 
 The `vendor` directory contains third party code that may be released under other licenses stated in the start of each file.
