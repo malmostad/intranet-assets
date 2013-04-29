@@ -57,6 +57,6 @@ $ cap production deploy
 The compression levels for CSS and Javascript files are configured in `config/environments/` for development, staging and production.
 
 ## License
-Released under GPL version 3.
+Released under AGPL version 3.
 
 The `vendor` directory contains third party code that may be released under other licenses stated in the start of each file.
