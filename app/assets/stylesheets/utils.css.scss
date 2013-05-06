@@ -5,10 +5,10 @@
   overflow: hidden;
 }
 
-.waiting {
+.loading {
   min-width: 14px;
   min-height: 14px;
-  background-image: url("ajax-loader.gif");
+  background-image: url("loading.gif");
   background-repeat: no-repeat;
 }
 
