@@ -980,7 +980,7 @@
 }
 .btn-mini {
   padding: 1px 6px;
-  font-size: 10.5px;
+  font-size: 10.5px !important;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
@@ -1293,13 +1293,13 @@ input[type="submit"].btn.btn-mini {
   font-size: 14px;
 }
 .btn-group > .btn-mini {
-  font-size: 11px;
+  font-size: 11px !important;
 }
 .btn-group > .btn-small {
-  font-size: 12px;
+  font-size: 12px !important;
 }
 .btn-group > .btn-large {
-  font-size: 16px;
+  font-size: 16px !important;
 }
 .btn-group > .btn:first-child {
   margin-left: 0;
