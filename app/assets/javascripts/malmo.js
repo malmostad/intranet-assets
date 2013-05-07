@@ -11,4 +11,6 @@
 //= require masthead
 //= require fastclick
 //= require ios-orientationchange-fix
+//= require select2
+//= require select2_locale_sv
 //= require google_analytics
