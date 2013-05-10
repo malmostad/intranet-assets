@@ -6,11 +6,10 @@
 //= require jquery.cookie
 //= require jquery-ui.custom.min
 //= require bootstrap
+//= require jquery.tokeninput
 //= require boxes
 //= require masthead_content
 //= require masthead
 //= require fastclick
 //= require ios-orientationchange-fix
-//= require select2
-//= require select2_locale_sv
 //= require google_analytics
