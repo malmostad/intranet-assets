@@ -59,20 +59,22 @@ input.small[type="color"] {
     }
   }
 
-  form {
-    .help-inline, .help {
-      color: black;
-      padding-left: 0;
-    }
-    .help-inline {
-      font-size: emize(13);
-    }
-    .help {
-      margin: 0 0 1em;
-      font-size: emize(15);
-      line-height: emize(19, 15);
-      font-family: $serif;
-    }
+  .help-inline, .help {
+    color: black;
+    padding-left: 0;
+  }
+  .help-inline {
+    font-size: emize(13);
+  }
+  .help {
+    margin: 0 0 1em;
+    font-size: emize(13);
+    font-family: $sansSerif;
+  }
+  ul.help {
+    list-style: disc;
+    margin-left: 1em;
+    padding-left: 1em;
   }
 
   form, .form-data {
