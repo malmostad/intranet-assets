@@ -6,6 +6,7 @@
 //= require jquery.cookie
 //= require jquery-ui.custom.min
 //= require bootstrap
+//= require bootstrap-typeahead
 //= require jquery.tokeninput
 //= require boxes
 //= require masthead_content
