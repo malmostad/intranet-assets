@@ -136,27 +136,6 @@ input.small[type="color"] {
     width: 90%;
   }
 
-  // Autocomplete list with images
-  ul.ui-autocomplete.image-list {
-    max-height: 30em;
-    overflow-y: auto;
-    overflow-x: hidden;
-    li a {
-      padding-right: 1.5em;
-      clear: left;
-      overflow: hidden;
-      white-space: nowrap;
-      img {
-        float: left;
-        height: 32px;
-        width: 32px;
-      }
-      p {
-        margin-left: 38px;
-      }
-    }
-  }
-
   // Used for pseudo labels
   .control-group {
     div.control-label {
