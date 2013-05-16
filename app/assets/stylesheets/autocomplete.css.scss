@@ -19,7 +19,7 @@
     display: block;
     padding: .2em .5em;
     font-family: $sansSerif;
-    font-size: emize(11);
+    font-size: emize(13);
     clear: both;
     white-space: nowrap;
     color: #000;
@@ -27,7 +27,6 @@
 
   .ui-state-focus {
     background: $backgroundDark;
-    @include linear-gradient($backgroundDark, $backgroundDark, 0, 100%);
     color: white !important;
     cursor: pointer;
   }
