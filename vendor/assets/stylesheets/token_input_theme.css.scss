@@ -58,6 +58,9 @@ li.token-input-selected-token-malmo {
   background: $backgroundDark;
   border: $borderDark;
   color: white;
+  span {
+    color: white;
+  }
 }
 
 li.token-input-input-token-malmo {
