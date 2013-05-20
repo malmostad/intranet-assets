@@ -128,39 +128,10 @@ input.small[type="color"] {
       color: $warningColor;
       background: transparent;
       border: none;
-      // font-size: emize(13, 17);
     }
   }
 
   .input-wide {
     width: 90%;
-  }
-
-  // Used for pseudo labels
-  .control-group {
-    div.control-label {
-      font-size: emize(13);
-      line-height: 1.4em;
-    }
-  }
-  // Used for show views w/form layout
-  .control-group.readonly {
-    margin-bottom: 0;
-    .control-label {
-      margin-top: 0;
-      padding: .8em 0;
-    }
-    .controls {
-      font-size: emize(13);
-      line-height: 1.4em;
-      margin-top: 0;
-      padding: .8em 0;
-      .change {
-        margin-left: 1em;
-        margin-right: .2em;
-        float: right;
-        display: inline-block;
-      }
-    }
   }
 }
