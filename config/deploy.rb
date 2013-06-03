@@ -21,8 +21,6 @@ set :application, "assets"
 set :asset_env, "RAILS_GROUPS=assets"
 
 set :deploy_via, :copy # Use local copy, be sure to update the stuff you want to deploy
-# set :scm, :git
-# set :repository_root, config[:repository_root]
 assets_path = "public/assets/"
 
 default_run_options[:pty] = true
