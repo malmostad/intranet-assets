@@ -1,5 +1,5 @@
 # The Capistrano tasks will use your **working copy**, compile the assets and deploy them to the server_address
-# Execute one of the following to deploy into test or production:
+# Execute one of the following to deploy into staging or production:
 #   $ cap staging deploy
 #   $ cap production deploy
 # Rollback one step:
@@ -14,7 +14,7 @@ set :server_address, config['server_address']
 server server_address, :web
 set :use_sudo, false
 
-set :stages, %w(staging production) # 'test' is a reserved word
+set :stages, %w(staging production)
 set :default_stage, "staging"
 
 set :application, "assets"
