@@ -1,5 +1,4 @@
 .DS_Store
-.ruby-version
 config/deploy.yml
 log
 tmp
