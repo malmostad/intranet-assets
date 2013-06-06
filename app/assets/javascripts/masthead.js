@@ -99,12 +99,12 @@ jQuery(document).ready(function($) {
     if ( narrowMode() ) $malmoMastheadNav.slideUp(100);
   }
 
-  $("#nav-menu-trigger").click( function(event) {
+  $("#nav-menu-trigger a").click( function(event) {
     event.preventDefault();
     $malmoMastheadNav.is(":hidden") ? showNav() : hideNav();
   });
 
-  $("#nav-search-trigger").click(function(event) {
+  $("#nav-search-trigger a").click(function(event) {
     event.preventDefault();
     $("#masthead-search").is(":hidden") ? showSearch() : hideSearch();
   });

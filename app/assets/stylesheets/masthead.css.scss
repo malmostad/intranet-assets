@@ -55,11 +55,11 @@
     }
     li.phone a span {
       position: relative;
-      top: 0em;
+      top: emize(-1, 13);
     }
     li.map a  span {
       position: relative;
-      top: -.1em;
+      top: emize(-2, 13);
     }
   }
 
