@@ -5,7 +5,7 @@
   right: 0;
   z-index: 100;
   @include linear-gradient($mastheadBackgroundFrom, $mastheadBackgroundTo, 0, 2.4em);
-  @include box-shadow(0 3px 3px $borderColor);
+  @include box-shadow(0 2px 2px rgba(0, 0, 0, .2));
   min-width: 50em;
   > nav > ul > li {
     float: left;
@@ -14,21 +14,25 @@
       @include box-sizing(border-box);
       overflow: hidden;
       white-space: nowrap;
-      padding: 13px 1em 14px;
+      padding: emize(13, 13) 1em emize(14, 13);
       margin: 0 -1px 0 0;
       color: $mastheadColor;
       font-family: $sansSerif;
       font-size: emize(13);
-      line-height: 1.1;
+      line-height: 1;
+      height: emize(41, 13);
       outline: 0;
       border: transparent solid;
       border-width: 0 1px;
       &.dropdown-toggle {
-        padding-right: .5em;
+        padding-right: .8em;
         color: $mastheadColor;
       }
       &.dropdown-toggle.more-items {
-        padding-bottom: 13px;
+        span.icon-caret-down {
+          line-height: .8;
+          margin-left: .3em;
+        }
       }
       &.dropdown-toggle.no-arrow {
         padding-right: 1em;
@@ -43,37 +47,19 @@
     ul.dropdown-menu {
       top: 3.1em;
       white-space: nowrap;
-      &:after {
-        position: absolute;
-        top: -9px;
-        left: 13px;
-        border-right: 9px solid transparent;
-        border-bottom: 9px solid #ffffff;
-        border-left: 9px solid transparent;
-        content: '';
-      }
-
-      &:before {
-        position: absolute;
-        top: -10px;
-        left: 12px;
-        display: inline-block;
-        border-right: 10px solid transparent;
-        border-bottom: 10px solid $borderColor;
-        border-left: 10px solid transparent;
-        content: '';
-      }
     }
   }
-  > nav#masthead-others > ul > li {
-    float: right;
-    &.phone a {
-      line-height: 18px;
-      padding: 14px .4em 9px;
+  > nav#masthead-others > ul {
+    li {
+      float: right;
     }
-    &.map a {
-      line-height: 18px;
-      padding: 13px .4em 10px;
+    li.phone a span {
+      position: relative;
+      top: 0em;
+    }
+    li.map a  span {
+      position: relative;
+      top: -.1em;
     }
   }
 
@@ -108,7 +94,7 @@
     float: right;
     a {
       display: block;
-      padding: 11px 1em 12px;
+      padding: 11px 1.2em 12px;
       line-height: 18px;
       font-family: $sansSerif;
       font-size: emize(13);
@@ -116,8 +102,13 @@
       border: transparent solid;
       border-width: 0 1px;
       color: $mastheadColor;
-      span {
-        line-height: 6px;
+      span.icon-reorder {
+        margin-left: .3em;
+        line-height: emize(14, 13);
+      }
+      span.icon-search {
+        margin-left: .4em;
+        line-height: emize(6, 13);
       }
     }
     a:hover,
@@ -135,6 +126,7 @@
   }
 
   #nav-menu-trigger {
+    // Activated in media_queries.scss
     display: none;
   }
   #masthead-search {
@@ -145,7 +137,7 @@
     padding: 1.4em;
     border: $border;
     @include radius(0 0 0 3px);
-    @include box-shadow(2px 2px 3px $borderColor);
+    @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
     background: $backgroundLight;
     form {
       margin-bottom: 0;
