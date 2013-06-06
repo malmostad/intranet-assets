@@ -8,7 +8,7 @@ gem 'rack-contrib'
 group :assets do
   gem 'sass-rails'
   gem 'uglifier'
-  gem "therubyracer"
+  # gem 'therubyracer', require: 'v8'
 end
 
 gem 'capistrano'
