@@ -1,19 +1,14 @@
 #malmo-masthead {
-  #nav-search-trigger {
-    a {
+  > nav > ul > li {
+    > a {
+      height: auto;
       span {
-        line-height: 1 !important;
+        display: none;
       }
     }
   }
-  > nav#masthead-others > ul > li a {
-    cursor: pointer;
-  }
-  #nav-more a  {
-    padding-right: 1em !important;
-    .icon-caret-down {
-      display: none;
-    }
+  #nav-search-trigger a span {
+    display: none !important;
   }
 }
 

@@ -1,7 +1,7 @@
 #malmo-masthead {
   // lte IE9 has a bug that clip absolute content inside a fixed block with a gradient
   filter: none;
-  background: url("ie-masthead.gif") repeat-x;
+  background-color: #5a5a5a;
 }
 body {
   word-wrap: normal;
