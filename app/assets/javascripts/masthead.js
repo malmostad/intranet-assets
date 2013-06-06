@@ -5,7 +5,7 @@ jQuery(document).ready(function($) {
   // Set test or development as a class in the body tag if applicable
   var development = $('body').hasClass('development');
   var test = $('body').hasClass('test');
-  if ( development || test ) preprodLinks();
+  if (development || test) preprodLinks();
 
   // Inject the masthead from the stringified html code
   $(malmoMasthead).prependTo('body');
@@ -136,7 +136,7 @@ jQuery(document).ready(function($) {
     document.location = $mastheadSearchIntranet.attr('action') + "?q=" + query;
   });
 
-  // Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iP*o*s.
+  // Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
   if( ( /iPhone|iPod/.test( navigator.platform ) && navigator.userAgent.indexOf( "AppleWebKit" ) > -1 ) ) {
     $("html").attr("style", "-webkit-text-size-adjust: none");
   }
