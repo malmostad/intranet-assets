@@ -156,19 +156,6 @@
         padding: emize(18) emize(12) !important;
       }
     }
-    #nav-menu-trigger, #nav-search-trigger {
-      font-size: emize(15, 13);
-      a {
-        padding: emize(11) emize(14) emize(13) emize(12);
-      }
-    }
-    #nav-search-trigger {
-      a span {
-        font-size: emize(14);
-        line-height: .5;
-        padding-left: 0;
-      }
-    }
   }
   body.development:after,
   body.test:after {
