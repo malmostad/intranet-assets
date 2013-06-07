@@ -5,14 +5,14 @@
   }
 }
 
-@media ( max-width: 56em ) {
+@media ( max-width: 64em ) {
   #malmo-masthead > nav#masthead-others {
     display: none !important;
   }
 }
 
 // Switch to collapsed top nav
-@media ( max-width: 51em ) {
+@media ( max-width: 62em ) {
   #malmo-masthead {
     position: absolute;
     min-width: 0;
@@ -137,7 +137,7 @@
 }
 
 // In case the nav was hidden by click event in narrower width
-@media ( min-width: 51.1em ) {
+@media ( min-width: 62.1em ) {
   #malmo-masthead > nav {
     display: block !important;
   }

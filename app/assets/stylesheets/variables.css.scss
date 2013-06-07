@@ -15,10 +15,8 @@ $backgroundLightHover: darken($backgroundLight, 10%);
 $backgroundDark: #888;
 $backgroundDarker: darken($backgroundDark, 18%);
 
-$mastheadBackgroundFrom: #777;
-$mastheadBackgroundTo: darken($mastheadBackgroundFrom, 30%);
-$mastheadBackgroundHighlightFrom: #000;
-$mastheadBackgroundHighlightTo: lighten($mastheadBackgroundHighlightFrom, 0);
+$mastheadBackground: #505050;
+$mastheadBackgroundHighlight: #000;
 $mastheadColor: white;
 $mastheadColorHighlight: white;
 

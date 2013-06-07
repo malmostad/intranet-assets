@@ -4,9 +4,9 @@
   left: 0;
   right: 0;
   z-index: 100;
-  @include linear-gradient($mastheadBackgroundFrom, $mastheadBackgroundTo, 0, 2.4em);
+  background-color: $mastheadBackground;
   @include box-shadow(0 2px 2px rgba(0, 0, 0, .2));
-  min-width: 50em;
+  min-width: 62em;
   > nav > ul > li {
     float: left;
     > a {
@@ -41,7 +41,7 @@
     > a:hover,
     > a:focus,
     &.open > a {
-      @include linear-gradient($mastheadBackgroundHighlightFrom, $mastheadBackgroundHighlightTo);
+      background: $mastheadBackgroundHighlight;
       border-color: transparent $mastheadColor;
     }
     ul.dropdown-menu {
@@ -112,7 +112,7 @@
     }
     a:hover,
     a:focus {
-      @include linear-gradient($mastheadBackgroundHighlightFrom, $mastheadBackgroundHighlightTo);
+      background: $mastheadBackgroundHighlight;
       color: $mastheadColorHighlight;
       border: white solid;
       border-width: 0 1px;
@@ -158,7 +158,7 @@
 .malmo-masthead-map #masthead-others .map,
 .malmo-masthead-search #nav-search-trigger {
   > a {
-    @include linear-gradient($mastheadBackgroundHighlightFrom, $mastheadBackgroundHighlightTo);
+    background: $mastheadBackground;
     border-color: transparent $mastheadColor;
   }
 }
