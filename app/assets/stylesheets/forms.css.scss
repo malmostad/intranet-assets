@@ -55,7 +55,6 @@ input.small[type="color"] {
       padding-left: 0;
       padding-right: 0;
       padding-top: 1px;
-      // overflow: hidden;
     }
   }
 
@@ -65,7 +64,6 @@ input.small[type="color"] {
   }
   .help-inline {
     font-size: emize(13);
-    margin: .5em 0;
   }
   .help {
     margin: 0 0 1em;
@@ -110,12 +108,12 @@ input.small[type="color"] {
       border: none;
       font-size: emize(13, 13);
       label, .checkbox {
-         color: black;
+        color: black;
       }
       .control-label {
         color: $warningColor;
       }
-      input, input:focus {
+      input, textarea, select, input, input:focus {
         border: $warningBorder;
         background: none;
       }
