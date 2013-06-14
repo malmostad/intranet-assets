@@ -115,7 +115,7 @@ input.small[type="color"] {
       }
       input, textarea, select, input, input:focus {
         border: $warningBorder;
-        background: none;
+        background: $warningBackground;
       }
       .help-inline {
         color: $warningColor;
