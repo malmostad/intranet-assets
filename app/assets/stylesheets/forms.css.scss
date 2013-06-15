@@ -1,24 +1,3 @@
-// Matches btn-small
-input.small[type="text"],
-input.small[type="password"],
-input.small[type="datetime"],
-input.small[type="datetime-local"],
-input.small[type="date"],
-input.small[type="month"],
-input.small[type="time"],
-input.small[type="week"],
-input.small[type="number"],
-input.small[type="email"],
-input.small[type="url"],
-input.small[type="search"],
-input.small[type="tel"],
-input.small[type="color"] {
-  height: 16px;
-  padding: 4px 6px;
-  font-size: 12px;
-  line-height: 16px;
-}
-
 .malmo-form {
   input[type="file"] {
     font-size: 13px;
@@ -26,7 +5,7 @@ input.small[type="color"] {
   }
 
   label {
-    font-size: emize(13);
+    font-size: 13px;
   }
 
   .radio.inline, .checkbox.inline {
@@ -63,11 +42,11 @@ input.small[type="color"] {
     padding-left: 0;
   }
   .help-inline {
-    font-size: emize(13);
+    font-size: 13px;
   }
   .help {
     margin: 0 0 1em;
-    font-size: emize(13);
+    font-size: 13px;
     line-height: 1.4;
     font-family: $sansSerif;
   }
@@ -88,7 +67,7 @@ input.small[type="color"] {
     }
 
     h2.form-group-title {
-      font-size: emize(13);
+      font-size: 13px;
       border-bottom: $border;
       margin: 2em 0 1em;
       padding-bottom: .2em;
@@ -106,7 +85,7 @@ input.small[type="color"] {
       padding: 0;
       background: transparent;
       border: none;
-      font-size: emize(13, 13);
+      font-size: 13px;
       label, .checkbox {
         color: black;
       }
@@ -116,6 +95,7 @@ input.small[type="color"] {
       input, textarea, select, input, input:focus {
         border: $warningBorder;
         background: $warningBackground;
+        color: black;
       }
       .help-inline {
         color: $warningColor;
@@ -137,7 +117,7 @@ input.small[type="color"] {
   // Used for pseudo labels
   .control-group {
     div.control-label {
-      font-size: emize(13);
+      font-size: 13px;
       line-height: 1.4em;
     }
   }
@@ -149,7 +129,7 @@ input.small[type="color"] {
       padding: .8em 0;
     }
     .controls {
-      font-size: emize(13);
+      font-size: 13px;
       line-height: 1.4em;
       margin-top: 0;
       padding: .8em 0;
@@ -160,5 +140,24 @@ input.small[type="color"] {
         display: inline-block;
       }
     }
+  }
+  input.small[type="text"],
+  input.small[type="password"],
+  input.small[type="datetime"],
+  input.small[type="datetime-local"],
+  input.small[type="date"],
+  input.small[type="month"],
+  input.small[type="time"],
+  input.small[type="week"],
+  input.small[type="number"],
+  input.small[type="email"],
+  input.small[type="url"],
+  input.small[type="search"],
+  input.small[type="tel"],
+  input.small[type="color"] {
+    height: 16px;
+    padding: 4px 6px;
+    font-size: 12px;
+    line-height: 16px;
   }
 }
