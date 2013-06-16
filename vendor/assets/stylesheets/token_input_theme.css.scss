@@ -1,8 +1,7 @@
 ul.token-input-list-malmo {
   overflow: hidden;
   height: 1%;
-  width: 400px;
-  border: 1px solid #8496ba;
+  width: 90%;
   cursor: text;
   font-family: $sansSerif;
   font-size: emize(13);
@@ -12,6 +11,15 @@ ul.token-input-list-malmo {
   padding: 0;
   background-color: #fff;
   list-style-type: none;
+  border: $border;
+  @include radius(4px);
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+  -webkit-transition: border linear .2s, box-shadow linear .2s;
+  -moz-transition: border linear .2s, box-shadow linear .2s;
+  -o-transition: border linear .2s, box-shadow linear .2s;
+  transition: border linear .2s, box-shadow linear .2s;
 }
 
 ul.token-input-list-malmo li input {
