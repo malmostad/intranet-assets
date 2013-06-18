@@ -4,7 +4,7 @@ ul.token-input-list-malmo {
   width: 90%;
   cursor: text;
   font-family: $sansSerif;
-  font-size: emize(13);
+  font-size: 13px;
   min-height: 1px;
   z-index: 999;
   margin: 0;
@@ -87,7 +87,7 @@ div.token-input-dropdown-malmo {
   border-right: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
   cursor: default;
-  font-size: emize(13);
+  font-size: 13px;
   font-family: $sansSerif;
   z-index: 1;
 }
