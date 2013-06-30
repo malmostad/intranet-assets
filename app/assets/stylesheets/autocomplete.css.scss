@@ -1,6 +1,6 @@
 /*******************************************************
   TEMP CODE USED BETWEEN HR MENU AND EMPLOYEE DB RELEASE
-  REMOVE AFTER EMPLOYEE DB RELEASE
+  TODO: REMOVE AFTER EMPLOYEE DB RELEASE
 *******************************************************/
 
 // Autocomplete list for user search
@@ -23,6 +23,12 @@ ul.ui-autocomplete.search_users {
     p {
       margin: 0 0 0 38px;
     }
+  }
+}
+
+body.user.edit .box.show {
+  a.btn {
+    float: right;
   }
 }
 
