@@ -54,8 +54,6 @@ jQuery(document).ready(function($) {
 
   var $malmoMastheadNav = $("#malmo-masthead nav.masthead-main");
   var $mastheadSearch = $("#masthead-search");
-  var $mastheadSearchPerson = $("#masthead-search-person");
-  var $mastheadSearchIntranet = $("#masthead-search-intranet");
 
   // if #nav-menu-trigger is displayed, the masthead is collapsed
   function narrowMode() {
@@ -69,7 +67,7 @@ jQuery(document).ready(function($) {
     hideNav();
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px");
     $mastheadSearch.slideDown(100);
-    $mastheadSearchIntranet.find("input:first").focus();
+    $("#masthead-search-intranet").find("input:first").focus();
 
     // Close on click outside the searchbox. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one('click', function(event) {
@@ -122,18 +120,11 @@ jQuery(document).ready(function($) {
     $(document).off('keyup');
   });
 
-  // Phone catalog search
-  $mastheadSearchPerson.submit( function(event) {
-    event.preventDefault();
-    query = escape($mastheadSearchPerson.find("input[name=q]").val() + '|');
-    window.open( $mastheadSearchPerson.attr('action') + query, "phonebook");
-  });
-
   // Komin search
-  $mastheadSearchIntranet.submit( function(event) {
+  $("#masthead-search-intranet").submit( function(event) {
     event.preventDefault();
-    query = $mastheadSearchIntranet.find("input[name=q]").val();
-    document.location = $mastheadSearchIntranet.attr('action') + "?q=" + query;
+    query = $(this).find("input[name=q]").val();
+    document.location = $(this).attr('action') + "?q=" + query;
   });
 
   // Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
