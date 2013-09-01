@@ -16,7 +16,7 @@ You might want to read the [How to Use the Assets](https://github.com/malmostad/
 For more information, contact kominteamet@malmo.se.
 
 ## Dependencies for Development and Deployment
-* Ruby 1.9.3 or 2.0
+* Ruby 2.0
 * Rubygems and Bundler
 
 ## Dependencies for Asset Hosting
