@@ -1,7 +1,16 @@
 jQuery ($) ->
+  # Inject the masthead from the stringified html code
+  $(malmoMasthead).prependTo('body')
+
+  $malmoMastheadNav = $("#malmo-masthead nav.masthead-main")
+  $mastheadSearch = $("#masthead-search")
+
   # if #nav-menu-trigger is displayed, the masthead is collapsed
   narrowMode = ->
     $("#nav-menu-trigger").css('display') is 'none'
+
+  # Animations are slow on some narrow devices
+  $.fx.off = narrowMode()
 
   hideNav = ->
     # Hide nav if the masthead is in narrow mode
@@ -49,28 +58,11 @@ jQuery ($) ->
     else if items.length is 1
       $(navItem).find('a').attr('href', items[0].homepage_url)
 
-
-  # Animations are slow on some narrow devices
-  $.fx.off = narrowMode()
-
   # We share the profile cookie on multiple systems so we have a limited set of
   # environments for the profile
   # Set test or development as a class in the body tag if applicable
   development = $('body').hasClass('development')
   test = $('body').hasClass('test')
-
-  # Inject the masthead from the stringified html code
-  masthead = malmoMasthead
-  # Hard coded link rewriting in pre-prod envs for convenience
-  if test
-    masthead = masthead.replace(/komin\.malmo\.se/g, 'komin.test.malmo.se')
-    masthead = masthead.replace(/webapps06\.malmo\.se\/dashboard/g, 'webapps06.malmo.se/dashboard-test')
-  else if development
-    masthead = masthead.replace(/https?:\/\/webapps06\.malmo\.se\/dashboard/g, '')
-  $(masthead).prependTo('body')
-
-  $malmoMastheadNav = $("#malmo-masthead nav.masthead-main")
-  $mastheadSearch = $("#masthead-search")
 
   # Users profile from the Dashboard is available in a cookie.
   $.cookie.json = true
@@ -125,5 +117,36 @@ jQuery ($) ->
   new FastClick $('#nav-menu-trigger')[0]
   new FastClick $('#nav-search-trigger')[0]
 
-  # Turn off Boostraps hover look-alikes on touch devices
+  # Turn off Bootstraps hover look-alikes on touch devices
   $(document).off('touchstart.dropdown')
+
+  # Autocomplete
+  $searchField = $('#masthead-search-intranet .q')
+  if $searchField.length
+    $searchField.autocomplete
+      class: "x"
+      source: (request, response) ->
+        $.ajax
+          url: $searchField.attr("data-autocomplete-path")
+          data:
+            q: request.term
+            ilang: 'sv'
+          dataType: "jsonp"
+          jsonpCallback: "results"
+          success: (data) ->
+            if data.length
+              response $.map data, (item) ->
+                return {
+                  hits: item.nHits
+                  suggestionHighlighted: item.suggestionHighlighted
+                  value: item.suggestion
+                }
+      minLength: 2
+      select: (event, ui) ->
+        document.location = $("#masthead-search-intranet").attr('action') + '?q=' + unescape(ui.item.value)
+    .css("z-index", 101)
+    .data( "autocomplete" )._renderItem = (ul, item) ->
+      return $("<li></li>")
+      .data("item.autocomplete", item)
+      .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
+      .appendTo(ul)

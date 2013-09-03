@@ -31,7 +31,6 @@ set(:user) do
 end
 
 before "deploy", "deploy:continue", "build"
-before "build", "build:masthead"
 after "deploy", "deploy:create_symlink", "deploy:cleanup", "build:cleanup"
 
 namespace :deploy do
@@ -54,18 +53,8 @@ end
 namespace :build do
   desc "Precompile assets locally"
   task :default do
+    run_locally("rake build:masthead RAILS_ENV=#{rails_env}")
     run_locally("rake assets:clean && rake assets:precompile RAILS_ENV=#{rails_env}")
-  end
-
-  desc "Convert masthead html to a javascript string variable"
-  task :masthead do
-    html = File.read('content/masthead.html')
-    js_var = html_to_javascript_variable(html, "malmoMasthead")
-    File.open('app/assets/javascripts/masthead_content.js', 'w') do |f|
-      f.puts("// Auto generated from content/masthead.html by cap build:masthead. Don't edit this file.")
-      f.puts(js_var)
-      f.close
-    end
   end
 
   desc "Remove locally compiled assets"
@@ -73,10 +62,4 @@ namespace :build do
     run_locally("rake assets:clean:all")
     run_locally("rm public/assets.tar.bz2")
   end
-end
-
-def html_to_javascript_variable(html, var_name)
-  puts "Convert #{var_name} html to a javascript string"
-  html = html.gsub(/^\s+/, '').gsub(/\s+/, ' ').gsub(/'/, '"').gsub(/\n/, ' ')
-  "var #{var_name} = '#{html}';"
 end
