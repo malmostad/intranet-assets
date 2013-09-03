@@ -100,32 +100,4 @@ jQuery(document).ready(function($) {
     _gaq.push(['_trackEvent', 'topMenuClick', text, $a.attr('href').replace(/https*:\/\/.*\//, '/')]);
     gaDelayEvent($a, event);
   });
-
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-// TODO: Remove this when new search integration is made
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
-  // Event tracking of details for selected link in the search results
-  $('#search-results h3 a, #search-results .breadcrumb ul li a, #search-categories a').click(function(event) {
-    var $a = $(this);
-    var link = $a.attr('href');
-    var GAAction = $("#essi-queryfield").val();
-    var GALabel = $.trim($a.text()) + " " + link;
-
-    // Track all clicks in the results list
-    _gaq.push(['_trackEvent', 'SearchClickPosition', GAAction, GALabel, parseInt($a.parent().parent().closest('li').attr('data-position'), 10)]);
-
-    // Track clicks on breadcrumbs in the results list
-    if ($a.closest("div.breadcrumb").length > 0) {
-      _gaq.push(['_trackEvent', 'SearchClickBreadcrumb', GAAction,  GALabel]);
-    }
-
-    // Track clicks on editors choich in the results list
-    if ($a.closest("#search-categories").length > 0) {
-      _gaq.push(['_trackEvent', 'SearchClickCategory', GAAction,  GALabel]);
-    }
-    gaDelayEvent($a, event);
-  });
-// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-
 });
