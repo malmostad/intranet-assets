@@ -124,7 +124,6 @@ jQuery ($) ->
   $searchField = $('#masthead-search-intranet .q')
   if $searchField.length
     $searchField.autocomplete
-      class: "x"
       source: (request, response) ->
         $.ajax
           url: $searchField.attr("data-autocomplete-path")
