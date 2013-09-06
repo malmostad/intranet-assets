@@ -3,3 +3,4 @@ config/deploy.yml
 log
 tmp
 doc
+_site
