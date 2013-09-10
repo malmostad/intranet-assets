@@ -14,7 +14,8 @@
 .btn-primary:active,
 .btn-primary.active,
 .btn-primary.disabled,
-.btn-primary[disabled] {
+.btn-primary[disabled],
+.btn-group.open .btn-primary.dropdown-toggle {
   background-color: $btnPrimaryBackgroundDark;
 }
 
