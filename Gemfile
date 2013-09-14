@@ -8,6 +8,7 @@ gem 'rack-contrib'
 group :assets do
   gem 'sass-rails'
   gem 'uglifier'
+  gem 'coffee-rails', '3.2.2'
   # gem 'therubyracer', require: 'v8'
 end
 
