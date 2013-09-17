@@ -1,3 +1,7 @@
+form.malmo-form, .malmo-form form {
+  font-family: $sansSerif;
+}
+
 .malmo-form {
   input[type="file"] {
     font-size: 13px;
@@ -10,33 +14,6 @@
 
   .radio.inline, .checkbox.inline {
     margin-right: 1em;
-  }
-
-  // Fluid horizontal forms, use a @media query w/a breakpoint to make it vertical
-  .form-horizontal {
-    .control-group {
-      margin-bottom: 1em;
-      @include box-sizing(border-box);
-    }
-    .control-label {
-      @include box-sizing(border-box);
-      font-size: 13px;
-      text-align: left;
-      width: 30%;
-      margin-left: 0;
-      margin-right: 0;
-      padding-left: 0;
-      padding-right: 0;
-    }
-    .controls {
-      @include box-sizing(border-box);
-      font-size: 13px;
-      margin-right: 0;
-      margin-left: 30%;
-      padding-left: 0;
-      padding-right: 0;
-      padding-top: 1px;
-    }
   }
 
   .help-inline, .help {
@@ -58,61 +35,58 @@
     padding-left: 1em;
   }
 
-  form, .form-data {
-    font-family: $sansSerif;
-    table {
-      td, th {
-        &.error, &.success {
-          border-width: 1px 0;
-        }
+  table {
+    td, th {
+      &.error, &.success {
+        border-width: 1px 0;
       }
     }
+  }
 
-    h2.form-group-title {
-      font-size: 13px;
-      border-bottom: $border;
-      margin: 1em 0 1em;
-      padding-bottom: .2em;
-    }
+  h2.form-group-title {
+    font-size: 13px;
+    border-bottom: $border;
+    margin: 1em 0 1em;
+    padding-bottom: .2em;
+  }
 
-    .box {
-      p {
-        &.notice, &.warning, &.error, &.flash {
-          margin: .8em .8em;
-        }
+  .box {
+    p {
+      &.notice, &.warning, &.error, &.flash {
+        margin: .8em .8em;
       }
     }
+  }
 
-    .control-group.warning, .field_with_errors {
-      padding: 0;
-      background: transparent;
-      border: none;
-      font-size: 13px;
-      label, .checkbox {
-        color: black;
-      }
-      .control-label {
-        color: $warningColor;
-      }
-      input, textarea, select, input, input:focus {
-        border: $warningBorder;
-        color: black;
-      }
-      .help-inline {
-        color: $warningColor;
-        display: block;
-      }
-      .help-block {
-        color: black;
-      }
+  .control-group.warning, .field_with_errors {
+    padding: 0;
+    background: transparent;
+    border: none;
+    font-size: 13px;
+    label, .checkbox {
+      color: black;
     }
-    .help-inline.warning {
-      display: block;
-      margin-bottom: 1em;
+    .control-label {
       color: $warningColor;
-      background: transparent;
-      border: none;
     }
+    input, textarea, select, input, input:focus {
+      border: $warningBorder;
+      color: black;
+    }
+    .help-inline {
+      color: $warningColor;
+      display: block;
+    }
+    .help-block {
+      color: black;
+    }
+  }
+  .help-inline.warning {
+    display: block;
+    margin-bottom: 1em;
+    color: $warningColor;
+    background: transparent;
+    border: none;
   }
 
   .input-wide {
@@ -186,5 +160,32 @@
     padding: 4px 6px;
     font-size: 12px;
     line-height: 16px;
+  }
+}
+
+// Fluid horizontal forms, use a @media query w/a breakpoint to make it vertical
+.form-horizontal {
+  .control-group {
+    margin-bottom: 1em;
+    @include box-sizing(border-box);
+  }
+  .control-label {
+    @include box-sizing(border-box);
+    font-size: 13px;
+    text-align: left;
+    width: 30%;
+    margin-left: 0;
+    margin-right: 0;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .controls {
+    @include box-sizing(border-box);
+    font-size: 13px;
+    margin-right: 0;
+    margin-left: 30%;
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 1px;
   }
 }
