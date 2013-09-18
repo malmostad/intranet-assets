@@ -189,3 +189,17 @@ form.malmo-form, .malmo-form form, .form-data {
     padding-top: 1px;
   }
 }
+
+// Reset for body-copy's ul trashing the bootstrap dropdown
+.body-copy ul.dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  li {
+    padding: 0;
+    margin: 0;
+    &.divider {
+      margin: .2em 0;
+    }
+  }
+}
