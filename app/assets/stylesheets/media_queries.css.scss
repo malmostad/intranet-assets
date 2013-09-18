@@ -164,13 +164,5 @@
 }
 
 @media ( max-width: 28em ) {
-  #malmo-masthead {
-    .nav-logo {
-      width: 1.8em;
-      height: 2em;
-      overflow: hidden;
-      background-position: 10px 6px;
-      background-size: 26px;
-    }
-  }
+  @include form-force-vertical();
 }
