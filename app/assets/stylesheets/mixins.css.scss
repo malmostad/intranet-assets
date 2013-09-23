@@ -1,11 +1,8 @@
-@mixin columns($span, $last: false) {
-  $gutter: 2%;
-  $total-columns: 12; // Number of columns in the grid
-
+@mixin columns($span, $last: false, $gutter: 2%, $total-columns: 12) {
   // (column width in percentage) minus its (own portion of all the gutters)
   width: percentage($span / $total-columns) - (($total-columns / $span - 1) * $gutter / ($total-columns / $span));
 
-  // No gutter to the left if the column is the last to the right
+  // No gutter to the right if the column is the last to the right
   @if not $last {
     margin-right: $gutter;
   } @else {
