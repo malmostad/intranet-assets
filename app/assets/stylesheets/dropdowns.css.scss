@@ -18,6 +18,9 @@ a.dropdown-toggle {
   font-size: emize(13);
   font-family: $sansSerif;
   border: $borderDark;
+  li {
+    margin: 0 !important;
+  }
   li a {
     display: block;
     padding: .4em 1em;

@@ -53,6 +53,7 @@ blockquote {
 
 table {
   border-collapse: collapse;
+  margin-bottom: 1em;
   th {
     text-align: left;
     vertical-align: top;
@@ -62,16 +63,13 @@ table {
     font-family: $sansSerif;
     font-size: emize(13);
     line-height: 1.35;
-    padding: .3em .5em;
+    padding: .4em .6em;
     border-top: $border;
     border-bottom: $border;
     border-collapse: collapse;
   }
-  &.large {
-    th, td {
-      font-size: emize(13);
-      padding: .4em .6em;
-    }
+  &.full {
+    width: 100%;
   }
 }
 

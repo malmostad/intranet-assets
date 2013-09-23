@@ -5,6 +5,7 @@
 //= require bootstrap
 //= require jquery.tokeninput
 //= require boxes
+//= require content
 //= require masthead_content
 //= require masthead
 //= require fastclick
