@@ -1,8 +1,17 @@
-@mixin columns($span, $last: false, $gutter: 2%, $total-columns: 12) {
+// Used for the 12 column grid system. Supports RWD without specific class names.
+// Use it to make a block span over a given number of columns.
+//    $span is the number of columns that the block should span over.
+//    $last specifies if the column is the last in the row, no gutter to the right then.
+//      Optional. Defaults to false. Forced to true if the number of columns is 12 (full width block)
+//    $gutter is the margin to the right of the block in percentage of the full width.
+//      Defaults to 2%.
+@mixin columns($span, $last: false, $gutter: 2%) {
+  $total-columns: 12;
+
   // (column width in percentage) minus its (own portion of all the gutters)
   width: percentage($span / $total-columns) - (($total-columns / $span - 1) * $gutter / ($total-columns / $span));
 
-  // No gutter to the right if the column is the last to the right
+  // No gutter to the right if the column is last in a row
   @if not $last {
     margin-right: $gutter;
   } @else {
