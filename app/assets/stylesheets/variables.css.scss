@@ -1,46 +1,55 @@
-// Colors
+// Black text on white background is the default
+// with green links in content
 $bodyBackground: white;
 $bodyColor: black;
-$menuColor: $bodyColor;
-
 $linkColor: #007133;
 
+// Borders around boxes etc.
 $borderColor: #ccc;
 $border: $borderColor 1px solid;
+// Darker border
 $borderColorDark: darken($borderColor, 20%);
 $borderDark: $borderColorDark 1px solid;
 
+// Background colors
 $backgroundLight: #f5f5f5;
+// Use it for hover effect when the area is linked
 $backgroundLightHover: darken($backgroundLight, 10%);
+// Background colors used with inverted text
 $backgroundDark: #888;
 $backgroundDarker: darken($backgroundDark, 18%);
 
+// Masthead with hover effects
 $mastheadBackground: #454545;
 $mastheadBackgroundHighlight: #000;
 $mastheadColor: white;
 $mastheadColorHighlight: white;
 
+// Masthead in collapsed mode
+// (verbose, but it makes it possible to change the color and add gradients etc. in the css)
 $narrowNavBackground: #5a5a5a;
 $narrowNavBackgroundHiglight: #000;
 $narrowNavColor: white;
 $narrowNavBorderColor: white;
 $narrowNavBottomBorderColor: none;
-
 $narrowNavBackground: $backgroundLight;
 $narrowNavBackgroundHiglight: $backgroundLightHover;
 $narrowNavColor: black;
 $narrowNavBorderColor: $borderColor;
 $narrowNavBottomBorderColor: $borderColor;
 
+// Title bars for boxes
 $boxTitleBackground: $backgroundDarker;
 $boxTitleColor: white;
 $boxTriggersHightligt: lighten(#666, 14%);
 
 $boxShadow: 2px 2px 3px #ccc;
 
+// Background color for Save/Update/Login buttons
 $btnPrimaryBackground: #60c05a;
 $btnPrimaryBackgroundDark: darken($btnPrimaryBackground, 15%);
 
+// Colors for status messages
 $successBackground: #eafcea;
 $successBorder: 1px solid desaturate(darken($successBackground, 50%), 40%);
 $warningBackground: #fffcd0;
@@ -48,7 +57,6 @@ $warningColor: #c00;
 $warningBorder: 1px solid $warningColor;
 $errorBackground: #ffeae0;
 $errorBorder: 1px solid darken($errorBackground, 40%);
-
 $dangerColor: #c00;
 
 // Fonts
