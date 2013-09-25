@@ -24,6 +24,9 @@
     line-height: emize(21, 16);
     margin: 1.5em 0 0;
   }
+  h1+h2, h2+h3, h3+h4 {
+    margin-top: 1em;
+  }
 
   p {
     font-size: emize(16);
@@ -50,6 +53,10 @@
   }
   ol {
     list-style: decimal;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 
   // Reset RTF formatted headings
