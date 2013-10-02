@@ -144,8 +144,8 @@ jQuery ($) ->
       select: (event, ui) ->
         document.location = $("#masthead-search-intranet").attr('action') + '?q=' + unescape(ui.item.value)
     .css("z-index", 101)
-    .data( "autocomplete" )._renderItem = (ul, item) ->
+    .data( "ui-autocomplete" )._renderItem = (ul, item) ->
       return $("<li></li>")
-      .data("item.autocomplete", item)
+      .data("ui-autocomplete-item", item)
       .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
       .appendTo(ul)
