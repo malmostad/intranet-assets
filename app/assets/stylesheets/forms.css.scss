@@ -187,4 +187,15 @@
     font-size: 12px;
     line-height: 16px;
   }
+
+  input.date {
+    width: 8em;
+  }
+  .date .add-on.icon-th {
+    cursor: pointer;
+  }
+}
+
+.dropdown-menu.datepicker-dropdown {
+  font-size: 1em;
 }
