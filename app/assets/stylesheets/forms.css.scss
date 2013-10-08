@@ -170,8 +170,8 @@ form.malmo-form, .malmo-form form, .form-data {
   }
 }
 
-.dropdown-menu.datepicker-dropdown {
-  font-size: 1em;
+.dropdown-menu.datepicker-dropdown * {
+  font-size: 13px;
 }
 
 // Fluid horizontal forms, use a @media query w/a breakpoint to make it vertical
