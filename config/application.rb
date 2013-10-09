@@ -34,13 +34,6 @@ module AssetsContainer
       legacy/ie9.css
       legacy/ie7.css
     )
-
-    # config.sass.style = :compressed
-
-    initializer :after_append_asset_paths, group: :all, after: :append_assets_path do
-      config.assets.paths.unshift "vendor/assets/stylesheets/jquery-ui-smoothness"
-      config.assets.paths.unshift "vendor/assets/select2"
-    end
   end
 end
 
