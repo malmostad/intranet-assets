@@ -20,6 +20,7 @@ module AssetsContainer
 
     config.assets.precompile += %w(
       malmo.js
+      malmo_no_jquery.js
       malmo.css
       html5shiv-printshiv.js
       doc.css
