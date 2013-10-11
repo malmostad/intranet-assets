@@ -5,16 +5,8 @@ jQuery ($) ->
   $malmoMastheadNav = $("#malmo-masthead nav.masthead-main")
   $mastheadSearch = $("#masthead-search")
 
-  # if #nav-menu-trigger is displayed, the masthead is collapsed
-  narrowMode = ->
-    $("#nav-menu-trigger").css('display') is 'none'
-
-  # Animations are slow on some narrow devices
-  $.fx.off = narrowMode()
-
   hideNav = ->
-    # Hide nav if the masthead is in narrow mode
-    if narrowMode() then $malmoMastheadNav.slideUp(100)
+    $malmoMastheadNav.slideUp(100)
 
   showNav = ->
     hideSearch()
@@ -77,7 +69,7 @@ jQuery ($) ->
 
   $("#nav-menu-trigger a").click (event) ->
     event.preventDefault();
-    if $malmoMastheadNav.is(":hidden") then showNav() else hideNav()
+    if $("#malmo-masthead nav.masthead-main").is(":hidden") then showNav() else hideNav()
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
