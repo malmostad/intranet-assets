@@ -23,7 +23,6 @@ module AssetsContainer
       malmo_no_jquery.js
       malmo.css
       html5shiv-printshiv.js
-      doc.css
       masthead_standalone.css
       masthead_standalone_non_rwd.css
       masthead_standalone.js

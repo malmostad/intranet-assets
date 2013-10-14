@@ -3,7 +3,7 @@ namespace :build do
   task masthead: :environment do
 
     # Convert erb template to html
-    erb = File.read(File.expand_path('app/views/content/masthead.html.erb'))
+    erb = File.read(File.expand_path('app/assets/content/masthead.html.erb'))
     html = ERB.new(erb).result(binding)
 
     # Make it a one line string and attach it to a js var
