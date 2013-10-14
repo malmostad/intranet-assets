@@ -5,14 +5,9 @@
   <meta name='viewport'  content='width=device-width, initial-scale=1.0'/>
   <meta name='robots' content='noindex, nofollow'/>
   <title>Assets 3.0 Test Pages</title>
-  <!--[if lte IE 8]>
-    <%= javascript_include_tag "html5shiv-printshiv" %>
-  <![endif]-->
+  <!--[if lte IE 8]><%= javascript_include_tag "html5shiv-printshiv" %><![endif]-->
   <%= stylesheet_link_tag  "malmo" %>
-  <%= stylesheet_link_tag  "doc" %>
-  <!--[if lte IE 7]>
-    <%= stylesheet_link_tag "legacy/ie7" %>
-  <![endif]-->
+  <!--[if lte IE 7]><%= stylesheet_link_tag "legacy/ie7" %><![endif]-->
 </head>
 <body class="<%= Rails.env %> malmo-masthead-our-organization malmo-form">
 <%= yield %>
