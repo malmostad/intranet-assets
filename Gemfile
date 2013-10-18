@@ -12,5 +12,5 @@ group :assets do
   # gem 'therubyracer', require: 'v8'
 end
 
-gem 'capistrano'
+gem 'capistrano', '~> 2.15.5'
 gem 'capistrano-ext'
