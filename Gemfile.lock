@@ -127,7 +127,7 @@ PLATFORMS
 DEPENDENCIES
   capistrano
   capistrano-ext
-  coffee-rails
+  coffee-rails (= 3.2.2)
   jquery-rails
   rack-contrib
   rails (= 3.2.15)
