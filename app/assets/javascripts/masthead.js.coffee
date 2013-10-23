@@ -118,7 +118,7 @@ jQuery ($) ->
     $searchField.autocomplete
       source: (request, response) ->
         $.ajax
-          url: $searchField.attr("data-autocomplete-path")
+          url: $searchField.attr("data-autocomplete-url").replace("http:", location.protocol)
           data:
             q: request.term
             ilang: 'sv'
@@ -135,9 +135,9 @@ jQuery ($) ->
       minLength: 2
       select: (event, ui) ->
         document.location = $("#masthead-search-intranet").attr('action') + '?q=' + unescape(ui.item.value)
-    .css("z-index", 101)
     .data( "ui-autocomplete" )._renderItem = (ul, item) ->
+      ul.css("z-index", 1000)
       return $("<li></li>")
-      .data("ui-autocomplete-item", item)
-      .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
-      .appendTo(ul)
+        .data("ui-autocomplete-item", item)
+        .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
+        .appendTo(ul)
