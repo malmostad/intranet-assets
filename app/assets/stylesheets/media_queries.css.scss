@@ -23,7 +23,6 @@
   #malmo-masthead {
     min-width: 0;
     @include clearfix();
-    @include box-shadow(none);
     #masthead-search {
       position: static;
       float: left;
