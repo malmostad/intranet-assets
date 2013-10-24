@@ -11,9 +11,9 @@ form.malmo-form, .malmo-form form, .form-data {
   label {
     font-size: 13px;
   }
-
   .radio.inline, .checkbox.inline {
-    margin-right: 1em;
+    margin-left: 0 !important;
+    margin-right: 1.2em;
   }
 
   .help-inline, .help {
