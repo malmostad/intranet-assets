@@ -21,7 +21,6 @@
 // Switch to collapsed top nav
 @media ( max-width: 56em ) {
   #malmo-masthead {
-    position: absolute;
     min-width: 0;
     @include clearfix();
     @include box-shadow(none);
