@@ -39,7 +39,7 @@ Start the local asset server:
 $ rails s -p 3001
 ```
 
-You might need to map a domain name to your local host like `www.local.malmo.se` to debug and test some of the JavaScript code.
+You might need to map a domain name to your local host like `www.local.malmo.se` to debug and test the JavaScript code.
 
 Use the local views in the asset application for the visual part of the development. You can also point another locally installed web application your started asset server.
 
@@ -61,7 +61,7 @@ The compression levels for CSS and Javascript files are configured in `config/en
 
 ## Development
 
-The assets contains Sass code compiled to CSS, Javascripts, web fonts and an icon font.
+The assets contains Sass code compiled to CSS, Coffeescript compiled to JavaScript, web fonts and an icon font.
 
 Fundamentals for the intranet assets:
 
