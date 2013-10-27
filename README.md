@@ -69,12 +69,12 @@ Fundamentals for the intranet assets:
 * Have a long life cycle. The code from the asset host must be backward compatible for a long time since a lot of web application are consuming them and can’t be updated on a continues basis.
 * There is no room for extensive testing of all consuming web applications. It just have to work.
 
-## The Development Application
+### The Development Application
 The intranet assets are developed using Sprockets and the Assets Pipeline in a stripped-down Ruby on Rails application. It is used in development and deployment but not in production. It can be used as a local asset server during development and when developing or adapting other applications for the intranet.
 
 You must set a fully qualified domain name in the host file for your local development environment. such as `www.local.malmo.se`.
 
-## Stylesheets
+### Stylesheets
 Stylesheets are written in Sass with the SCSS syntax and organized in smaller files. All files, except for IE specifics, are imported in the `malmo.css.scss` file. The files are served uncompressed in development and concatenated to one compressed file, `malmo.css` with a Rake task by Capistrano in the build process.
 
 All sizes must be set in `em` or percentage units. Use the `emize()` Sass function defined in `functions.scss` to get a consistent output for font sizes. Thin border widths can be declared with `1px`.
@@ -89,26 +89,26 @@ For available Sass functions, mixins and defined variables, see each file with t
 
 The `columns()` mixin is used to define responsive column layouts that and is altered in the media query file.
 
-## Javascript
-As for the stylesheets, the Javascript is organized in smaller files and imported in the malmo.js file using the Sprockets syntax. The files are automatically served as individual files in the development application for easy debugging and concatenated and compressed in the build phase.
+### Coffeescript
+Use Coffeescript for JavaScript development and organize it in smaller files that will be imported in the malmo.js file using the Sprockets syntax. The files are automatically served as individual files in the development application for easy debugging and concatenated and compressed in the build phase.
 
-## The Masthead
+### The Masthead
 The common masthead that must be on every intranet application page is found in `app/assets/content/masthead.html.erb`. The code is transform to a Javascript string during the Capistrano build process for fast injection on every intranet page or view. To transform and display it during development, run the following task:
 
 ```shell
 $ rake build:masthead
 ```
 
-## Icons
-Always use the icon font for icons, never png images or sprites.
+### Icons
+Use the icon font for icons, not png images or sprites.
 
-## Gradients, Rounded Corners and Shadows
+### Gradients, Rounded Corners and Shadows
 For gradients, rounded corners and related stuff, use CSS3. Use solid background colors as a fallback. Use the Sass mixins for vendor prefixes to keep the code clean.
 
-## Build and Deployment
+### Build and Deployment
 See the repository’s [readme file](../blob/master/README.md).
 
-## Frameworks and Third Party Code
+### Frameworks and Third Party Code
 Third party code resides in `vendor/assets`. The code is included in the global stylesheet and Javascript file in the development environment as well as in the build process.
 
 Third party code and components are added to the intranet assets with caution, no brute force incorporation of frameworks and code without qualification. City of Malmö’s intranet assets is an enterprise level solution and must be maintained with all consuming applications in mind.
