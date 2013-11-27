@@ -4,6 +4,7 @@ jQuery ($) ->
 
   $malmoMastheadNav = $("#malmo-masthead nav.masthead-main")
   $mastheadSearch = $("#masthead-search")
+  $form = $("#masthead-search").find("form")
 
   hideNav = ->
     $malmoMastheadNav.slideUp(100)
@@ -23,32 +24,12 @@ jQuery ($) ->
   showSearch = ->
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
     $mastheadSearch.slideDown(100)
-    $("#masthead-search-intranet").find("input:first").focus()
+    $mastheadSearch.find("input:first").focus()
 
     # Close on click outside the searchbox. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
       event.preventDefault()
       hideSearch()
-
-  # We use the cookie values to change two nav items
-  hijackNav = (navItem, items, plural) ->
-    # Add a dropdown if the user has more than one items
-    if items.length > 1
-      $(navItem).addClass('dropdown')
-        .find('a')
-        .addClass('dropdown-toggle no-arrow')
-        .attr('data-toggle', 'dropdown')
-        .text(plural)
-        .append(' <span class="icon-caret-down">')
-        .end()
-        .append('<ul class="dropdown-menu"></ul>')
-
-      $.each items, (index, value) ->
-        $(navItem).find('ul').append('<li><a href="' + value.homepage_url + '">' + value.name + '</a></li>')
-
-    # Change the href if the user has one item
-    else if items.length is 1
-      $(navItem).find('a').attr('href', items[0].homepage_url)
 
   # We share the profile cookie on multiple systems so we have a limited set of
   # environments for the profile
@@ -56,24 +37,13 @@ jQuery ($) ->
   development = $('body').hasClass('development')
   test = $('body').hasClass('test')
 
-  # Users profile from the Dashboard is available in a cookie.
-  $.cookie.json = true
-
-  if development then myprofile = "myprofile-development"
-  else if test then myprofile = "myprofile-test"
-  else myprofile = "myprofile"
-
-  profile = $.cookie(myprofile) || {}
-  if profile.departments then hijackNav('#nav-my-department', profile.departments, 'Mina förvaltningar')
-  if profile.workingfields then hijackNav('#nav-my-workingfield', profile.workingfields, 'Mina arbetsfält')
-
   $("#nav-menu-trigger a").click (event) ->
     event.preventDefault();
     if $("#malmo-masthead nav.masthead-main").is(":hidden") then showNav() else hideNav()
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
-    if $("#masthead-search").is(":hidden") then showSearch() else hideSearch()
+    if $mastheadSearch.is(":hidden") then showSearch() else hideSearch()
 
   # Bind escape key to hide form
   $mastheadSearch.focusin ->
@@ -85,8 +55,7 @@ jQuery ($) ->
   $mastheadSearch.focusout ->
     $(document).off('keyup')
 
-  # Komin search
-  $("#masthead-search-intranet").submit (event) ->
+  $form.submit (event) ->
     event.preventDefault()
     query = $(@).find("input[name=q]").val()
     document.location = $(@).attr('action') + "?q=" + query;
@@ -113,7 +82,7 @@ jQuery ($) ->
   $(document).off('touchstart.dropdown')
 
   # Autocomplete
-  $searchField = $('#masthead-search-intranet .q')
+  $searchField = $mastheadSearch.find('.q')
   if $searchField.length
     $searchField.autocomplete
       source: (request, response) ->
@@ -134,7 +103,7 @@ jQuery ($) ->
                 }
       minLength: 2
       select: (event, ui) ->
-        document.location = $("#masthead-search-intranet").attr('action') + '?q=' + unescape(ui.item.value)
+        document.location = $form.attr('action') + '?q=' + unescape(ui.item.value)
     .data( "ui-autocomplete" )._renderItem = (ul, item) ->
       ul.css("z-index", 1000)
       return $("<li></li>")

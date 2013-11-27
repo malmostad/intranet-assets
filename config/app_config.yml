@@ -1,14 +1,12 @@
 # Used for content/masthead
 development:
   sv_base_url: "http://www.local.malmo.se:9292"
-  site_search_url: "http://www.local.malmo.se:9292/search"
+  site_search_ac_url: "http://malmo.appliance.siteseeker.se/qc/webb/qc"
 
 test: &test
   sv_base_url: "http://www.test.malmo.se/"
-  site_search_url: "http://www.malmo.se/sok"
 staging:
   <<: *test
 
 production:
   sv_base_url: "https://www.malmo.se/"
-  site_search_url: "http://webapps06.malmo.se/dashboard/search"
