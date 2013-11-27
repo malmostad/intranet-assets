@@ -1,6 +1,6 @@
 # Used for content/masthead
 development:
-  sv_base_url: "http://www.local.malmo.se:9292"
+  sv_base_url: "http://www.test.malmo.se/"
   site_search_ac_url: "http://malmo.appliance.siteseeker.se/qc/webb/qc"
 
 test: &test

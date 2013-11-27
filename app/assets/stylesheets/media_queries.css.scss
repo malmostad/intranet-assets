@@ -23,6 +23,7 @@
   #malmo-masthead {
     min-width: 0;
     @include clearfix();
+    background-color: $mastheadBackground;
     #masthead-search {
       position: static;
       float: left;
@@ -30,7 +31,7 @@
       overflow: hidden;
       padding-left: .8em;
       padding-right: .8em;
-      @include box-shadow(0 10px 60px 0 black);
+      @include box-shadow(0 10px 20px 0 rgba(0, 0, 0, .8));
       @include radius(0);
       input[type=text] {
         width: 70%;
@@ -41,7 +42,7 @@
       width: 100%;
       overflow: hidden;
       border-bottom: 1px solid $narrowNavBottomBorderColor;
-      @include box-shadow(0 10px 60px 0 black);
+      @include box-shadow(0 10px 20px 0 rgba(0, 0, 0, .8));
       @include clearfix();
       ul li {
         float: none;
@@ -49,10 +50,12 @@
         a,
         a:hover,
         a:focus {
-          padding: emize(22) emize(13) emize(22) emize(13);
-          @include linear-gradient($narrowNavBackground, $narrowNavBackground);
+          font-size: emize(15, 16);
+          height: auto;
+          padding: emize(18) emize(13);
           border-width: 1px 0 0;
           border-top-color: $narrowNavBorderColor;
+          background-color: $backgroundLight;
           color: $narrowNavColor;
           @include radius(0);
           .icon-caret-down {
@@ -61,7 +64,7 @@
         }
         a:hover,
         a:focus {
-          @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+          background-color: $backgroundLightHover;
         }
       }
     }
@@ -101,17 +104,12 @@
 
         > li {
           > a {
-            @include linear-gradient($narrowNavBackground, $narrowNavBackground);
             @include radius(0);
             padding-top: emize(18);
             padding-bottom: emize(18);
             border-top-width: 1px;
             border-top-color: $narrowNavBorderColor;
             border-top-style: solid;
-          }
-          > a:hover,
-          > a:focus {
-            @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
           }
         }
       }
@@ -129,7 +127,6 @@
     a, a:hover {
       border-top-color: $narrowNavBorderColor;
       background: $narrowNavBackgroundHiglight;
-      @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
     }
   }
 
@@ -148,14 +145,6 @@
 }
 
 @media ( max-width: 34em ) {
-  #malmo-masthead {
-    nav {
-      font-size: emize(15, 13);
-      li a {
-        padding: emize(18) emize(12) !important;
-      }
-    }
-  }
   body.development:after,
   body.test:after {
     font-size: 9px;

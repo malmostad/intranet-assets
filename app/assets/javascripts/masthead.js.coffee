@@ -22,6 +22,7 @@ jQuery ($) ->
     $mastheadSearch.slideUp(100)
 
   showSearch = ->
+    hideNav()
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
     $mastheadSearch.slideDown(100)
     $mastheadSearch.find("input:first").focus()
