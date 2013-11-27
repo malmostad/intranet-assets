@@ -49,7 +49,8 @@
         a,
         a:hover,
         a:focus {
-          padding: emize(22) emize(13) emize(22) emize(13);
+          height: auto;
+          padding: emize(18) emize(13);
           @include linear-gradient($narrowNavBackground, $narrowNavBackground);
           border-width: 1px 0 0;
           border-top-color: $narrowNavBorderColor;
