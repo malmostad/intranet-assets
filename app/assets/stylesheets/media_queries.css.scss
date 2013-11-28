@@ -1,156 +1,121 @@
-// Retina logo
+// Retina logos
 @media (min-resolution: 2dppx) {
   #malmo-masthead .nav-logo a {
     background: white url("logo-x2.png") 15px center no-repeat;
     background-size: 48px 65px;
   }
 }
+@media (min-resolution: 1dppx) and (max-width: 43em) {
+  #malmo-masthead .nav-logo a {
+    background: url("logo-mini-x1.png") 0 no-repeat;
+    background-size: 26px;
+  }
+}
+@media (min-resolution: 2dppx) and (max-width: 43em) {
+  #malmo-masthead .nav-logo a {
+    background: url("logo-mini-x2.png") 0 no-repeat;
+    background-size: 26px;
+  }
+}
 
-// @media ( max-width: 60em ) {
-//   #malmo-masthead > nav#masthead-others {
-//     display: none !important;
-//   }
-// }
+// In case the nav was hidden by click event in narrower width
+@media (min-width: 43.1em) {
+  #malmo-masthead > nav {
+    display: block !important;
+  }
+}
 
-// // In case the nav was hidden by click event in narrower width
-// @media ( min-width: 56.1em ) {
-//   #malmo-masthead > nav {
-//     display: block !important;
-//   }
-// }
+// Switch to collapsed top nav
+@media (max-width: 43em) {
+  #malmo-masthead {
+    margin-bottom: 2em;
+    min-width: 0;
+    border-bottom: #999 1px solid;
 
-// // Switch to collapsed top nav
-// @media ( max-width: 56em ) {
-//   #malmo-masthead {
-//     margin-bottom: 2em;
-//     min-width: 0;
-//     border-bottom: #999 1px solid;
-//     #masthead-search {
-//       position: static;
-//       float: left;
-//       width: 100%;
-//       overflow: hidden;
-//       border-bottom: 0;
-//       padding-left: .8em;
-//       padding-right: .8em;
-//       input[type=text] {
-//         width: 70%;
-//       }
-//     }
-//     > nav {
-//       display: none;
-//       width: 100%;
-//       overflow: hidden;
-//       border-bottom: 0;
-//       @include clearfix();
-//       ul li {
-//         float: none;
-//         width: 100%;
-//         a,
-//         a:hover,
-//         a:focus {
-//           font-size: emize(15, 16);
-//           height: auto;
-//           padding: emize(18) emize(13);
-//           border-width: 1px 0 0;
-//           border-top-color: $narrowNavBorderColor;
-//           background-color: $backgroundLight;
-//           color: $narrowNavColor;
-//           @include radius(0);
-//           .icon-caret-down {
-//             display: none;
-//           }
-//         }
-//         a:hover,
-//         a:focus {
-//           background-color: $backgroundLightHover;
-//         }
-//       }
-//     }
-//     #nav-triggers a {
-//       height: 3em;
-//     }
-//     #nav-menu-trigger {
-//       display: block;
-//       margin-right: -1px;
-//       a {
-//         margin-right: 0;
-//         span {
-//           padding-left: .3em;
-//         }
-//       }
-//     }
-//     #nav-search-trigger a {
-//       margin-right: 0;
-//       span {
-//         margin-left: 0;
-//       }
-//     }
+    #masthead-search {
+      display: none;
+      position: static;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 0;
+      padding-left: .8em;
+      padding-right: .8em;
+      input[type=text] {
+        width: 70%;
+      }
+    }
+    > nav {
+      display: none;
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 0;
+      @include clearfix();
+      ul li {
+        float: none;
+        width: 100%;
+        a,
+        a:hover,
+        a:focus {
+          font-size: emize(15, 16);
+          height: auto;
+          padding: emize(18) emize(13);
+          border-width: 1px 0 0;
+          border-top-color: $narrowNavBorderColor;
+          background-color: $backgroundLight;
+          color: $narrowNavColor;
+          @include radius(0);
+          .icon-caret-down {
+            display: none;
+          }
+        }
+        a:hover,
+        a:focus {
+          background-color: $backgroundLightHover;
+        }
+      }
+    }
+    #nav-triggers {
+      display: block;
+      position: absolute;
+      right: 0;
+      top: 0;
+      a {
+        height: 3em;
+        color: black;
+      }
+    }
+    #nav-menu-trigger {
+      display: block;
+      margin-right: -1px;
+      a {
+        margin-right: 0;
+        span {
+          padding-left: .3em;
+        }
+      }
+    }
+    #nav-search-trigger a {
+      margin-right: 0;
+      span {
+        margin-left: 0;
+      }
+    }
+  }
 
-//     #nav-my-department, #nav-my-workingfield, #nav-more {
-//       .dropdown-toggle {
-//         display: none;
-//         cursor: default;
-//         background: $narrowNavBackground;
-//       }
-//       ul.dropdown-menu {
-//         position: static;
-//         display: block;
-//         border: none;
-//         width: 100%;
-//         &:after, &:before {
-//           content: none;
-//         }
+  body.development:after,
+  body.test:after {
+    font-size: 13px;
+  }
+}
 
-//         > li {
-//           > a {
-//             @include radius(0);
-//             padding-top: emize(18);
-//             padding-bottom: emize(18);
-//             border-top-width: 1px;
-//             border-top-color: $narrowNavBorderColor;
-//             border-top-style: solid;
-//           }
-//         }
-//       }
-//     }
-//   }
+@media (max-width: 34em) {
+  body.development:after,
+  body.test:after {
+    font-size: 9px;
+  }
+}
 
-//   // Add on of the class selectors to the body
-//   // to get an active nav item
-//   .malmo-masthead-dashboard #nav-dashboard,
-//   .malmo-masthead-my-department #nav-my-department,
-//   .malmo-masthead-my-workingfield #nav-my-workingfield,
-//   .malmo-masthead-our-organization #nav-our-organization,
-//   .malmo-masthead-hrutan #nav-hrutan,
-//   .malmo-masthead-more #nav-more {
-//     a, a:hover {
-//       border-top-color: $narrowNavBorderColor;
-//       background: $narrowNavBackgroundHiglight;
-//     }
-//   }
-
-//   body.development:after,
-//   body.test:after {
-//     font-size: 13px;
-//   }
-// }
-
-// @media ( max-width: 38em ) {
-//   footer.bigfoot {
-//     ul, ul.list-3 {
-//       @include columns(12);
-//     }
-//   }
-// }
-
-// @media ( max-width: 34em ) {
-//   body.development:after,
-//   body.test:after {
-//     font-size: 9px;
-//   }
-// }
-
-// @media ( max-width: 46em ) {
-//   @include form-force-vertical();
-// }
+@media (max-width: 46em) {
+  @include form-force-vertical();
+}
