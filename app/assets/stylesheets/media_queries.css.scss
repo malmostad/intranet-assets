@@ -1,5 +1,5 @@
 // Retina logo
-@media only screen and ( -webkit-min-device-pixel-ratio: 2 ) {
+@media (min-resolution: 2dppx) {
   #malmo-masthead .nav-logo {
     background-image: url("logo-x2.png");
   }
