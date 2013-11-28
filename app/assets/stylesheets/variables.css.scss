@@ -20,10 +20,10 @@ $backgroundDark: #888;
 $backgroundDarker: darken($backgroundDark, 18%);
 
 // Masthead with hover effects
-$mastheadBackground: white;
-$mastheadBackgroundHighlight: white;
-$mastheadColor: black;
-$mastheadColorHighlight: black;
+$mastheadBackground: #00693C;
+$mastheadBackgroundHighlight: lighten($mastheadBackground, 7%);
+$mastheadColor: white;
+$mastheadColorHighlight: white;
 
 // Masthead in collapsed mode
 $narrowNavBackground: #5a5a5a;
@@ -35,7 +35,6 @@ $narrowNavBackground: $backgroundLight;
 $narrowNavBackgroundHiglight: $backgroundLightHover;
 $narrowNavColor: black;
 $narrowNavBorderColor: $borderColor;
-$narrowNavBottomBorderColor: $borderColor;
 
 // Title bars for boxes
 $boxTitleBackground: $backgroundDarker;

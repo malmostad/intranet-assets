@@ -1,165 +1,108 @@
 #malmo-masthead {
-  @include clearfix();
-  min-width: 56em;
-  background-color: $mastheadBackground;
+  position: relative;
+  max-width: 56em;
+  min-width: 43em;
+  height: 6em;
+  margin: .2em auto 1em;
 
-  #nav-search-trigger,
-  #nav-menu-trigger,
-  > nav > ul > li {
-    float: left;
-    > a {
+  .nav-logo {
+    position: absolute;
+    z-index: 20;
+    top: .5em;
+    left: 1em;
+    a {
       display: block;
+      background: white url("logo-x1.png") 15px center no-repeat;
+      background-size: 48px 65px;
+      width: 78px;
+      height: 65px;
+      border: none;
+    }
+  }
+
+  nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav#masthead-main {
+    position: absolute;
+    width: 100%;
+    z-index: 10;
+    top: 2.3em;
+    left: 0;
+    height: emize(26);
+    background: $mastheadBackground;
+    color: $mastheadColor;
+    ul {
+      margin-left: 6.8em;
+    }
+    a {
+      display: inline-block;
       @include box-sizing(border-box);
       overflow: hidden;
       white-space: nowrap;
-      padding: emize(13, 13) 1em emize(14, 13);
-      margin: 0 -1px 0 0;
-      color: $mastheadColor;
+      padding: emize(6) emize(15);
       font-family: $sansSerif;
       font-size: emize(13);
+      color: white;
+      height: emize(26, 13);
       line-height: emize(15, 13);
-      height: emize(41, 13);
       outline: 0;
       border: transparent solid;
+      border-right: white solid;
       border-width: 0 1px;
-      &.dropdown-toggle {
-        padding-right: .8em;
-        color: $mastheadColor;
-      }
-      &.dropdown-toggle.more-items {
-        span.icon-caret-down {
-          line-height: .8;
-          margin-left: .3em;
-        }
-      }
-      &.dropdown-toggle.no-arrow {
-        padding-right: 1em;
-      }
     }
-    > a:hover,
-    > a:focus,
-    &.open > a {
+    li:first-child a {
+      border-left: white solid 1px;
+    }
+    a:hover, a.active {
       background: $mastheadBackgroundHighlight;
-      border-color: transparent $mastheadColor;
-    }
-    ul.dropdown-menu {
-      top: 3.1em;
-      white-space: nowrap;
-    }
-  }
-  > nav#masthead-others > ul {
-    li {
-      float: right;
-    }
-    li.phone a span {
-      position: relative;
-      top: emize(-1, 13);
-    }
-    li.map a  span {
-      position: relative;
-      top: emize(-2, 13);
     }
   }
 
-  #nav-menu-trigger, #nav-search-trigger {
-    float: right;
-    a {
-      span.icon-reorder {
-        margin-left: .3em;
-        line-height: .8;
-      }
-      span.icon-search {
-        margin-left: .4em;
-        line-height: .8;
-        position: relative;
-        top: -1px;
-      }
-    }
-  }
-
-  #nav-search-trigger a:hover {
-    border-right-color: black;
-  }
-
-  #nav-menu-trigger {
-    // Activated in media_queries.scss
-    display: none;
-  }
-
-  #nav-my-department, #nav-my-workingfield {
-    .icon-caret-down {
-      display: none;
-    }
-  }
-
-  // Search box
-  #masthead-search {
-    display: none;
+  nav#masthead-others {
     position: absolute;
-    @include box-sizing(border-box);
-    right: 0;
-    padding: 1.4em;
-    border: $border;
-    background: $backgroundLight;
-    form {
-      margin-bottom: 0;
+    top: .6em;
+    right: 18em;
+    li {
+      margin-right: 1.4em;
     }
-    input[type=text] {
-      width: 20em;
-    }
-  }
-
-  .nav-logo {
-    display: block;
-    float: left;
-    line-height: 1;
     a {
-      display: block;
-      @include box-sizing(border-box);
-      margin: emize(5) emize(10) 0;
-      height: 26px;
-      width: 26px;
-      padding: 0;
-      background: url("logo-mini-x1.png") 0 no-repeat;
-      background-size: 26px;
-      border: none;
-      font-weight: bold;
-      line-height: 1;
-      text-transform: uppercase;
+      overflow: hidden;
+      white-space: nowrap;
+      color: black;
+      display: inline-block;
+      font-family: $sansSerif;
+      font-size: emize(13);
     }
   }
-}
 
-// Add on of the class selectors to the body
-// to get an active nav item
-.malmo-masthead-dashboard #nav-dashboard,
-.malmo-masthead-my-department #nav-my-department,
-.malmo-masthead-my-workingfield #nav-my-workingfield,
-.malmo-masthead-our-organization #nav-our-organization,
-.malmo-masthead-hrutan #nav-hrutan,
-.malmo-masthead-more #nav-more-items,
-.malmo-masthead-map #masthead-others .map,
-.malmo-masthead-search #nav-search-trigger {
-  > a {
-    background: $mastheadBackgroundHighlight;
-    border-color: transparent $mastheadColor;
+  #masthead-search {
+    position: absolute;
+    top: .3em;
+    right: 0;
+    .q {
+      @include box-sizing(border-box);
+      font-size: 13px;
+      height: 28px;
+      width: 18em;
+    }
+    .btn {
+      @include box-sizing(border-box);
+      font-size: 13px;
+      height: 28px
+    }
   }
-}
-.malmo-masthead-search #nav-search-trigger > a {
-  border-left: 1px solid $mastheadColor !important;
-}
 
-.service-title, .app-title {
-  padding: .5em .9em;
-  line-height: 1;
-  margin: 0 0 1em;
-  background-color: $backgroundLight;
-  border: $border;
-  border-width: 1px 0;
-  font-size: emize(13);
-  font-weight: normal;
-  font-family: $sansSerif;
-  a {
-    color: black;
+  #nav-triggers {
+    display: none;
   }
 }
