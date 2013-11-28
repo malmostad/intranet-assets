@@ -70,7 +70,7 @@
 
   nav#masthead-others {
     position: absolute;
-    top: .6em;
+    top: .5em;
     right: 18em;
     li {
       margin-right: 1.4em;
@@ -92,14 +92,14 @@
     .q {
       @include box-sizing(border-box);
       font-size: 13px;
-      height: 28px;
+      height: 25px;
       width: 18em;
     }
     .btn {
       @include box-sizing(border-box);
       font-size: 13px;
-      height: 28px;
-      padding-top: 2px;
+      height: 25px;
+      padding-top: 1px;
     }
   }
 
