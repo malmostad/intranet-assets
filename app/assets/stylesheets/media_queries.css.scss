@@ -23,12 +23,13 @@
   #malmo-masthead {
     margin-bottom: 2em;
     min-width: 0;
-    border-bottom: $border;
+    border-bottom: #999 1px solid;
     #masthead-search {
       position: static;
       float: left;
       width: 100%;
       overflow: hidden;
+      border-bottom: 0;
       padding-left: .8em;
       padding-right: .8em;
       input[type=text] {
@@ -39,7 +40,7 @@
       display: none;
       width: 100%;
       overflow: hidden;
-      border-bottom: 1px solid $narrowNavBottomBorderColor;
+      border-bottom: 0;
       @include clearfix();
       ul li {
         float: none;
@@ -64,6 +65,9 @@
           background-color: $backgroundLightHover;
         }
       }
+    }
+    #nav-triggers a {
+      height: 3em;
     }
     #nav-menu-trigger {
       display: block;

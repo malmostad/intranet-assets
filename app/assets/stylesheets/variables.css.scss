@@ -12,9 +12,9 @@ $borderColorDark: darken($borderColor, 20%);
 $borderDark: $borderColorDark 1px solid;
 
 // Background colors
-$backgroundLight: #f5f5f5;
+$backgroundLight: #fafafa;
 // Use it for hover effect when the area is linked
-$backgroundLightHover: darken($backgroundLight, 10%);
+$backgroundLightHover: darken($backgroundLight, 5%);
 // Background colors used with inverted text
 $backgroundDark: #888;
 $backgroundDarker: darken($backgroundDark, 18%);
@@ -26,7 +26,6 @@ $mastheadColor: black;
 $mastheadColorHighlight: black;
 
 // Masthead in collapsed mode
-// (verbose, but it makes it possible to change the color and add gradients etc. in the css)
 $narrowNavBackground: #5a5a5a;
 $narrowNavBackgroundHiglight: #000;
 $narrowNavColor: white;
