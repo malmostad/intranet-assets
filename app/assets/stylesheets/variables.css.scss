@@ -21,7 +21,7 @@ $backgroundDarker: darken($backgroundDark, 18%);
 
 // Masthead with hover effects
 $mastheadBackground: #00693C;
-$mastheadBackgroundHighlight: lighten($mastheadBackground, 7%);
+$mastheadBackgroundHighlight: desaturate(lighten($mastheadBackground, 12%), 25%);
 $mastheadColor: white;
 $mastheadColorHighlight: white;
 

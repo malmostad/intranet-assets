@@ -1,9 +1,10 @@
-// // Retina logo
-// @media only screen and ( -webkit-min-device-pixel-ratio: 2 ) {
-//   #malmo-masthead .nav-logo {
-//     background-image: url("logo-mini-x2.png");
-//   }
-// }
+// Retina logo
+@media (min-resolution: 2dppx) {
+  #malmo-masthead .nav-logo a {
+    background: white url("logo-x2.png") 15px center no-repeat;
+    background-size: 48px 65px;
+  }
+}
 
 // @media ( max-width: 60em ) {
 //   #malmo-masthead > nav#masthead-others {
