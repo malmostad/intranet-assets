@@ -1,7 +1,7 @@
 // Retina logo
 @media only screen and ( -webkit-min-device-pixel-ratio: 2 ) {
   #malmo-masthead .nav-logo {
-    background-image: url("logo-x2.png");
+    background-image: url("logo-mini-x2.png");
   }
 }
 
@@ -21,9 +21,9 @@
 // Switch to collapsed top nav
 @media ( max-width: 56em ) {
   #malmo-masthead {
+    margin-bottom: 2em;
     min-width: 0;
-    @include clearfix();
-    background-color: $mastheadBackground;
+    border-bottom: $border;
     #masthead-search {
       position: static;
       float: left;
@@ -31,8 +31,6 @@
       overflow: hidden;
       padding-left: .8em;
       padding-right: .8em;
-      @include box-shadow(0 10px 20px 0 rgba(0, 0, 0, .8));
-      @include radius(0);
       input[type=text] {
         width: 70%;
       }
@@ -42,7 +40,6 @@
       width: 100%;
       overflow: hidden;
       border-bottom: 1px solid $narrowNavBottomBorderColor;
-      @include box-shadow(0 10px 20px 0 rgba(0, 0, 0, .8));
       @include clearfix();
       ul li {
         float: none;
@@ -94,8 +91,6 @@
       ul.dropdown-menu {
         position: static;
         display: block;
-        @include box-shadow(none);
-        @include radius(0);
         border: none;
         width: 100%;
         &:after, &:before {

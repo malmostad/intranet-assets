@@ -20,10 +20,10 @@ $backgroundDark: #888;
 $backgroundDarker: darken($backgroundDark, 18%);
 
 // Masthead with hover effects
-$mastheadBackground: #00693C;
-$mastheadBackgroundHighlight: lighten($mastheadBackground, 5%);
-$mastheadColor: white;
-$mastheadColorHighlight: white;
+$mastheadBackground: white;
+$mastheadBackgroundHighlight: white;
+$mastheadColor: black;
+$mastheadColorHighlight: black;
 
 // Masthead in collapsed mode
 // (verbose, but it makes it possible to change the color and add gradients etc. in the css)
