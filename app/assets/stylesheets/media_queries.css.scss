@@ -28,23 +28,56 @@
 // Switch to collapsed top nav
 @media (max-width: 43em) {
   #malmo-masthead {
-    margin-bottom: 2em;
+    // margin-bottom: 2em;
     min-width: 0;
-    border-bottom: #999 1px solid;
+    border-bottom: $border;
+    height: 2.6em;
+    margin: 0 0 1em;
 
-    #masthead-search {
-      display: none;
-      position: static;
-      float: left;
-      width: 100%;
-      overflow: hidden;
-      border-bottom: 0;
-      padding-left: .8em;
-      padding-right: .8em;
-      input[type=text] {
-        width: 70%;
+    .nav-logo {
+      top: .5em;
+      left: .5em;
+      a {
+        width: 26px;
+        height: 26px;
       }
     }
+
+    #nav-triggers {
+      display: block;
+      position: absolute;
+      right: 1em;
+      top: .8em;
+      li {
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+      }
+      a {
+        height: 2em;
+        color: black;
+        font-family: $sansSerif;
+        font-size: emize(13, 16);
+      }
+    }
+
+    #nav-menu-trigger {
+      display: block;
+      margin-right: -1px;
+      a {
+        margin-right: 1.4em;
+        span {
+          padding-left: .3em;
+        }
+      }
+    }
+    #nav-search-trigger a {
+      margin-right: 0;
+      span {
+        padding-left: .3em;
+      }
+    }
+
     > nav {
       display: none;
       width: 100%;
@@ -75,30 +108,18 @@
         }
       }
     }
-    #nav-triggers {
-      display: block;
-      position: absolute;
-      right: 0;
-      top: 0;
-      a {
-        height: 3em;
-        color: black;
-      }
-    }
-    #nav-menu-trigger {
-      display: block;
-      margin-right: -1px;
-      a {
-        margin-right: 0;
-        span {
-          padding-left: .3em;
-        }
-      }
-    }
-    #nav-search-trigger a {
-      margin-right: 0;
-      span {
-        margin-left: 0;
+
+    #masthead-search {
+      display: none;
+      position: static;
+      float: left;
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 0;
+      padding-left: .8em;
+      padding-right: .8em;
+      input[type=text] {
+        width: 70%;
       }
     }
   }

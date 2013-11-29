@@ -2,7 +2,7 @@ jQuery ($) ->
   # Inject the masthead from the stringified html code
   $(malmoMasthead).prependTo('body')
 
-  $malmoMastheadNav = $("#malmo-masthead nav.masthead-main")
+  $malmoMastheadNav = $("#masthead-main")
   $mastheadSearch = $("#masthead-search")
   $form = $("#masthead-search").find("form")
 
@@ -40,7 +40,7 @@ jQuery ($) ->
 
   $("#nav-menu-trigger a").click (event) ->
     event.preventDefault();
-    if $("#malmo-masthead nav.masthead-main").is(":hidden") then showNav() else hideNav()
+    if $("#masthead-main").is(":hidden") then showNav() else hideNav()
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
