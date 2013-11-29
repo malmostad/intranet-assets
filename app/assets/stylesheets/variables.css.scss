@@ -23,12 +23,10 @@ $backgroundDarker: darken($backgroundDark, 18%);
 $mastheadBackground: #00693C;
 $mastheadBackgroundHighlight: desaturate(lighten($mastheadBackground, 12%), 25%);
 $mastheadColor: white;
-$mastheadColorHighlight: white;
 
 // Masthead in collapsed mode
 $narrowNavBackground: #5a5a5a;
 $narrowNavBackgroundHiglight: #000;
-$narrowNavColor: white;
 $narrowNavBorderColor: white;
 $narrowNavBottomBorderColor: none;
 $narrowNavBackground: $backgroundLight;
