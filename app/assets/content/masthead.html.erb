@@ -3,6 +3,11 @@
     <a href="<%= APP_CONFIG['sv_base_url']%>"></a>
   </div>
 
+  <ul id="nav-triggers">
+    <li id="nav-menu-trigger"><a href="#">Meny <span class="icon-reorder icon-large"></span></a></li>
+    <li id="nav-search-trigger"><a href="<%= APP_CONFIG['site_search_url'] %>">Sök <span class="icon-search icon-large"></span></a></li>
+  </ul>
+
   <nav id="masthead-main">
     <ul>
       <li class="nav-citizen">
@@ -39,11 +44,6 @@
       </li>
     </ul>
   </nav>
-
-  <ul id="nav-triggers">
-    <li id="nav-menu-trigger"><a href="#">Meny <span class="icon-reorder icon-large"></span></a></li>
-    <li id="nav-search-trigger"><a href="<%= APP_CONFIG['site_search_url'] %>">Sök <span class="icon-search icon-large"></span></a></li>
-  </ul>
 
   <div id="masthead-search" class="malmo-form">
     <form action="<%= APP_CONFIG['site_search_url'] %>" method="get">

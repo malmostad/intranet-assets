@@ -20,8 +20,10 @@
 
 // In case the nav was hidden by click event in narrower width
 @media (min-width: 43.1em) {
-  #malmo-masthead > nav {
-    display: block !important;
+  #malmo-masthead {
+    > nav, #masthead-search {
+      display: block !important;
+    }
   }
 }
 
@@ -49,7 +51,7 @@
     #nav-triggers {
       display: block;
       position: static;
-      margin: .8em 1em 0 0;
+      margin: .7em 1em 0 0;
       float: right;
       li {
         display: inline-block;
@@ -81,35 +83,45 @@
       }
     }
 
-    > nav {
+    nav#masthead-main {
+      position: static;
       display: none;
-      width: 100%;
-      overflow: hidden;
+      clear: both;
       border-bottom: 0;
-      @include clearfix();
+      height: auto;
+      background: $narrowNavBackground;
+      color: $narrowNavColor;
+      ul {
+        margin-left: 0;
+      }
       ul li {
+        display: block;
         float: none;
         width: 100%;
+        background: $backgroundLight;
         a,
         a:hover,
         a:focus {
-          font-size: emize(15, 16);
+          display: block;
+          width: 100%;
           height: auto;
+          font-size: emize(15, 16);
           padding: emize(18) emize(13);
+          color: $narrowNavColor;
           border-width: 1px 0 0;
           border-top-color: $narrowNavBorderColor;
-          background-color: $backgroundLight;
-          color: $narrowNavColor;
-          @include radius(0);
-          .icon-caret-down {
-            display: none;
-          }
         }
         a:hover,
         a:focus {
-          background-color: $backgroundLightHover;
+          background-color: $narrowNavBackgroundHiglight;
         }
       }
+      li:first-child a {
+        border-left: 0;
+      }
+    }
+    #masthead-others {
+      display: none;
     }
 
     #masthead-search {
@@ -128,7 +140,7 @@
         margin-bottom: 0;
       }
       input[type=text] {
-        width: 80%;
+        width: 75%;
       }
     }
   }
