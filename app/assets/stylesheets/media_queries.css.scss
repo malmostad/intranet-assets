@@ -28,15 +28,18 @@
 // Switch to collapsed top nav
 @media (max-width: 43em) {
   #malmo-masthead {
-    // margin-bottom: 2em;
+    @include clearfix();
+    position: static;
     min-width: 0;
     border-bottom: $border;
-    height: 2.6em;
+    height: auto;
+    min-height: 2.6em;
     margin: 0 0 1em;
 
     .nav-logo {
-      top: .5em;
-      left: .5em;
+      position: static;
+      float: left;
+      margin: .5em 0 .5em .5em;
       a {
         width: 26px;
         height: 26px;
@@ -45,9 +48,9 @@
 
     #nav-triggers {
       display: block;
-      position: absolute;
-      right: 1em;
-      top: .8em;
+      position: static;
+      margin: .8em 1em 0 0;
+      float: right;
       li {
         display: inline-block;
         margin: 0;
@@ -112,14 +115,20 @@
     #masthead-search {
       display: none;
       position: static;
-      float: left;
+      clear: both;
+      @include box-sizing(border-box);
       width: 100%;
       overflow: hidden;
+      margin-top: 1em;
+      padding: 1.4em .8em;
+      border: $border;
       border-bottom: 0;
-      padding-left: .8em;
-      padding-right: .8em;
+      background: $backgroundLight;
+      form {
+        margin-bottom: 0;
+      }
       input[type=text] {
-        width: 70%;
+        width: 80%;
       }
     }
   }
