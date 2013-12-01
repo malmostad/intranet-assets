@@ -11,7 +11,8 @@ jQuery ($) ->
 
   showNav = ->
     hideSearch()
-    $malmoMastheadNav.slideDown(100)
+    $malmoMastheadNav.slideDown()
+
     # Close on click outside the nav. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
       event.preventDefault()
@@ -19,12 +20,14 @@ jQuery ($) ->
 
   hideSearch = ->
     $mastheadSearch.find("input").blur()
-    $mastheadSearch.slideUp(100)
+    $mastheadSearch.slideUp 100, ->
+      $(@).css("top", "")
 
   showSearch = ->
     hideNav()
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
-    $mastheadSearch.slideDown(100)
+    $mastheadSearch.slideDown 100, ->
+      $(@).css("top", "")
     $mastheadSearch.find("input:first").focus()
 
     # Close on click outside the searchbox. Expensive but rare binding.
@@ -49,7 +52,7 @@ jQuery ($) ->
   # Bind escape key to hide form
   $mastheadSearch.focusin ->
     $(document).on 'keyup', (event) ->
-      if event.which is 27
+      if event.which is 27 and $mastheadSearch.css("position") is 'static'
         hideSearch()
 
   # Un-bind escape key
