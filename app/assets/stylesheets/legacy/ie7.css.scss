@@ -2,6 +2,8 @@
   #nav-search-trigger,
   #nav-menu-trigger,
   > nav > ul > li {
+    display: block;
+    float: left;
     max-height: 41px !important;
     overflow: hidden;
     > a {
@@ -15,9 +17,6 @@
   }
   #nav-search-trigger a span {
     display: none !important;
-  }
-  #masthead-others {
-    display: none;
   }
 }
 
