@@ -1,9 +1,9 @@
 # The Capistrano tasks will use your **working copy**, compile the assets and deploy them to the server_address
 # Execute one of the following to deploy into staging or production:
-#   $ cap staging deploy
-#   $ cap production deploy
+#   $ bundle exec cap staging deploy
+#   $ bundle exec cap production deploy
 # Rollback one step:
-#   $ cap [staging|production] deploy:rollback
+#   $ bundle exec cap [staging|production] deploy:rollback
 
 require 'capistrano/ext/multistage'
 require 'fileutils'
