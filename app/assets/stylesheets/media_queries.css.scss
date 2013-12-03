@@ -145,13 +145,13 @@
 }
 
 // Retina logos
-@media (min-resolution: 2dppx) {
+@media (min-resolution: 2dppx), (-webkit-min-device-pixel-ratio: 2) {
   #malmo-masthead .nav-logo a {
     background: white url("logo-x2.png") 15px center no-repeat;
     background-size: 48px 65px;
   }
 }
-@media (min-resolution: 2dppx) and (max-width: 43em) {
+@media (max-width: 43em) and (min-resolution: 2dppx), (max-width: 43em) and (-webkit-min-device-pixel-ratio: 2) {
   #malmo-masthead .nav-logo a {
     background: url("logo-mini-x2.png") 0 no-repeat;
     background-size: 26px;
