@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.15'
+gem 'rails', '3.2.16'
 gem 'thin'
 gem 'jquery-rails'
 gem 'rack-contrib'
@@ -8,7 +8,7 @@ gem 'rack-contrib'
 group :assets do
   gem 'sass-rails'
   gem 'uglifier'
-  gem 'coffee-rails', '3.2.2'
+  gem 'coffee-rails'
   # gem 'therubyracer', require: 'v8'
 end
 
