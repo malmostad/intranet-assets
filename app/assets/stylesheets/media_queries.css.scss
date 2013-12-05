@@ -134,6 +134,16 @@
     }
   }
 
+  .ui-autocomplete .ui-menu-item {
+    border-bottom: $border;
+    &:last-child {
+      border-bottom: none;
+    }
+    > a.ui-corner-all {
+      padding: .8em;
+    }
+  }
+
   body.development:after,
   body.test:after {
     font-size: 13px;
