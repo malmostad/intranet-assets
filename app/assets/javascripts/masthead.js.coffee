@@ -20,8 +20,9 @@ jQuery ($) ->
 
   hideSearch = ->
     $mastheadSearch.find("input").blur()
-    $mastheadSearch.slideUp 100, ->
-      $(@).css("top", "")
+    if $mastheadSearch.css("position") is 'static'
+      $mastheadSearch.slideUp 100, ->
+        $(@).css("top", "")
 
   showSearch = ->
     hideNav()
@@ -34,12 +35,6 @@ jQuery ($) ->
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
       event.preventDefault()
       hideSearch()
-
-  # We share the profile cookie on multiple systems so we have a limited set of
-  # environments for the profile
-  # Set test or development as a class in the body tag if applicable
-  development = $('body').hasClass('development')
-  test = $('body').hasClass('test')
 
   $("#nav-menu-trigger a").click (event) ->
     event.preventDefault();
