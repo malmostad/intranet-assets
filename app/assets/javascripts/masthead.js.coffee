@@ -26,15 +26,18 @@ jQuery ($) ->
 
   showSearch = ->
     hideNav()
-    $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
-    $mastheadSearch.slideDown 100, ->
-      $(@).css("top", "")
-    $mastheadSearch.find("input:first").focus()
+    if $("#full-search #q").length
+      $("#q").focus()
+    else
+      $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
+      $mastheadSearch.slideDown 100, ->
+        $(@).css("top", "")
+      $mastheadSearch.find("input:first").focus()
 
-    # Close on click outside the searchbox. Expensive but rare binding.
-    $('body > *').not('#malmo-masthead').one 'click', (event) ->
-      event.preventDefault()
-      hideSearch()
+      # Close on click outside the searchbox. Expensive but rare binding.
+      $('body > *').not('#malmo-masthead').one 'click', (event) ->
+        event.preventDefault()
+        hideSearch()
 
   $("#nav-menu-trigger a").click (event) ->
     event.preventDefault();
