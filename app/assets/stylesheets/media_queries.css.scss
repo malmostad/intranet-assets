@@ -127,18 +127,22 @@
     }
   }
 
+  .ui-autocomplete .ui-menu-item {
+    border-bottom: $border;
+    &:last-child {
+      border-bottom: none;
+    }
+    > a.ui-corner-all {
+      padding: .8em;
+    }
+  }
+
   body.development:after,
   body.test:after {
     font-size: 13px;
   }
 }
 
-@media (max-width: 34em) {
-  body.development:after,
-  body.test:after {
-    font-size: 9px;
-  }
-}
 
 @media (max-width: 46em) {
   @include form-force-vertical();
@@ -155,5 +159,12 @@
   #malmo-masthead .nav-logo a {
     background: url("logo-mini-x2.png") 0 no-repeat;
     background-size: 26px;
+  }
+}
+
+@media (max-width: 34em) {
+  body.development:after,
+  body.test:after {
+    font-size: 9px;
   }
 }
