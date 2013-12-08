@@ -6,12 +6,18 @@ jQuery ($) ->
   $mastheadSearch = $("#masthead-search")
   $form = $("#masthead-search").find("form")
 
+  disableSclingHack = ->
+    $("meta[name=viewport]").attr("content", viewportContent + ', maximum-scale=1')
+
+  releaseScaling = ->
+    $("meta[name=viewport]").attr("content", viewportContent + ', maximum-scale=10')
+
   hideNav = ->
     $malmoMastheadNav.slideUp(100)
 
   showNav = ->
     hideSearch()
-    $malmoMastheadNav.slideDown()
+    $malmoMastheadNav.slideDown(100)
 
     # Close on click outside the nav. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
@@ -29,9 +35,9 @@ jQuery ($) ->
     if $("#full-search #q").length
       $("#q").focus()
     else
+      disableSclingHack()
       $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
-      $mastheadSearch.slideDown 100, ->
-        $(@).css("top", "")
+      $mastheadSearch.show()
       $mastheadSearch.find("input:first").focus()
 
       # Close on click outside the searchbox. Expensive but rare binding.
@@ -72,9 +78,9 @@ jQuery ($) ->
     # Temporarily disable zoom on text field focus
     $('input')
       .focus ->
-        $("meta[name=viewport]").attr("content", viewportContent + ', maximum-scale=1')
+        disableSclingHack()
       .blur ->
-        $("meta[name=viewport]").attr("content", viewportContent + ', maximum-scale=10')
+        releaseScaling()
 
   # https://github.com/ftlabs/fastclick
   new FastClick $('#nav-menu-trigger')[0]
