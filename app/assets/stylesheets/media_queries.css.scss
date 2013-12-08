@@ -9,9 +9,6 @@
 
 // Switch to collapsed top nav
 @media (max-width: 43em) {
-  a {
-    color: $futureLinkColor;
-  }
   #malmo-masthead {
     @include clearfix();
     position: static;
