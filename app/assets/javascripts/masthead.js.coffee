@@ -22,7 +22,7 @@ jQuery ($) ->
 
   showSearch = ->
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
-    $mastheadSearch.slideDown(100)
+    $mastheadSearch.show()
     $("#masthead-search-intranet").find("input:first").focus()
 
     # Close on click outside the searchbox. Expensive but rare binding.
@@ -85,12 +85,6 @@ jQuery ($) ->
   $mastheadSearch.focusout ->
     $(document).off('keyup')
 
-  # Komin search
-  $("#masthead-search-intranet").submit (event) ->
-    event.preventDefault()
-    query = $(@).find("input[name=q]").val()
-    document.location = $(@).attr('action') + "?q=" + query;
-
   # Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
   if /iPhone|iPod/.test(navigator.platform) and navigator.userAgent.indexOf("AppleWebKit") > -1
     $("html").attr("style", "-webkit-text-size-adjust: none")
@@ -134,7 +128,7 @@ jQuery ($) ->
                 }
       minLength: 2
       select: (event, ui) ->
-        document.location = $("#masthead-search-intranet").attr('action') + '?q=' + unescape(ui.item.value)
+        $("#masthead-search-intranet").submit()
     .data( "ui-autocomplete" )._renderItem = (ul, item) ->
       ul.css("z-index", 1000)
       return $("<li></li>")
