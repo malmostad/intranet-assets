@@ -23,7 +23,7 @@ jQuery ($) ->
   showSearch = ->
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
     $mastheadSearch.show()
-    $("#masthead-search-intranet").find("input:first").focus()
+    $("#masthead-search-intranet").find("input.q:first").focus()
 
     # Close on click outside the searchbox. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
