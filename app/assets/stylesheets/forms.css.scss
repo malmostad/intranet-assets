@@ -89,7 +89,11 @@ form.malmo-form, .malmo-form form, .form-data {
     border: none;
   }
 
-  .input-wide {
+  .small {
+    max-width: 6em;
+  }
+
+  .input-wide, .wide {
     width: 90%;
   }
   // Used for pseudo labels
