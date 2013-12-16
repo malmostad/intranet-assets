@@ -16,7 +16,14 @@ jQuery ($) ->
   # Replace `data-map-selector` contents with the iframe and set the src from `data-poi`
   $("body").on "click", "[data-poi]", (event) ->
     event.preventDefault()
+
     $iframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>')
-    $selector = $ $(@).attr("data-map-selector")
+    $selector = $($(@).attr("data-map-selector"))
     if $selector.length
       $selector.show().html $iframe.attr("src", urlForInlineMap($(@).attr("data-poi")))
+
+      # After injection, scroll to the top of `data-scroll-to` or the $selector
+      $scrollTo = if $(@).is("[data-scroll-to]") then $($(@).attr("data-scroll-to")) else $selector
+      $('html, body').animate
+        scrollTop: $scrollTo.offset().top - 10
+      , 100
