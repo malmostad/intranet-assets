@@ -1,3 +1,4 @@
+# Integrations for SBK's map service
 jQuery ($) ->
   if $("body.test, body.development").length then mapEnv = "test" else mapEnv = "prod"
 
