@@ -1,5 +1,6 @@
 //= require jquery
 //= require json2
+//= require maps
 //= require jquery.cookie
 //= require jquery-ui.custom.min
 //= require bootstrap
