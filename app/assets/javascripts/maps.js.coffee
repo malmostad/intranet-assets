@@ -20,7 +20,17 @@ jQuery ($) ->
     $iframe = $('<iframe scrolling="no" frameborder="0" src=""></iframe>')
     $selector = $($(@).attr("data-map-selector"))
     if $selector.length
-      $selector.show().html $iframe.attr("src", urlForInlineMap($(@).attr("data-poi")))
+      # Set selector position to relative so we can place the close link on it
+      $selector.css("position", "relative") if $selector.css("position") is "static"
+
+      # Inject the iframe
+      $selector.show().html($iframe.attr("src", urlForInlineMap($(@).attr("data-poi"))))
+
+      # Place a close link on the map
+      $selector.prepend("<a href='#map' class='close-map'><span class='icon-remove'></span>Stäng</a>")
+        .find("a").click (event)->
+          event.preventDefault()
+          $selector.hide()
 
       # After injection, scroll to the top of `data-scroll-to` or the $selector
       $scrollTo = if $(@).is("[data-scroll-to]") then $($(@).attr("data-scroll-to")) else $selector

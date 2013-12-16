@@ -1,3 +1,23 @@
+a.close-map {
+  position: absolute;
+  top: .15em;
+  left: .5em;
+  background: transparent;
+  font-family: $sansSerif;
+  font-size: emize(13);
+  color: black;
+  span {
+    margin-right: .4em;
+    color: $backgroundDark;
+  }
+  &:hover {
+    text-decoration: none;
+    span {
+      color: $dangerColor;
+    }
+  }
+}
+
 .a11y {
   position: absolute;
   left: -300em;
