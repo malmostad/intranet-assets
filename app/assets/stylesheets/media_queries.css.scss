@@ -168,3 +168,12 @@
     font-size: 9px;
   }
 }
+
+// Hack for form-zoom. Don't keep it too long...
+@media only screen and (max-device-width: 568px) {
+  input:focus,
+  textarea:focus,
+  select:focus {
+    font-size: 16px;
+  }
+}

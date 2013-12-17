@@ -6,12 +6,6 @@ jQuery ($) ->
   $mastheadSearch = $("#masthead-search")
   $form = $("#masthead-search").find("form")
 
-  disableSclingHack = ->
-    $("meta[name=viewport]").attr("content", viewportContent + ', maximum-scale=1')
-
-  releaseScaling = ->
-    $("meta[name=viewport]").attr("content", viewportContent + ', maximum-scale=10')
-
   hideNav = ->
     $malmoMastheadNav.slideUp(100)
 
@@ -35,7 +29,6 @@ jQuery ($) ->
     if $("#full-search #q").length
       $("#q").focus()
     else
-      disableSclingHack()
       $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
       $mastheadSearch.show()
       $mastheadSearch.find("input:first").focus()
@@ -71,16 +64,6 @@ jQuery ($) ->
   # Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
   if /iPhone|iPod/.test(navigator.platform) and navigator.userAgent.indexOf("AppleWebKit") > -1
     $("html").attr("style", "-webkit-text-size-adjust: none")
-
-  # Minor small device adjustments
-  viewportContent = $("meta[name=viewport]").attr("content")
-  if $(window).width() <= 480
-    # Temporarily disable zoom on text field focus
-    $('input')
-      .focus ->
-        disableSclingHack()
-      .blur ->
-        releaseScaling()
 
   # https://github.com/ftlabs/fastclick
   new FastClick $('#nav-menu-trigger')[0]
