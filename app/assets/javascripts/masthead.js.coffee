@@ -56,11 +56,6 @@ jQuery ($) ->
   $mastheadSearch.focusout ->
     $(document).off('keyup')
 
-  $form.submit (event) ->
-    event.preventDefault()
-    query = $(@).find("input[name=q]").val()
-    document.location = $(@).attr('action') + "?q=" + query;
-
   # Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
   if /iPhone|iPod/.test(navigator.platform) and navigator.userAgent.indexOf("AppleWebKit") > -1
     $("html").attr("style", "-webkit-text-size-adjust: none")
