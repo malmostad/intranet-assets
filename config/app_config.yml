@@ -2,6 +2,7 @@
 development: &development
   sv_base_url: "http://www.test.malmo.se/"
   site_search_ac_url: "http://malmo.appliance.siteseeker.se/qc/webb/qc"
+  site_search_url: http://95.85.4.216/
 
 test: &test
   <<: *development
