@@ -4,11 +4,11 @@ jQuery ($) ->
 
   # Used for iframe with single POI
   urlForInlineMap = (streetAddress) ->
-    encodeURI "http://xyz.malmo.se/mkarta/init/map-1.00.htm?mapmode=basic&poi=#{streetAddress}&zoomlevel=3&maptype=Karta&env=#{mapEnv}"
+    encodeURI "//xyz.malmo.se/mkarta/init/map-1.00.htm?mapmode=basic&poi=#{streetAddress}&zoomlevel=3&maptype=Karta&env=#{mapEnv}"
 
   # Used for full map with single POI
   urlForFullMap = (streetAddress) ->
-    encodeURI "http://www.malmo.se/karta?poi=#{streetAddress}&zoomlevel=4&maptype=karta"
+    encodeURI "//www.malmo.se/karta?poi=#{streetAddress}&zoomlevel=4&maptype=karta"
 
   # Rewrite href attr on load to enable right click open in full map
   $("[data-poi]").attr "href", ->
