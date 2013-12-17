@@ -48,6 +48,7 @@
   <div id="masthead-search" class="malmo-form">
     <form action="<%= APP_CONFIG['site_search_url'] %>" method="get">
       <div class="input-append">
+        <input name="utf8" type="hidden" value="&#x2713;"/>
         <input name="q" class="q" placeholder="Ange ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_ac_url'] %>/autocomplete"/>
         <input class="btn" name="" type="submit" value="Sök"/>
       </div>
