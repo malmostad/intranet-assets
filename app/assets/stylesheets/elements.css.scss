@@ -6,6 +6,7 @@ body {
   background-color: $bodyBackground;
   color: $bodyColor;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
 }
 
 // HTML5 elements
