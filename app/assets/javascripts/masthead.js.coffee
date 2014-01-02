@@ -21,7 +21,7 @@ jQuery ($) ->
     $mastheadSearch.slideUp(100)
 
   showSearch = ->
-    $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
+    # $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
     $mastheadSearch.show()
     $("#masthead-search-intranet").find("input.q:first").focus()
 

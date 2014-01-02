@@ -43,7 +43,7 @@
   </nav>
 
   <div id="masthead-search" class="malmo-form">
-    <form action="<%= APP_CONFIG['site_search_url'] %>" method="get" id="masthead-search-intranet">
+    <form action="<%= APP_CONFIG['site_search_url'] %>" id="masthead-search-intranet">
       <div class="input-append">
         <input name="utf8" type="hidden" value="&#x2713;"/>
         <input name="q" class="q" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete" />
@@ -51,7 +51,7 @@
       </div>
     </form>
 
-    <form action="<%= APP_CONFIG['dashboard_base_url'] %>users" id="masthead-search-person" method="get">
+    <form action="<%= APP_CONFIG['dashboard_base_url'] %>users" id="masthead-search-person">
       <div class="input-append">
         <input name="utf8" type="hidden" value="&#x2713;"/>
         <input name="q" class="text" placeholder="För- och/eller efternamn" type="text"/>

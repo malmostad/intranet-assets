@@ -86,7 +86,7 @@
     border-right-color: black;
   }
 
-  #nav-menu-trigger {
+  #nav-triggers {
     // Activated in media_queries.scss
     display: none;
   }
@@ -99,21 +99,31 @@
 
   // Search box
   #masthead-search {
-    display: none;
     position: absolute;
     @include box-sizing(border-box);
-    right: 0;
-    padding: 1.4em;
-    border: $border;
-    @include radius(0 0 0 3px);
-    @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
-    background: $backgroundLight;
+    top: emize(6);
+    right: emize(5);
+    #masthead-search-intranet .q {
+      height: 18px;
+    }
     form {
       margin-bottom: 0;
     }
     input[type=text] {
       width: 20em;
     }
+    #masthead-search-person,
+    .btn {
+      display: none;
+    }
+  }
+  .x {
+    border: $border;
+    background: $backgroundLight;
+    padding: 1.4em;
+    @include radius(0 0 0 3px);
+    @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
+
   }
 
   .nav-logo {
