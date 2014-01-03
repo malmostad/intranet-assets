@@ -111,11 +111,19 @@
       margin-bottom: 0;
     }
     input[type=text] {
-      width: 20em;
+      width: 22em;
     }
     #masthead-search-person,
     .btn, .add-on {
       display: none;
+    }
+    .icon-search {
+      position: absolute;
+      right: .5em;
+      top: .3em;
+      display: block;
+      color: $mastheadBackground;
+      font-size: emize(14);
     }
   }
   // Search box, expanded
@@ -141,6 +149,9 @@
     }
     input[type=text] {
       width: 25em;
+    }
+    .icon-search {
+      display: none;
     }
   }
 
