@@ -4,14 +4,14 @@ jQuery ($) ->
   hideSearch = ->
     $mastheadSearch.find("input").blur()
     $mastheadSearch.find("input.text").val("")
-    $mastheadSearch.find(".input-append").removeClass "input-append"
+    $mastheadSearch.find("div").removeClass("input-append, input-prepend")
     $mastheadSearch.removeClass "expanded"
     $mastheadSearch.css("top", "")
     $(document).off 'click.searchForm'
 
   showSearch = ->
     $mastheadSearch.addClass("expanded")
-    $mastheadSearch.find("div").addClass "input-append"
+    $mastheadSearch.find("div").addClass("input-append, input-prepend")
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
     $mastheadSearch.show()
 

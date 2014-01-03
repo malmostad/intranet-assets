@@ -46,16 +46,18 @@
     <form action="<%= APP_CONFIG['site_search_url'] %>" id="masthead-search-intranet">
       <div>
         <input name="utf8" type="hidden" value="&#x2713;"/>
+        <span class="add-on icon-file-text-alt icon-large"></span>
         <input name="q" class="text q" placeholder="Ett eller flera sökord" type="text" data-autocomplete-url="<%= APP_CONFIG['site_search_url'] %>/autocomplete"/>
-        <input class="btn btn-primary" type="submit" value="Sök på Komin"/>
+        <input class="btn" type="submit" value="Sök på Komin"/>
       </div>
     </form>
 
     <form action="<%= APP_CONFIG['dashboard_base_url'] %>users" id="masthead-search-person">
-      <div class="input-append">
+      <div class="input-append input-prepend">
         <input name="utf8" type="hidden" value="&#x2713;"/>
+        <span class="add-on icon-male icon-large"></span>
         <input name="q" class="text" placeholder="För- och/eller efternamn" type="text"/>
-        <input class="btn btn-primary" type="submit" value="Sök person"/>
+        <input class="btn" type="submit" value="Sök person"/>
       </div>
     </form>
   </div>
