@@ -4,16 +4,16 @@ jQuery ($) ->
   hideSearch = ->
     $mastheadSearch.find("input").blur()
     $mastheadSearch.find("input.text").val("")
-    # $mastheadSearch.slideUp(100)
+    $mastheadSearch.find(".input-append").removeClass "input-append"
     $mastheadSearch.removeClass "expanded"
     $mastheadSearch.css("top", "")
     $(document).off 'click.searchForm'
 
   showSearch = ->
-    $mastheadSearch.addClass "expanded"
+    $mastheadSearch.addClass("expanded")
+    $mastheadSearch.find("div").addClass "input-append"
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
     $mastheadSearch.show()
-    # $("#masthead-search-intranet").find("input.q:first").focus()
 
     # Close on click outside the searchbox
     $(document).on 'click.searchForm', (event) ->

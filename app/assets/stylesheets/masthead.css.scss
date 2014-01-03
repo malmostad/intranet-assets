@@ -105,7 +105,7 @@
     top: emize(6);
     right: emize(5);
     #masthead-search-intranet .q {
-      height: 18px;
+      max-height: 18px;
     }
     form {
       margin-bottom: 0;
@@ -124,14 +124,23 @@
     border: $border;
     border-width: 0 0 1px 1px;
     background: $backgroundLight;
-    padding: 1.4em;
+    padding: 1.2em;
     @include radius(0 0 0 3px);
     @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
     #masthead-search-person {
       display: block;
     }
+    #masthead-search-intranet {
+      margin-bottom: .8em;
+      .q {
+        max-height: none;
+      }
+    }
     .btn {
       display: inline;
+    }
+    input[type=text] {
+      width: 25em;
     }
   }
 
