@@ -53,6 +53,7 @@
     }
   }
   > nav#masthead-others > ul {
+    display: none;
     li {
       float: right;
     }
@@ -97,7 +98,7 @@
     }
   }
 
-  // Search box
+  // Search box, minimal
   #masthead-search {
     position: absolute;
     @include box-sizing(border-box);
@@ -117,13 +118,21 @@
       display: none;
     }
   }
-  .x {
+  // Search box, expanded
+  #masthead-search.expanded {
+    right: 0;
     border: $border;
+    border-width: 0 0 1px 1px;
     background: $backgroundLight;
     padding: 1.4em;
     @include radius(0 0 0 3px);
     @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
-
+    #masthead-search-person {
+      display: block;
+    }
+    .btn {
+      display: inline;
+    }
   }
 
   .nav-logo {

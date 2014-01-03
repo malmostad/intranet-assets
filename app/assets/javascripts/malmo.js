@@ -10,6 +10,7 @@
 //= require content
 //= require masthead_content
 //= require masthead
+//= require masthead_search
 //= require fastclick
 //= require ios-orientationchange-fix
 //= require jquery.cycle2.min.js
