@@ -12,6 +12,7 @@
 //= require masthead
 //= require masthead_search
 //= require fastclick
+//= require legacy
 //= require ios-orientationchange-fix
 //= require jquery.cycle2.min.js
 //= require jquery.cycle2.swipe.min.js
