@@ -54,12 +54,12 @@ namespace :build do
   desc "Precompile assets locally"
   task :default do
     run_locally("rake build:masthead RAILS_ENV=#{rails_env}")
-    run_locally("rake assets:clean && rake assets:precompile RAILS_ENV=#{rails_env}")
+    run_locally("rake assets:clobber && rake assets:precompile assets:non_digested RAILS_ENV=#{rails_env}")
   end
 
   desc "Remove locally compiled assets"
   task :cleanup do
-    run_locally("rake assets:clean:all")
+    run_locally("rake assets:clobber")
     run_locally("rm public/assets.tar.bz2")
   end
 end
