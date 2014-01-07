@@ -35,6 +35,9 @@
   #malmo-masthead > nav {
     display: block !important;
   }
+  #masthead-search {
+    display: block !important;
+  }
 }
 
 // Switch to collapsed top nav
@@ -50,7 +53,7 @@
       overflow: hidden;
       padding-left: .8em;
       padding-right: .8em;
-      @include box-shadow(0 10px 60px 0 black);
+      @include box-shadow(0 5px 5px 0 rgba(0, 0, 0, .2));
       @include radius(0);
       input[type=text] {
         max-width: 55%;
@@ -64,7 +67,7 @@
       width: 100%;
       overflow: hidden;
       border-bottom: 1px solid $narrowNavBottomBorderColor;
-      @include box-shadow(0 10px 60px 0 black);
+      @include box-shadow(0 5px 5px 0 rgba(0, 0, 0, .2));
       @include clearfix();
       ul li {
         float: none;

@@ -4,6 +4,9 @@ jQuery ($) ->
 
   $malmoMastheadNav = $("#malmo-masthead nav.masthead-main")
 
+  isNarrow = ->
+    $("#nav-search-trigger").is(":visible")
+
   hideNav = ->
     $malmoMastheadNav.slideUp(100)
 
@@ -71,11 +74,14 @@ jQuery ($) ->
   hideSearch = ->
     $mastheadSearch.find("input").blur()
     $mastheadSearch.find("div").removeClass("input-append, input-prepend")
-    $mastheadSearch.removeClass "expanded"
-    $mastheadSearch.css("top", "")
+    $mastheadSearch.removeClass("expanded").css("top", "")
     $(document).off 'click.searchForm'
+    if isNarrow()
+      $mastheadSearch.hide()
 
   showSearch = ->
+    if isNarrow()
+      hideNav()
     $mastheadSearch.addClass("expanded")
     $mastheadSearch.find("div").addClass("input-append, input-prepend")
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
@@ -83,7 +89,7 @@ jQuery ($) ->
 
     # Close on click outside the searchbox
     $(document).on 'click.searchForm', (event) ->
-      hideSearch() unless $(event.target).closest("#masthead-search").length
+      hideSearch() unless $(event.target).closest("#masthead-search, #nav-search-trigger").length
 
   # Bind escape key to hide form
   $mastheadSearch.focusin ->
@@ -100,7 +106,6 @@ jQuery ($) ->
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
     if $("#masthead-search").is(":hidden") then showSearch() else hideSearch()
-
 
   # https://github.com/ftlabs/fastclick
   new FastClick $('#nav-search-trigger')[0]
