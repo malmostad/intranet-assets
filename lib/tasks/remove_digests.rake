@@ -12,5 +12,6 @@ namespace :assets do
       non_digested = File.join(source)
       FileUtils.mv(file, non_digested)
     end
+    FileUtils.rm(File.join(Rails.root, 'public/assets/manifest.json'))
   end
 end
