@@ -1,6 +1,6 @@
 namespace :assets do
   desc "Hack to remove digests"
-  task non_digested: :environment do
+  task remove_digests: :environment do
     assets = Dir.glob(File.join(Rails.root, 'public/assets/**/*'))
     regex = /(-{1}[a-z0-9]{32}*\.{1}){1}/
     assets.each do |file|

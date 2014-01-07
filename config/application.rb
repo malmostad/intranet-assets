@@ -18,8 +18,8 @@ module AssetsContainer
 
     config.assets.enabled = true
     config.assets.version = '1.0'
-
     config.assets.precompile += %w(
+      *.png *.jpg *.jpeg *.gif *.eot *.svg *.ttf *.woff
       malmo.js
       malmo_no_jquery.js
       malmo.css

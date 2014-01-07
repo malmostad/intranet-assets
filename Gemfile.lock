@@ -126,7 +126,7 @@ DEPENDENCIES
   coffee-rails
   jquery-rails
   rack-contrib
-  rails
+  rails (= 4.0.2)
   sass-rails
   thin
   uglifier
