@@ -24,6 +24,7 @@
     min-width: 0;
     @include clearfix();
     #masthead-search {
+      display: none;
       position: static;
       float: left;
       width: 100%;
@@ -34,6 +35,9 @@
       @include radius(0);
       input[type=text] {
         max-width: 55%;
+      }
+      .icon-search {
+        display: none;
       }
     }
     > nav {

@@ -10,7 +10,6 @@
 //= require content
 //= require masthead_content
 //= require masthead
-//= require masthead_search
 //= require fastclick
 //= require legacy
 //= require ios-orientationchange-fix
