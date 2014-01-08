@@ -182,6 +182,10 @@
   }
 }
 
+@media ( max-width: 46em ) {
+  @include form-force-vertical();
+}
+
 @media ( max-width: 38em ) {
   footer.bigfoot {
     ul, ul.list-3 {
@@ -205,6 +209,10 @@
   }
 }
 
-@media ( max-width: 46em ) {
-  @include form-force-vertical();
+@media ( max-width: 28em ) {
+  #malmo-masthead {
+    #masthead-search.expanded  label.add-on {
+      display: none;
+    }
+  }
 }
