@@ -8,11 +8,11 @@ jQuery ($) ->
     $("#nav-search-trigger").is(":visible")
 
   hideNav = ->
-    $malmoMastheadNav.slideUp(100)
+    $malmoMastheadNav.removeClass("expanded")
 
   showNav = ->
     hideSearch()
-    $malmoMastheadNav.slideDown(100)
+    $malmoMastheadNav.addClass("expanded")
     # Close on click outside the nav. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one 'click', (event) ->
       event.preventDefault()
@@ -27,7 +27,7 @@ jQuery ($) ->
         .addClass('dropdown-toggle no-arrow')
         .attr('data-toggle', 'dropdown')
         .text(plural)
-        .append(' <span class="icon-caret-down">')
+        .append('<span class="icon-caret-down">')
         .end()
         .append('<ul class="dropdown-menu"></ul>')
 
@@ -76,12 +76,9 @@ jQuery ($) ->
     $mastheadSearch.find("input").blur()
     $mastheadSearch.find("div").removeClass("input-append, input-prepend")
     $(document).off 'click.searchForm'
-    if isNarrow()
-      $("#masthead-search-intranet input.text").hide()
 
   showSearch = ->
     hideNav() if isNarrow()
-    $("#masthead-search-intranet input[type=text]").css("display", "inline")
     $mastheadSearch.addClass("expanded")
     $mastheadSearch.find("div").addClass("input-append, input-prepend")
 

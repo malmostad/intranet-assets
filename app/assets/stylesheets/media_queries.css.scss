@@ -20,6 +20,7 @@
     }
   }
 }
+
 @media ( max-width: 65em ) {
   #malmo-masthead {
     #masthead-search {
@@ -30,29 +31,11 @@
   }
 }
 
-// In case the nav was hidden by click event in narrower width
-@media ( min-width: 59.1em ) {
-  #malmo-masthead {
-    > nav {
-      display: block !important;
-    }
-    #masthead-search-intranet input.text {
-      display: inline;
-    }
-  }
-}
-
 // Switch to collapsed top nav
 @media ( max-width: 59em ) {
   #malmo-masthead {
     min-width: 0;
     @include clearfix();
-    #masthead-search-intranet input.text {
-      display: none !important;
-    }
-    #masthead-search-intranet #masthead-search.expanded input.text {
-      display: inline !important;
-    }
     #masthead-search {
       position: static;
       float: left;
@@ -62,12 +45,18 @@
       padding-right: .8em;
       @include box-shadow(0 5px 5px 0 rgba(0, 0, 0, .2));
       @include radius(0);
-      input[type=text] {
+      input.text {
         max-width: 55%;
       }
       .icon-search {
         display: none;
       }
+    }
+    #masthead-search #masthead-search-intranet input.text {
+      display: none;
+    }
+    #masthead-search.expanded #masthead-search-intranet input.text {
+      display: inline;
     }
     > nav {
       display: none;
@@ -98,6 +87,9 @@
           @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
         }
       }
+    }
+    > nav.expanded {
+      display: block;
     }
     #nav-triggers {
       display: block;
