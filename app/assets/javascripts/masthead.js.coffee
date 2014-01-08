@@ -72,11 +72,12 @@ jQuery ($) ->
 # Search form
   $mastheadSearch = $("#masthead-search")
   hideSearch = ->
+    $mastheadSearch.removeClass("expanded")
     $mastheadSearch.find("input").blur()
     $mastheadSearch.find("div").removeClass("input-append, input-prepend")
     $(document).off 'click.searchForm'
     if isNarrow()
-      $("#masthead-search-intranet input[type=text]").hide()
+      $("#masthead-search-intranet .q").hide()
 
   showSearch = ->
     hideNav() if isNarrow()
@@ -102,7 +103,7 @@ jQuery ($) ->
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
-    if $("#masthead-search").is(":hidden") then showSearch() else hideSearch()
+    if $("#masthead-search-intranet .q").is(":hidden") then showSearch() else hideSearch()
 
   # https://github.com/ftlabs/fastclick
   new FastClick $('#nav-search-trigger')[0]

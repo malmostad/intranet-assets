@@ -32,11 +32,13 @@
 
 // In case the nav was hidden by click event in narrower width
 @media ( min-width: 59.1em ) {
-  #malmo-masthead > nav {
-    display: block !important;
-  }
-  #masthead-search-intranet input[type=text] {
-    display: inline;
+  #malmo-masthead {
+    > nav {
+      display: block !important;
+    }
+    #masthead-search-intranet input[type=text] {
+      display: inline;
+    }
   }
 }
 
