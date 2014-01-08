@@ -128,8 +128,8 @@ jQuery ($) ->
       minLength: 2
       select: (event, ui) ->
         $("#masthead-search-intranet").submit()
-    .data( "ui-autocomplete" )._renderItem = (ul, item) ->
-      ul.css("z-index", 1000)
+    .data("ui-autocomplete")._renderItem = (ul, item) ->
+      ul.css("z-index", 1000).addClass("masthead-ac")
       return $("<li></li>")
         .data("ui-autocomplete-item", item)
         .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
