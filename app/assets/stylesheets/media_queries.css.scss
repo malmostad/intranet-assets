@@ -14,7 +14,7 @@
 @media ( max-width: 69em ) {
   #malmo-masthead {
     #masthead-search {
-      input[type=text] {
+      input.text {
         width: 18em;
       }
     }
@@ -23,7 +23,7 @@
 @media ( max-width: 65em ) {
   #malmo-masthead {
     #masthead-search {
-      input[type=text] {
+      input.text {
         width: 12em;
       }
     }
@@ -48,7 +48,10 @@
     min-width: 0;
     @include clearfix();
     #masthead-search-intranet input.text {
-      display: none;
+      display: none !important;
+    }
+    #masthead-search-intranet #masthead-search.expanded input.text {
+      display: inline !important;
     }
     #masthead-search {
       position: static;
