@@ -77,15 +77,14 @@ jQuery ($) ->
     $mastheadSearch.removeClass("expanded").css("top", "")
     $(document).off 'click.searchForm'
     if isNarrow()
-      $mastheadSearch.hide()
+      $("#masthead-search-intranet input[type=text]").hide()
 
   showSearch = ->
-    if isNarrow()
-      hideNav()
+    hideNav() if isNarrow()
+    $("#masthead-search-intranet input[type=text]").css("display", "inline")
     $mastheadSearch.addClass("expanded")
     $mastheadSearch.find("div").addClass("input-append, input-prepend")
     $mastheadSearch.css("top", $("#malmo-masthead").height() + "px")
-    $mastheadSearch.show()
 
     # Close on click outside the searchbox
     $(document).on 'click.searchForm', (event) ->
