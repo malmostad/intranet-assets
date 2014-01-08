@@ -11,6 +11,15 @@
   }
 }
 
+@media ( min-width: 69em ) {
+  #malmo-masthead {
+    #masthead-search {
+      input.text {
+        width: 22em;
+      }
+    }
+  }
+}
 @media ( max-width: 69em ) {
   #malmo-masthead {
     #masthead-search {
