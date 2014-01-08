@@ -104,13 +104,13 @@
     @include box-sizing(border-box);
     top: emize(6);
     right: emize(5);
-    #masthead-search-intranet .q {
+    #masthead-search-intranet input.text {
       max-height: 18px;
     }
     form {
       margin-bottom: 0;
     }
-    input[type=text] {
+    input.text {
       width: 22em;
     }
     #masthead-search-person,
@@ -141,14 +141,14 @@
     }
     #masthead-search-intranet {
       margin-bottom: .6em;
-      .q {
+      input.text {
         max-height: none;
       }
     }
     .btn, .add-on {
       display: inline-block;
     }
-    input[type=text] {
+    input.text {
       width: 25em;
     }
     .icon-search {

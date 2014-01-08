@@ -77,7 +77,7 @@ jQuery ($) ->
     $mastheadSearch.find("div").removeClass("input-append, input-prepend")
     $(document).off 'click.searchForm'
     if isNarrow()
-      $("#masthead-search-intranet .q").hide()
+      $("#masthead-search-intranet input.text").hide()
 
   showSearch = ->
     hideNav() if isNarrow()
@@ -98,18 +98,18 @@ jQuery ($) ->
   $mastheadSearch.focusout ->
     $(document).off('keyup.searchForm')
 
-  $('#masthead-search-intranet .q').focus ->
+  $('#masthead-search-intranet input.text').focus ->
     showSearch()
 
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
-    if $("#masthead-search-intranet .q").is(":hidden") then showSearch() else hideSearch()
+    if $("#masthead-search-intranet input.text").is(":hidden") then showSearch() else hideSearch()
 
   # https://github.com/ftlabs/fastclick
   new FastClick $('#nav-search-trigger')[0]
 
   # Autocomplete
-  $searchField = $('#masthead-search-intranet .q')
+  $searchField = $('#masthead-search-intranet input.text')
   if $searchField.length
     $searchField.autocomplete
       source: (request, response) ->

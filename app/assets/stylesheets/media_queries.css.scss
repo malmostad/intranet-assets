@@ -36,7 +36,7 @@
     > nav {
       display: block !important;
     }
-    #masthead-search-intranet input[type=text] {
+    #masthead-search-intranet input.text {
       display: inline;
     }
   }
@@ -47,7 +47,7 @@
   #malmo-masthead {
     min-width: 0;
     @include clearfix();
-    #masthead-search-intranet input[type=text] {
+    #masthead-search-intranet input.text {
       display: none;
     }
     #masthead-search {
