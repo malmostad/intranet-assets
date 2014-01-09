@@ -18,6 +18,7 @@ jQuery ($) ->
     $malmoMastheadNav.addClass("expanded")
     # Close on click outside the list
     $(document).on 'click.nav', (event) ->
+      $("#malmo-masthead nav ul").css("cursor", "pointer") # Worst iOS hack ever
       if $(event.target).is("ul")
         hideNav()
 
