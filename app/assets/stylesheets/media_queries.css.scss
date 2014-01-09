@@ -110,6 +110,11 @@
           border-bottom: $narrowNavBorderColor 1px solid;
         }
       }
+      ul.dropdown-menu li {
+        a, a:hover, a:focus {
+          line-height: emize(15, 13);
+        }
+      }
     }
     > nav.expanded {
       display: block;
