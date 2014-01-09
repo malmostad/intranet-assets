@@ -11,14 +11,10 @@ jQuery ($) ->
     $("body").removeClass("nav-open");
     $malmoMastheadNav.removeClass("expanded")
 
-  showNav = ->
+  showNav = (event) ->
     hideSearch()
     $("body").addClass("nav-open");
     $malmoMastheadNav.addClass("expanded")
-    # Close on click outside the nav. Expensive but rare binding.
-    $('body > *').not('#malmo-masthead').one 'click', (event) ->
-      event.preventDefault()
-      hideNav()
 
   # We use the cookie values to change two nav items
   hijackNav = (navItem, items, plural) ->
@@ -59,7 +55,7 @@ jQuery ($) ->
 
   $("#nav-menu-trigger a").click (event) ->
     event.preventDefault();
-    if $("#malmo-masthead nav.masthead-main").is(":hidden") then showNav() else hideNav()
+    if $("#malmo-masthead nav.masthead-main").is(":hidden") then showNav(event) else hideNav()
 
   # Browser sniffing hack for landscape text size on iPhone. Note: Prevents zooming on desktops so we limit it to iOS.
   if /iPhone|iPod/.test(navigator.platform) and navigator.userAgent.indexOf("AppleWebKit") > -1
