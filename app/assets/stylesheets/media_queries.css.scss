@@ -92,7 +92,7 @@
           a:focus {
             height: auto;
             padding: emize(18) emize(13);
-            @include linear-gradient($narrowNavBackground, $narrowNavBackground);
+            background: $narrowNavBackground;
             border-width: 1px 0 0;
             border-top-color: $narrowNavBorderColor;
             color: $narrowNavColor;
@@ -103,7 +103,7 @@
           }
           a:hover,
           a:focus {
-            @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+            background: $narrowNavBackgroundHiglight;
           }
         }
         > li#nav-more li:last-child > a {
@@ -152,7 +152,7 @@
 
         > li {
           > a {
-            @include linear-gradient($narrowNavBackground, $narrowNavBackground);
+            background: $narrowNavBackground;
             @include radius(0);
             padding-top: emize(18);
             padding-bottom: emize(18);
@@ -162,7 +162,7 @@
           }
           > a:hover,
           > a:focus {
-            @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+            background: $narrowNavBackgroundHiglight;
           }
         }
       }
@@ -180,7 +180,7 @@
     a, a:hover {
       border-top-color: $narrowNavBorderColor;
       background: $narrowNavBackgroundHiglight;
-      @include linear-gradient($narrowNavBackgroundHiglight, $narrowNavBackgroundHiglight);
+      background: $narrowNavBackgroundHiglight;
     }
   }
 
