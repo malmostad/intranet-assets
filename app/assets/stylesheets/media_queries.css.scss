@@ -78,8 +78,7 @@
       right: 0;
       display: none;
       overflow: hidden;
-      background: $narrowNavBackground;
-      border-bottom: 1px solid $narrowNavBottomBorderColor;
+      background: rgba(255, 255, 255, .7);
       ul {
         overflow: auto;
         position: static;
@@ -89,10 +88,12 @@
           width: 100%;
           a,
           a:hover,
-          a:focus {
+          a:focus,
+          &.open > a:hover,
+          &.open > a:focus {
             height: auto;
             padding: emize(18) emize(13);
-            background: $narrowNavBackground;
+            background-color: $narrowNavBackground !important;
             border-width: 1px 0 0;
             border-top-color: $narrowNavBorderColor;
             color: $narrowNavColor;
@@ -101,13 +102,12 @@
               display: none;
             }
           }
-          a:hover,
-          a:focus {
-            background: $narrowNavBackgroundHiglight;
-          }
         }
         > li#nav-more li:last-child > a {
           border-bottom: $narrowNavBorderColor 1px solid;
+        }
+        > li#nav-more li {
+          @include box-shadow(0 5px 5px 0 rgba(0, 0, 0, .2));
         }
       }
       ul.dropdown-menu li {
