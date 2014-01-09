@@ -42,7 +42,9 @@
 
 // Switch to collapsed top nav
 @media ( max-width: 59em ) {
+  // Prevent scrolling of body when nav is open
   body.nav-open {
+    height: 100%;
     overflow: hidden;
   }
   #malmo-masthead {
