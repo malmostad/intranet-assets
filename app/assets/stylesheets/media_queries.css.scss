@@ -55,13 +55,15 @@
       overflow: hidden;
       padding-left: .8em;
       padding-right: .8em;
-      @include box-shadow(0 5px 5px 0 rgba(0, 0, 0, .2));
-      @include radius(0);
       input.text {
         max-width: 55%;
       }
       .icon-search {
         display: none;
+      }
+      &.expanded {
+        @include radius(0);
+        border: none;
       }
     }
     #masthead-search #masthead-search-intranet input.text {
@@ -103,11 +105,9 @@
             }
           }
         }
-        > li#nav-more li:last-child > a {
+        > li#nav-more ul.dropdown-menu {
           border-bottom: $narrowNavBorderColor 1px solid;
-        }
-        > li#nav-more li {
-          @include box-shadow(0 5px 5px 0 rgba(0, 0, 0, .2));
+          @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
         }
       }
       ul.dropdown-menu li {
