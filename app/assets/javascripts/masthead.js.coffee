@@ -10,11 +10,16 @@ jQuery ($) ->
   hideNav = ->
     $("body").removeClass("nav-open");
     $malmoMastheadNav.removeClass("expanded")
+    $(document).off 'click.nav'
 
   showNav = (event) ->
     hideSearch()
     $("body").addClass("nav-open");
     $malmoMastheadNav.addClass("expanded")
+    # Close on click outside the list
+    $(document).on 'click.nav', (event) ->
+      if $(event.target).is("ul")
+        hideNav()
 
   # We use the cookie values to change two nav items
   hijackNav = (navItem, items, plural) ->
