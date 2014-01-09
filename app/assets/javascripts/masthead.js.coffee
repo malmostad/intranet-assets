@@ -8,10 +8,12 @@ jQuery ($) ->
     $("#nav-search-trigger").is(":visible")
 
   hideNav = ->
+    $("body").removeClass("nav-open");
     $malmoMastheadNav.removeClass("expanded")
 
   showNav = ->
     hideSearch()
+    $("body").addClass("nav-open");
     $malmoMastheadNav.addClass("expanded")
     # Close on click outside the nav. Expensive but rare binding.
     $('body > *').not('#malmo-masthead').one 'click', (event) ->

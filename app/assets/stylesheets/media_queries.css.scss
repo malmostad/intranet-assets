@@ -42,6 +42,9 @@
 
 // Switch to collapsed top nav
 @media ( max-width: 59em ) {
+  body.nav-open {
+    overflow: hidden;
+  }
   #malmo-masthead {
     min-width: 0;
     @include clearfix();
