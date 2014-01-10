@@ -1,6 +1,6 @@
 jQuery ($) ->
   # For missing placeholder support (IE9)
-  unless 'placeholder' in document.createElement('input')
+  unless 'placeholder' of document.createElement('input')
     setPlaceholder = (self) ->
       if $(self).val() is '' or $(self).val() is $(self).attr('placeholder')
         $(self).addClass('placeholder')
