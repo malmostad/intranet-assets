@@ -11,37 +11,21 @@
   }
 }
 
-@media ( min-width: 69em ) {
-  #malmo-masthead {
-    #masthead-search {
-      input.text {
-        width: 22em;
-      }
-    }
-  }
-}
-@media ( max-width: 69em ) {
-  #malmo-masthead {
-    #masthead-search {
-      input.text {
-        width: 18em;
-      }
-    }
-  }
+#malmo-masthead #masthead-search input.text {
+  @media ( max-width: 70em ) { width: 20em; }
+  @media ( max-width: 68em ) { width: 18em; }
+  @media ( max-width: 66em ) { width: 16em; }
+  @media ( max-width: 64em ) { width: 14em; }
 }
 
-@media ( max-width: 65em ) {
-  #malmo-masthead {
-    #masthead-search {
-      input.text {
-        width: 12em;
-      }
-    }
+@media ( max-width: 74em ) {
+  #masthead-others {
+    display: none;
   }
 }
 
 // Switch to collapsed top nav
-@media ( max-width: 59em ) {
+@media ( max-width: 61em ) {
   // Prevent scrolling of body when nav is open
   body.nav-open {
     height: 100%;
@@ -57,9 +41,6 @@
       overflow: hidden;
       padding-left: .8em;
       padding-right: .8em;
-      input.text {
-        max-width: 55%;
-      }
       .icon-search {
         display: none;
       }
@@ -73,6 +54,7 @@
     }
     #masthead-search.expanded #masthead-search-intranet input.text {
       display: inline;
+      max-width: 55%;
     }
     > nav {
       position: fixed;
