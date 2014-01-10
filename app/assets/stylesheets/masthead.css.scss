@@ -6,6 +6,7 @@
   z-index: 100;
   background-color: $mastheadBackground;
   @include box-shadow(0 2px 2px rgba(0, 0, 0, .2));
+  _min-width: 66em; // don't want to add an IE8 legacy file for this one
   min-width: 59em;
 
   #nav-search-trigger,
