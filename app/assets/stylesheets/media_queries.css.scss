@@ -5,27 +5,22 @@
   }
 }
 
-@media ( max-width: 60em ) {
-  #malmo-masthead > nav#masthead-others {
-    display: none !important;
-  }
-}
-
 #malmo-masthead #masthead-search input.text {
-  @media ( max-width: 70em ) { width: 20em; }
-  @media ( max-width: 68em ) { width: 18em; }
-  @media ( max-width: 66em ) { width: 16em; }
-  @media ( max-width: 64em ) { width: 14em; }
+  @media (min-width: 70em) { width: 22em; }
+  @media (max-width: 70em) { width: 20em; }
+  @media (max-width: 68em) { width: 18em; }
+  @media (max-width: 66em) { width: 16em; }
+  @media (max-width: 64em) { width: 14em; }
 }
 
-@media ( max-width: 74em ) {
+@media (max-width: 74em) {
   #masthead-others {
     display: none;
   }
 }
 
 // Switch to collapsed top nav
-@media ( max-width: 61em ) {
+@media (max-width: 61em) {
   // Prevent scrolling of body when nav is open
   body.nav-open {
     height: 100%;
@@ -189,11 +184,11 @@
   }
 }
 
-@media ( max-width: 46em ) {
+@media (max-width: 46em) {
   @include form-force-vertical();
 }
 
-@media ( max-width: 38em ) {
+@media (max-width: 38em) {
   footer.bigfoot {
     ul, ul.list-3 {
       @include columns(12);
@@ -201,7 +196,7 @@
   }
 }
 
-@media ( max-width: 34em ) {
+@media (max-width: 34em) {
   #malmo-masthead {
     nav {
       li a {
@@ -215,7 +210,7 @@
   }
 }
 
-@media ( max-width: 28em ) {
+@media (max-width: 28em) {
   #malmo-masthead {
     #masthead-search.expanded  label.add-on {
       display: none;
