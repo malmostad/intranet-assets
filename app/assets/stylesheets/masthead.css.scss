@@ -139,28 +139,11 @@
     @include box-shadow(2px 2px 3px rgba(0, 0, 0, .2));
     #masthead-search-person {
       display: block;
-      .add-on {
-        .icon-male {
-          display: inline-block;
-          height: 1.4em;
-          width: 18px;
-          overflow: hidden;
-        }
-        .icon-male:before {
-          font-size: 2.3em;
-          line-height: 1.1;
-          overflow: hidden;
-        }
-      }
     }
     #masthead-search-intranet {
       margin-bottom: .6em;
       input.text {
         max-height: none;
-      }
-      .add-on .icon-file-text-alt {
-        display: inline-block;
-        width: 18px;
       }
     }
     .btn, .add-on {
