@@ -214,8 +214,8 @@
 
 @media (max-width: 28em) {
   #malmo-masthead {
-    #masthead-search.expanded  label.add-on {
-      display: none;
+    #masthead-search.expanded  .add-on {
+      display: none !important;
     }
   }
 }
