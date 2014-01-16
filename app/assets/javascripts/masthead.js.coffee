@@ -77,13 +77,13 @@ jQuery ($) ->
   hideSearch = ->
     $mastheadSearch.removeClass("expanded")
     $mastheadSearch.find("input").blur()
-    $mastheadSearch.find("div").removeClass("input-append, input-prepend")
+    $mastheadSearch.find("div").removeClass("input-append input-prepend")
     $(document).off 'click.searchForm'
 
   showSearch = ->
     hideNav() if isNarrow()
     $mastheadSearch.addClass("expanded")
-    $mastheadSearch.find("div").addClass("input-append, input-prepend")
+    $mastheadSearch.find("div").addClass("input-append input-prepend")
 
     # Close on click outside the searchbox
     $(document).on 'click.searchForm', (event) ->
