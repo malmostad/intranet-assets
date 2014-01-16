@@ -103,7 +103,7 @@
     float: right;
     @include box-sizing(border-box);
     top: emize(6);
-    right: emize(5);
+    right: emize(10);
     #masthead-search-intranet input.text {
       max-height: 18px;
     }
