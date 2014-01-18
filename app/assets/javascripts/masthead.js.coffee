@@ -83,9 +83,6 @@ jQuery ($) ->
   showSearch = ->
     hideNav() if isNarrow()
 
-    if $(document).width() <= 568
-      $("#masthead-q-komin, #masthead-q-employee").css("font-size", "16px") # hack to prevent iOS from zooming
-
     $mastheadSearch.addClass("expanded")
     $mastheadSearch.find("div").addClass("input-append input-prepend")
 

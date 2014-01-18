@@ -196,6 +196,9 @@
       @include columns(12);
     }
   }
+  #masthead-q-komin, #masthead-q-employee {
+    font-size: 16px; // hack to avoid zoom in iOS
+  }
 }
 
 @media (max-width: 34em) {
