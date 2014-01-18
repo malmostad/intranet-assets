@@ -7,6 +7,15 @@
   background-color: $mastheadBackground;
   @include box-shadow(0 2px 2px rgba(0, 0, 0, .2));
   min-width: 61em;
+  min-height: emize(41);
+
+  #nav-triggers {
+    // Activated in media_queries.scss
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 
   #nav-search-trigger,
   #nav-menu-trigger,
@@ -51,7 +60,22 @@
       top: 3.1em;
       white-space: nowrap;
     }
+    span.icon-reorder {
+      margin-left: .3em;
+      line-height: .8;
+    }
+    span.icon-search {
+      margin-left: .4em;
+      line-height: .8;
+      position: relative;
+      top: -1px;
+    }
   }
+
+  #nav-search-trigger a:hover {
+    border-right-color: black;
+  }
+
   > nav#masthead-others > ul {
     li {
       float: left;
@@ -64,31 +88,6 @@
       position: relative;
       top: emize(-2, 13);
     }
-  }
-
-  #nav-menu-trigger, #nav-search-trigger {
-    float: right;
-    a {
-      span.icon-reorder {
-        margin-left: .3em;
-        line-height: .8;
-      }
-      span.icon-search {
-        margin-left: .4em;
-        line-height: .8;
-        position: relative;
-        top: -1px;
-      }
-    }
-  }
-
-  #nav-search-trigger a:hover {
-    border-right-color: black;
-  }
-
-  #nav-triggers {
-    // Activated in media_queries.scss
-    display: none;
   }
 
   #nav-my-department, #nav-my-workingfield {
