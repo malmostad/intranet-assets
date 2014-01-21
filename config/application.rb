@@ -11,14 +11,16 @@ end
 module AssetsContainer
   class Application < Rails::Application
     config.time_zone = 'Stockholm'
-    config.i18n.default_locale = :sv
+    config.i18n.default_locale = :en
+    I18n.config.enforce_available_locales = true
+
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
 
     config.assets.enabled = true
     config.assets.version = '1.0'
-
     config.assets.precompile += %w(
+      *.png *.jpg *.jpeg *.gif *.eot *.svg *.ttf *.woff *.map
       malmo.js
       malmo_no_jquery.js
       malmo.css
@@ -37,3 +39,4 @@ module AssetsContainer
 end
 
 AssetsContainer::Application.config.secret_token = 'Not_used_in_this_app_but_required_by_rails'
+AssetsContainer::Application.config.secret_key_base = 'Not_used_in_this_app_but_required_by_rails'

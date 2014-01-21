@@ -4,3 +4,4 @@ log
 tmp
 doc
 _site
+.bundle
