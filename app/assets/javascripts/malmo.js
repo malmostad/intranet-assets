@@ -10,6 +10,8 @@
 //= require content
 //= require masthead_content
 //= require masthead
+//= require maps
+//= require jquery-ui.custom.min
 //= require fastclick
 //= require legacy
 //= require ios-orientationchange-fix
