@@ -102,6 +102,10 @@ jQuery ($) ->
   $('#masthead-search-intranet input.text').focus ->
     showSearch()
 
+  $('#masthead-search .icon-search').click ->
+    $('#masthead-search-intranet input.text').focus()
+    showSearch()
+
   $("#nav-search-trigger a").click (event) ->
     event.preventDefault()
     if $("#masthead-search-intranet input.text").is(":hidden") then showSearch() else hideSearch()
