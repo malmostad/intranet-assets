@@ -213,6 +213,11 @@
   body.test:after {
     font-size: 9px;
   }
+  .ui-autocomplete {
+    max-height: 30em;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
 }
 
 @media (max-width: 28em) {
