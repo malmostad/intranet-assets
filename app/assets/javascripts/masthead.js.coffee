@@ -142,3 +142,28 @@ jQuery ($) ->
         .data("ui-autocomplete-item", item)
         .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
         .appendTo(ul)
+
+  # Autocomplete on user search
+  $queryEmployee = $("#masthead-q-employee")
+  if $queryEmployee.length
+    $queryEmployee
+      .autocomplete
+        source: $queryEmployee.attr("data-path")
+        minLength: 2
+        appendTo: $queryEmployee.closest(".box")
+        select: (event, ui) ->
+          document.location = ui.item.path
+      .data("ui-autocomplete")
+      ._renderItem = (ul, item) ->
+        ul.addClass('search_users')
+        if $queryEmployee.hasClass("full-search")
+          ul.addClass('full-search')
+        $("<li>")
+          .data("ui-autocomplete-item", item)
+          .append("<a><img src='#{item.avatar_full_url}'/>
+              <p>#{item.first_name} #{item.last_name}<br>
+              #{item.company_short}<br>
+              #{item.department}</p></a>
+          ")
+          .appendTo(ul)
+
