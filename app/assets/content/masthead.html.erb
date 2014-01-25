@@ -47,7 +47,7 @@
       <div class="input-append input-prepend">
         <input name="utf8" type="hidden" value="&#x2713;"/>
         <label for="masthead-q-employee" class="add-on icon-user icon-large"></label>
-        <input name="q" id="masthead-q-employee" class="text" placeholder="För- och/eller efternamn" type="text"/>
+        <input name="q" id="masthead-q-employee" class="text" placeholder="För- och/eller efternamn" type="text" data-autocomplete-url="<%= APP_CONFIG['dashboard_base_url'] %>users/suggest"/>
         <input class="btn" type="submit" value="Sök person"/>
       </div>
     </form>

@@ -3,13 +3,11 @@ development:
   dashboard_base_url: "http://www.local.malmo.se:3000/"
   sv_base_url: "https://komin.malmo.se/"
   site_search_url: "http://www.local.malmo.se:3000/search"
-  employee_suggest_url: "http://www.local.malmo.se:3000/users/suggest"
 
 test: &test
   dashboard_base_url: "http://webapps06.malmo.se/dashboard-test/"
   sv_base_url: "https://komin.test.malmo.se/"
   site_search_url: "http://webapps06.malmo.se/dashboard-test/search"
-  employee_suggest_url: "http://webapps06.malmo.se/dashboard-test/users/suggest"
 
 staging:
   <<: *test
@@ -18,4 +16,3 @@ production:
   dashboard_base_url: "http://webapps06.malmo.se/dashboard/"
   sv_base_url: "https://komin.malmo.se/"
   site_search_url: "http://webapps06.malmo.se/dashboard/search"
-  employee_suggest_url: "http://webapps06.malmo.se/dashboard/users/suggest"
