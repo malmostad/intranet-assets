@@ -214,7 +214,7 @@
     font-size: 9px;
   }
   .ui-autocomplete {
-    max-height: 30em;
+    max-height: 20em;
     overflow-y: auto;
     overflow-x: hidden;
   }
@@ -225,5 +225,8 @@
     #masthead-search.expanded  label.add-on {
       display: none;
     }
+  }
+  .ui-autocomplete {
+    max-height: 12em;
   }
 }
