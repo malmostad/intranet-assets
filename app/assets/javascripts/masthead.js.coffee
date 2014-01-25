@@ -159,7 +159,6 @@ jQuery ($) ->
               response $.map data, (item) ->
                 item
       minLength: 2
-      appendTo: $queryEmployee.closest(".box")
       select: (event, ui) ->
         document.location = ui.item.path
     .data("ui-autocomplete")._renderItem = (ul, item) ->
