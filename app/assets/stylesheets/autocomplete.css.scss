@@ -33,3 +33,9 @@
     margin: 0;
   }
 }
+
+.ui-autocomplete.ui-menu .ui-menu-item {
+  // overrides jquery ui helper css that makes items very heigh
+  // Bug introduce as a fix http://bugs.jqueryui.com/ticket/8844
+  list-style-image: none !important;
+}
