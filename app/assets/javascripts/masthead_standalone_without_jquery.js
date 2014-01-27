@@ -5,3 +5,4 @@
 //= require masthead
 //= require fastclick
 //= require google_analytics
+//= require legacy

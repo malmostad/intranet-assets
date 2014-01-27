@@ -216,10 +216,12 @@ ul.ui-autocomplete li .hits {
 }
 ul.ui-autocomplete.masthead-ac {
   min-width: 17em;
+  z-index: 1000;
 }
 
 // Autocomplete list for user search
 ul.ui-autocomplete.search_users {
+  z-index: 1000;
   .ui-menu-item > a.ui-corner-all {
     padding: .5em 1em .7em .5em;
     clear: left;

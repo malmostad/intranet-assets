@@ -16,6 +16,7 @@
 }
 
 @import "masthead";
+@import "autocomplete";
 @import "media_queries";
 @import "font-awesome";
 @import "fonts";
@@ -39,5 +40,17 @@ body header#malmo-masthead {
     &:hover {
       color: white !important;
     }
+  }
+}
+
+body .ui-autocomplete {
+  .ui-menu-item > a  p {
+    font-family: $sansSerif !important;
+    font-size: 13px !important;
+  }
+
+  .ui-state-focus, .ui-menu-item > a:hover, .ui-menu-item > a:focus {
+    background: $backgroundDark !important;
+    color: white !important;
   }
 }
