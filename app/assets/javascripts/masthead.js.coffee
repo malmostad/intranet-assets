@@ -89,7 +89,8 @@ jQuery ($) ->
                 }
       minLength: 2
       select: (event, ui) ->
-        document.location = $form.attr('action') + '?q=' + unescape(ui.item.value)
+        $searchField.val(ui.item.value)
+        $form.submit()
     .data( "ui-autocomplete" )._renderItem = (ul, item) ->
       ul.css("z-index", 1000)
       return $("<li></li>")
