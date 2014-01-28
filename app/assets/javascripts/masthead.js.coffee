@@ -136,7 +136,7 @@ jQuery ($) ->
                 }
       minLength: 2
       select: (event, ui) ->
-        $("#masthead-search-intranet").submit()
+        document.location = $("#masthead-search-intranet").attr('action') + '?utf8=&#x2713;&q=' + unescape(ui.item.value)
     .data("ui-autocomplete")._renderItem = (ul, item) ->
       ul.addClass("masthead-ac")
       return $("<li></li>")
