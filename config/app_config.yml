@@ -1,6 +1,6 @@
 # Used for content/masthead
 development: &development
-  sv_base_url: "http://www.test.malmo.se/"
+  sv_base_url: "/"
   site_search_ac_url: "http://malmo.appliance.siteseeker.se/qc/webb/qc"
   site_search_url: http://s1.malmo.se/
 
@@ -11,4 +11,4 @@ staging:
 
 production:
   <<: *development
-  sv_base_url: "https://www.malmo.se/"
+  sv_base_url: "/juni2014/"
