@@ -1,5 +1,5 @@
 // In case the nav was hidden by click event in narrower width
-@media (min-width: 43.1em) {
+@media (min-width: 1043.1em) {
   #malmo-masthead {
     > nav, #masthead-search {
       display: block !important;
@@ -8,7 +8,7 @@
 }
 
 // Switch to collapsed top nav
-@media (max-width: 43em) {
+@media (max-width: 1043em) {
   #malmo-masthead {
     @include clearfix();
     position: static;
@@ -144,7 +144,7 @@
 }
 
 
-@media (max-width: 46em) {
+@media (max-width: 1046em) {
   @include form-force-vertical();
 }
 
@@ -155,14 +155,14 @@
     background-size: 48px 65px;
   }
 }
-@media (max-width: 43em) and (min-resolution: 2dppx), (max-width: 43em) and (-webkit-min-device-pixel-ratio: 2) {
+@media (max-width: 1043em) and (min-resolution: 2dppx), (max-width: 43em) and (-webkit-min-device-pixel-ratio: 2) {
   #malmo-masthead .nav-logo a {
     background: url("logo-mini-x2.png") 0 no-repeat;
     background-size: 26px;
   }
 }
 
-@media (max-width: 34em) {
+@media (max-width: 1034em) {
   body.development:after,
   body.test:after {
     font-size: 9px;
