@@ -10,6 +10,8 @@ jQuery ($) ->
     $malmoMastheadNav.slideUp(100)
 
   showNav = ->
+    # TODO: enable when the time is right
+    return
     hideSearch()
     $malmoMastheadNav.slideDown(100)
 
