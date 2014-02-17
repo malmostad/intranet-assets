@@ -27,6 +27,11 @@
   h1+h2, h2+h3, h3+h4 {
     margin-top: 1em;
   }
+  img+h2,
+  table+h2,
+  .table-wrapper+h2 {
+    margin-top: 1em;
+  }
 
   p {
     font-size: emize(16);
