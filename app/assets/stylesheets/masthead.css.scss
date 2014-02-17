@@ -4,20 +4,17 @@
   min-width: 43em;
   height: 5em;
   margin: .2em auto 0;
+  background-color: $backgroundDarker;
 
-  .nav-logo {
+  .nav-logo a {
     position: absolute;
     z-index: 20;
-    top: .5em;
-    left: 1em;
-    a {
-      display: block;
-      // background: white url("logo-x1.png") 15px center no-repeat;
-      // background-size: 48px 65px;
-      // width: 78px;
-      // height: 65px;
-      border: none;
-    }
+    top: .2em;
+    left: .4em;
+    font-family: $sansSerif;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: white;
   }
 
   nav ul {
