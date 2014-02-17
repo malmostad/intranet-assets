@@ -11,8 +11,10 @@
 @media (max-width: 1043em) {
   #malmo-masthead {
     @include clearfix();
-    position: static;
+    position: fixed;
+    top: 0;
     min-width: 0;
+    width: emize(320);
     height: auto;
     min-height: 2.6em;
     margin: 0 0 1em;
