@@ -23,8 +23,7 @@ jQuery ($) ->
   hideSearch = ->
     $mastheadSearch.find("input").blur()
     if $mastheadSearch.css("position") is 'static'
-      $mastheadSearch.slideUp 100, ->
-        $(@).css("top", "")
+      $mastheadSearch.hide().css("top", "")
 
   showSearch = ->
     hideNav()

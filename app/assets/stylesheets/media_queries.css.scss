@@ -13,7 +13,6 @@
     @include clearfix();
     position: static;
     min-width: 0;
-    border-bottom: $border;
     height: auto;
     min-height: 2.6em;
     margin: 0 0 1em;
@@ -21,7 +20,7 @@
     #nav-triggers {
       display: block;
       position: static;
-      margin: .7em 1em 0 0;
+      margin: .6em 1em 0 0;
       float: right;
       li {
         display: inline-block;
@@ -101,10 +100,10 @@
       @include box-sizing(border-box);
       width: 100%;
       overflow: hidden;
-      margin-top: 1em;
+      margin-top: emize(42);
       padding: 1.4em .8em;
       border: $border;
-      border-bottom: 0;
+      border-top: 0;
       background: $backgroundLight;
       form {
         margin-bottom: 0;
