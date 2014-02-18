@@ -8,12 +8,14 @@
   .nav-logo a {
     position: absolute;
     z-index: 20;
-    top: .2em;
+    color: white;
+
+    top: .15em;
     left: .5em;
     font-family: $sansSerif;
-    font-weight: bold;
-    font-size: 1.4em;
-    color: white;
+    font-family: myriad-pro, sans-serif;
+    font-weight: 600;
+    font-size: 1.5em;
   }
 
   nav ul {
