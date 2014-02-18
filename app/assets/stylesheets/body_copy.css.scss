@@ -64,6 +64,13 @@
     text-decoration: underline;
   }
 
+  p.caption {
+    font-family: $sansSerif;
+    font-size: emize(13);
+    line-height: 1.2;
+    margin: -1.2em 0 1.5em;
+  }
+
   // Reset RTF formatted headings
   h1, h2 {
     strong, b {
