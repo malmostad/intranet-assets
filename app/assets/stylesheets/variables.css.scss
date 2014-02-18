@@ -2,7 +2,7 @@
 // with green links in content
 $bodyBackground: white;
 $bodyColor: black;
-$linkColor: #0065a5;
+$linkColor: #0075a0;
 
 // Borders around boxes etc.
 $borderColor: #ccc;
@@ -20,7 +20,8 @@ $backgroundDark: #888;
 $backgroundDarker: darken($backgroundDark, 34%);
 
 // Masthead with hover effects
-$mastheadBackground: #004679;
+// $mastheadBackground: #019bc0;
+$mastheadBackground: #07a8d3;
 $mastheadBackgroundHighlight: desaturate(lighten($mastheadBackground, 12%), 25%);
 $mastheadColor: white;
 
