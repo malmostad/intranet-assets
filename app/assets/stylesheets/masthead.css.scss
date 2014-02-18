@@ -9,11 +9,10 @@
     position: absolute;
     z-index: 20;
     color: white;
-
     top: .15em;
     left: .5em;
     font-family: $sansSerif;
-    font-family: myriad-pro, sans-serif;
+    font-family: myriad-pro, sans-serif; // Used when temorary switching $sansSerif to OpenSans
     font-weight: 600;
     font-size: 1.5em;
   }
