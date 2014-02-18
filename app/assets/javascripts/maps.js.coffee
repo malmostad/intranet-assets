@@ -34,7 +34,7 @@ jQuery ($) ->
           $selector.hide()
 
       # After injection, scroll to the top of `data-scroll-to` or the $selector
-      $scrollTo = if $(@).is("[data-scroll-to]") then $($(@).attr("data-scroll-to")) else $selector
-      $('html, body').animate
-        scrollTop: $scrollTo.offset().top - 10
-      , 100
+      if $(@).is("[data-scroll-to]")
+        $('html, body').animate
+          scrollTop: $($(@).attr("data-scroll-to")).offset().top - 10
+        , 100
