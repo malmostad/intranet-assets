@@ -3,7 +3,7 @@
 #   $ bundle exec cap staging deploy
 #   $ bundle exec cap production deploy
 # Rollback one step:
-#   $ bundle exec cap [evolve|staging|production] deploy:rollback
+#   $ bundle exec cap [staging|production] deploy:rollback
 
 require 'capistrano/ext/multistage'
 require 'fileutils'
