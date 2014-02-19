@@ -6,8 +6,10 @@ development: &development
 
 test: &test
   <<: *development
+
 staging:
   <<: *test
+  sv_base_url: "/juni2014-opensans/"
 
 production:
   <<: *development
