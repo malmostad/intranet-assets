@@ -8,7 +8,7 @@ jQuery ($) ->
 
   # Used for full map with single POI
   urlForFullMap = (streetAddress) ->
-    encodeURI "//www.malmo.se/karta?poi=#{streetAddress}&zoomlevel=4&maptype=karta"
+    encodeURI "http://www.malmo.se/karta?poi=#{streetAddress}&zoomlevel=4&maptype=karta"
 
   # Rewrite href attr on load to enable right click open in full map
   $("[data-poi]").attr "href", ->
