@@ -5,14 +5,14 @@ $bodyColor: black;
 $linkColor: #0065a5;
 
 // Borders around boxes etc.
-$borderColor: #ccc;
+$borderColor: #b5b5b5;
 $border: $borderColor 1px solid;
 // Darker border
 $borderColorDark: darken($borderColor, 20%);
 $borderDark: $borderColorDark 1px solid;
 
 // Background colors
-$backgroundLight: #fafafa;
+$backgroundLight: #f0f0f0;
 // Use it for hover effect when the area is linked
 $backgroundLightHover: darken($backgroundLight, 5%);
 // Background colors used with inverted text
