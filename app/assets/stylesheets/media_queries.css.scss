@@ -12,7 +12,7 @@
   #malmo-masthead {
     @include clearfix();
     position: fixed;
-    z-index: 2147483647;
+    z-index: 1000;
     top: 0;
     min-width: 0;
     width: emize(320);
