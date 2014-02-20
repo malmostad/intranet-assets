@@ -103,6 +103,9 @@
   #nav-triggers {
     display: none;
   }
+  a:hover {
+    text-decoration: none;
+  }
 }
 
 ul.ui-autocomplete li .hits {

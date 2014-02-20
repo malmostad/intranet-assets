@@ -1,6 +1,6 @@
 body {
   padding: 0;
-  margin: 4em 0 0;
+  margin: 3.7em 0 0;
   font-size: 100%;
   font-family: $serif;
   background-color: $bodyBackground;
@@ -23,6 +23,7 @@ a {
   color: $linkColor;
   text-decoration: none;
   &:hover {
+    text-decoration: underline;
   }
 }
 
