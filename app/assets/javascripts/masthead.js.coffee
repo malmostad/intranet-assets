@@ -169,7 +169,7 @@ jQuery ($) ->
       $("<li>")
         .data("ui-autocomplete-item", item)
         .append("<a><img src='#{item.avatar_full_url}'/>
-            <p>#{item.first_name} #{item.last_name}<br>
+            <p>#{item.displayname}<br>
             #{item.company_short}<br>
             #{item.department}</p></a>
         ")
