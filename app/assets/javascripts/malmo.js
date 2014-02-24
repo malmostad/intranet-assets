@@ -10,6 +10,8 @@
 //= require content
 //= require masthead_content
 //= require masthead
+//= require site_search
+//= require employee_search
 //= require maps
 //= require jquery-ui.custom.min
 //= require fastclick
