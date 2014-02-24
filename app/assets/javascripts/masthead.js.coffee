@@ -164,7 +164,7 @@ jQuery ($) ->
         document.location = ui.item.path
       open: (event, ui) ->
         # Add "More results" at the bottom of the list
-        $("<li class='more-search-results ui-menu-item' role='presentation'><a>Fler resultat</a></li>").click (event) ->
+        $("<li class='more-search-results ui-menu-item' role='presentation'><a>Visa fler resultat</a></li>").click (event) ->
           event.preventDefault()
           $queryEmployee.closest("form").submit()
         .appendTo $('ul.search_users')

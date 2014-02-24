@@ -38,3 +38,12 @@
   // Bug introduce as a fix http://bugs.jqueryui.com/ticket/8844
   list-style-image: none !important;
 }
+
+.more-search-results.ui-menu-item {
+  border-top: $border;
+  background-color: $backgroundLightHover;
+  a {
+    padding-top: .5em;
+    padding-bottom: .6em;
+  }
+}
