@@ -32,7 +32,7 @@ $ ->
           # Create item for full search we reached the last item
           $more = ""
           if items is ul.find("li").length + 1
-            $more = $("<li class='more-search-results ui-menu-item' role='presentation'><a>Visa all träffar</a></li>")
+            $more = $("<li class='more-search-results ui-menu-item' role='presentation'><a>Visa alla träffar</a></li>")
               .data("ui-autocomplete-item", { path: "full-search", value: requestTerm})
           ul.addClass('search_users')
           $("<li>")
