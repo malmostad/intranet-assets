@@ -1,5 +1,6 @@
 //= require json2
 //= require jquery.cookie
+//= require jquery-ui.custom.min
 //= require bootstrap
 //= require masthead_content
 //= require masthead

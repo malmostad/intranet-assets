@@ -13,7 +13,6 @@
 //= require site_search
 //= require employee_search
 //= require maps
-//= require jquery-ui.custom.min
 //= require fastclick
 //= require legacy
 //= require ios-orientationchange-fix

@@ -9,6 +9,12 @@
 //= require content
 //= require masthead_content
 //= require masthead
+//= require site_search
+//= require employee_search
+//= require maps
 //= require fastclick
+//= require legacy
 //= require ios-orientationchange-fix
+//= require jquery.cycle2.min.js
+//= require jquery.cycle2.swipe.min.js
 //= require google_analytics
