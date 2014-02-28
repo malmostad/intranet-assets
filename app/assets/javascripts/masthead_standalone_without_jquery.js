@@ -3,6 +3,8 @@
 //= require bootstrap
 //= require masthead_content
 //= require masthead
+//= require site_search
+//= require employee_search
 //= require fastclick
 //= require google_analytics
 //= require legacy
