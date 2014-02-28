@@ -9,3 +9,8 @@
 //= require fastclick
 //= require google_analytics
 //= require legacy
+
+jQuery(document).ready(function($) {
+  // Steal back the BS dropdown events that SV hijacked
+  window.setTimeout(function() { $("[data-toggle=dropdown]").dropdown(); }, 500);
+});
