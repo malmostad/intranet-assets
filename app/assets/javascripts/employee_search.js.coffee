@@ -22,6 +22,8 @@ $ ->
                   response $.map data, (item) ->
                     $.extend(item, { value: item.displayname })
                     item
+                else
+                  $queryEmployeeField.autocomplete("close")
           minLength: 2
           select: (event, ui) ->
             if ui.item.path is "full-search"
