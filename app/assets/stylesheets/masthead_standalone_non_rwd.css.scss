@@ -9,6 +9,7 @@
 #malmo-masthead {
   font-size: 16px;
   text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: subpixel-antialiased;
   @import "bootstrap";
   @import "bootstrap_overrides";
   @import "elements";
