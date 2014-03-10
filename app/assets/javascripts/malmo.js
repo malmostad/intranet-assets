@@ -11,6 +11,7 @@
 //= require content
 //= require masthead_content
 //= require masthead
+//= require sitesearch
 //= require fastclick
 //= require ios-orientationchange-fix
 //= require jquery.cycle2.min.js
