@@ -3,6 +3,7 @@
 @import "mixins";
 @import "functions";
 @import "bootstrap";
+@import "jquery-ui.helpers.min";
 @import "font-awesome";
 @import "autocomplete";
 @import "bootstrap_overrides";
@@ -19,6 +20,5 @@
 @import "utils";
 @import "token_input_theme";
 @import "datepicker";
-@import "jquery-ui.helpers.min";
 @import "media_queries";
 @import "print";
