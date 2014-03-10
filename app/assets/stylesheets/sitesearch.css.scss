@@ -1,0 +1,15 @@
+.ui-autocomplete.site-search {
+  .ui-menu-item {
+    > a.ui-corner-all {
+      padding-top: .6em;
+      padding-bottom: .6em;
+    }
+    .hits {
+      float: right;
+    }
+  }
+  .more-search-results.ui-menu-item {
+    border-top: $border;
+    background-color: $backgroundLight;
+  }
+}
