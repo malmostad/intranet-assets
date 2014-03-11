@@ -1,14 +1,18 @@
 # Used for content/masthead
-development: &development
+default: &default
   sv_base_url: "http://www.test.malmo.se/"
   site_search_ac_url: "http://malmo.appliance.siteseeker.se/qc/webb/qc"
   site_search_url: http://s1.malmo.se/
 
+development: &development
+  <<: *default
+  site_search_url: http://www.local.malmo.se:3000/
+
 test: &test
-  <<: *development
+  <<: *default
 staging:
   <<: *test
 
 production:
-  <<: *development
+  <<: *default
   sv_base_url: "https://www.malmo.se/"
