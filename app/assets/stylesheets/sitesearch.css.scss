@@ -12,4 +12,13 @@
     border-top: $border;
     background-color: $backgroundLight;
   }
+  .ui-autocomplete-category {
+    border-top: $border;
+    border-bottom: $border;
+    background-color: $backgroundLight;
+    padding: .7em .6em;
+    font-family: $sansSerif;
+    font-size: emize(11);
+    text-transform: uppercase;
+  }
 }
