@@ -1,42 +1,68 @@
+# Autocomplete for site search
 jQuery ($) ->
-  items = 0
-  requestTerm = ""
-  # Covers both masthead search and search page form
+  # Covers both masthead search and the search page form
   searchFields = ["#full-search #q", "#masthead-search .q"]
   for searchField in searchFields
     do ->
       $searchField = $(searchField)
       if $searchField.length
+        requestTerm = ""
         $searchField.autocomplete
           minLength: 2
           source: (request, response) ->
             requestTerm = request.term
-            $.ajax
-              url: $searchField.attr("data-autocomplete-url")
-              data:
-                q: request.term.toLowerCase()
-              dataType: "jsonp"
-              success: (data) ->
-                if data.recommendations.length || data.sitesearch.length
-                  items = data.length
-                  response $.map data, (item) ->
-                    item
-                else
-                  $searchField.autocomplete("close")
+            remoteData($searchField, request, response)
           select: (event, ui) ->
             if ui.item.path is "full-search"
               $searchField.closest("form").submit()
             else
               document.location = ui.item.path
+          open: ->
+            $widget = $searchField.autocomplete("widget").addClass('site-search')
+            recommendationHeader($widget)
+            suggestionHeader($widget)
+            fullSearchItem($widget, requestTerm)
         .data("ui-autocomplete")._renderItem = (ul, item) ->
-          menuItem(ul, item)
+          if item.link
+            recommendationItem(ul, item)
+          else if item.suggestion
+            suggestionItem(ul, item)
 
-  menuItem = (ul, item) ->
-    if items is ul.find("li").length + 1
-      $more = $("<li class='more-search-results ui-menu-item' role='presentation'><a class='ui-corner-all'>Visa alla sökresultat</a></li>")
-        .data("ui-autocomplete-item", { path: "full-search", value: requestTerm})
-    ul.addClass('site-search')
-    $("<li>")
+  remoteData = ($searchField, request, response) ->
+    $.ajax
+      url: $searchField.attr("data-autocomplete-url")
+      data:
+        q: request.term.toLowerCase()
+      dataType: "jsonp"
+      success: (data) ->
+        items = data.recommendations.length + data.sitesearch.length
+        if items
+          response $.map data, (item) ->
+            item
+        else
+          $searchField.autocomplete("close")
+
+  recommendationItem = (ul, item) ->
+    $("<li class='recommendation'>")
       .data("ui-autocomplete-item", item)
       .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
-      .appendTo(ul).after($more)
+      .appendTo ul
+
+  suggestionItem = (ul, item) ->
+    $("<li class='suggestion'>")
+      .data("ui-autocomplete-item", item)
+      .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
+      .appendTo ul
+
+  fullSearchItem = ($widget, term) ->
+    $("<li class='more-search-results ui-menu-item' role='presentation'><a class='ui-corner-all'>Visa alla sökresultat</a></li>")
+      .data("ui-autocomplete-item", { path: "full-search", value: term})
+      .appendTo $widget
+
+  recommendationHeader = ($widget) ->
+    $("<li class='ui-autocomplete-category'>Gå direkt till:</li>")
+      .insertBefore $widget.find(".recommendation:first")
+
+  suggestionHeader = ($widget) ->
+    $("<li class='ui-autocomplete-category'>Sök på:</li>")
+      .insertBefore $widget.find(".suggestion:first")

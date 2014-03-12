@@ -1,15 +1,17 @@
 # Used for content/masthead
 default: &default
   sv_base_url: "http://www.test.malmo.se/"
-  site_search_ac_url: "http://malmo.appliance.siteseeker.se/qc/webb/qc"
+  site_search_ac_url: "http://s1.malmo.se/search/autocomplete"
   site_search_url: http://s1.malmo.se/
 
 development: &development
   <<: *default
   site_search_url: http://www.local.malmo.se:3000/
+  site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
 
 test: &test
   <<: *default
+  site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
 staging:
   <<: *test
 
