@@ -13,10 +13,10 @@ jQuery ($) ->
             requestTerm = request.term
             remoteData($searchField, request, response)
           select: (event, ui) ->
-            if ui.item.path is "full-search"
-              $searchField.closest("form").submit()
+            if ui.item.link
+              document.location = ui.item.link
             else
-              document.location = ui.item.path
+              $searchField.val(ui.item.value).closest("form").submit()
           open: ->
             $widget = $searchField.autocomplete("widget").addClass('site-search')
             recommendationHeader($widget)
@@ -35,28 +35,27 @@ jQuery ($) ->
         q: request.term.toLowerCase()
       dataType: "jsonp"
       success: (data) ->
-        items = data.recommendations.length + data.sitesearch.length
-        if items
+        if data.length
           response $.map data, (item) ->
+            if item.name then $.extend item, { value: item.name }
+            else $.extend item, { value: item.suggestion }
             item
         else
           $searchField.autocomplete("close")
 
   recommendationItem = (ul, item) ->
     $("<li class='recommendation'>")
-      .data("ui-autocomplete-item", item)
-      .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
+      .append("<a>#{item.name}</a>")
       .appendTo ul
 
   suggestionItem = (ul, item) ->
     $("<li class='suggestion'>")
-      .data("ui-autocomplete-item", item)
-      .append("<a><span class='hits'>" + item.hits + "</span>" + item.suggestionHighlighted + "</a>")
+      .append("<a><span class='hits'>#{item.nHits}</span>#{item.suggestionHighlighted}</a>")
       .appendTo ul
 
   fullSearchItem = ($widget, term) ->
     $("<li class='more-search-results ui-menu-item' role='presentation'><a class='ui-corner-all'>Visa alla sökresultat</a></li>")
-      .data("ui-autocomplete-item", { path: "full-search", value: term})
+      .data("ui-autocomplete-item", { value: term })
       .appendTo $widget
 
   recommendationHeader = ($widget) ->
