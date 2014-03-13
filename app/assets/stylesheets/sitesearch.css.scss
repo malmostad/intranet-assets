@@ -18,7 +18,16 @@
     background-color: $backgroundLight;
     padding: .7em .6em;
     font-family: $sansSerif;
-    font-size: emize(11);
-    text-transform: uppercase;
+    font-size: emize(13);
+  }
+  .recommendation a {
+    padding-top: 1em;
+    img {
+      width: 24px;
+      height: auto;
+      margin-right: .5em;
+      float: left;
+      background: white;
+    }
   }
 }
