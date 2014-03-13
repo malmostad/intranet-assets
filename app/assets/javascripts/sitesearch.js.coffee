@@ -24,7 +24,7 @@ jQuery ($) ->
             fullSearchItem($widget, requestTerm)
         .data("ui-autocomplete")._renderItem = (ul, item) ->
           if item.link
-            recommendationItem(ul, item)
+            recommendationItem(ul, item, $searchField.attr("data-images-url"))
           else if item.suggestion
             suggestionItem(ul, item)
 
@@ -43,9 +43,10 @@ jQuery ($) ->
         else
           $searchField.autocomplete("close")
 
-  recommendationItem = (ul, item) ->
+  recommendationItem = (ul, item, imagesUrl) ->
+    $img = $("<img>").attr("src", imagesUrl + item.image)
     $("<li class='recommendation'>")
-      .append("<a>#{item.name}</a>")
+      .append($("<a>#{item.name}</a>").prepend($img))
       .appendTo ul
 
   suggestionItem = (ul, item) ->
