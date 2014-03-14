@@ -21,15 +21,16 @@
     font-size: emize(13);
   }
   .recommendation a {
-    padding-top: 1em;
+    min-height: 32px;
     img {
       float: left;
-      height: 32px;
       width: 32px;
+      height: auto;
+      max-height: 32px;
       background: white;
     }
     p {
-      margin: 7px 0 7px 40px;
+      margin: 4px 0 0 40px;
     }
   }
 }
