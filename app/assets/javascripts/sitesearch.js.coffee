@@ -46,7 +46,7 @@ jQuery ($) ->
   recommendationItem = (ul, item, imagesUrl) ->
     $img = $("<img>").attr("src", imagesUrl + item.image)
     $("<li class='recommendation'>")
-      .append($("<a>#{item.name}</a>").prepend($img))
+      .append($("<a><p>#{item.name}</p></a>").prepend($img))
       .appendTo ul
 
   suggestionItem = (ul, item) ->
