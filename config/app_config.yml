@@ -1,20 +1,17 @@
 # Used for content/masthead
 default: &default
-  sv_base_url: http://www.test.malmo.se/
+  sv_base_url: http://www.test.malmo.se
   site_search_url: http://s1.malmo.se/
   site_search_ac_url: http://s1.malmo.se/search/autocomplete
-  site_search_images: http://s1.malmo.se/assets/
 
 development: &development
   <<: *default
-  site_search_url: http://www.local.malmo.se:3000/
+  site_search_url: http://www.local.malmo.se:3000
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
-  site_search_images: http://www.local.malmo.se:3000/assets/
 
 test: &test
   <<: *default
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
-  site_search_images: http://www.local.malmo.se:3000/assets/
 
 production:
   <<: *default

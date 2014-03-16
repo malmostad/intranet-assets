@@ -44,7 +44,7 @@ jQuery ($) ->
           $searchField.autocomplete("close")
 
   recommendationItem = (ul, item, imagesUrl) ->
-    $img = $("<img>").attr("src", imagesUrl + item.image)
+    $img = $("<img>").attr("src", imagesUrl + item.images.mini)
     $("<li class='recommendation'>")
       .append($("<a><p>#{item.name}</p></a>").prepend($img))
       .appendTo ul
