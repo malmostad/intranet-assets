@@ -21,12 +21,12 @@
     font-size: emize(13);
   }
   .recommendation a {
+    @include clearfix();
     min-height: 32px;
     img {
       float: left;
       width: 32px;
       height: auto;
-      max-height: 32px;
     }
     p {
       margin: 2px 0 0 40px;
