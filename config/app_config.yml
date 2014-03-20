@@ -9,10 +9,13 @@ development: &development
   site_search_url: http://www.local.malmo.se:3000
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
 
-test: &test
+test:
   <<: *default
   site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
 
-production:
+production: &staging
   <<: *default
   sv_base_url: https://www.malmo.se/
+
+staging:
+  <<: *staging
