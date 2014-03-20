@@ -72,3 +72,11 @@ body.test {
     padding-right: 4.9em;
   }
 }
+
+body.staging {
+  &:after {
+    content: "Staging";
+    padding-left: 4.9em;
+    padding-right: 4.9em;
+  }
+}
