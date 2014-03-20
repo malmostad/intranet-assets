@@ -18,4 +18,6 @@ production: &staging
   sv_base_url: https://www.malmo.se/
 
 staging:
-  <<: *staging
+  <<: *default
+  site_search_url: http://188.226.179.132/
+  site_search_ac_url: http://188.226.179.132/search/autocomplete
