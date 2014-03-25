@@ -14,7 +14,8 @@ jQuery ($) ->
             remoteData($searchField, request, response)
           select: (event, ui) ->
             if ui.item.link
-              document.location = ui.item.link
+              event.preventDefault()
+              logToGaAndGo(ui.item, requestTerm)
             else
               $searchField.val(ui.item.value).closest("form").submit()
           open: ->
@@ -23,9 +24,12 @@ jQuery ($) ->
             suggestionHeader($widget)
             fullSearchItem($widget, requestTerm)
         .data("ui-autocomplete")._renderItem = (ul, item) ->
+          item.caller = $searchField.attr("data-caller")
           if item.link
-            recommendationItem(ul, item, $searchField.attr("data-images-url"))
+            item.type = "Recommendation"
+            recommendationItem(ul, item, $searchField.attr("data-images-url"), $searchField.attr("data-caller"))
           else if item.suggestion
+            item.type = "Suggestion"
             suggestionItem(ul, item)
 
   remoteData = ($searchField, request, response) ->
@@ -45,12 +49,14 @@ jQuery ($) ->
 
   recommendationItem = (ul, item, imagesUrl) ->
     $img = $("<img>").attr("src", imagesUrl + item.images.mini)
-    $("<li class='recommendation'>")
+    $("<li>")
+      .addClass('recommendation')
       .append($("<a><p>#{item.name}</p></a>").prepend($img))
       .appendTo ul
 
   suggestionItem = (ul, item) ->
-    $("<li class='suggestion'>")
+    $("<li>")
+      .addClass('suggestion')
       .append("<a><span class='hits'>#{item.nHits}</span>#{item.suggestionHighlighted}</a>")
       .appendTo ul
 
@@ -66,3 +72,14 @@ jQuery ($) ->
   suggestionHeader = ($widget) ->
     $("<li class='ui-autocomplete-category'>Sök på:</li>")
       .insertBefore $widget.find(".suggestion:first")
+
+  logToGaAndGo = (item, requestTerm) ->
+    GALabel = requestTerm
+    GAValue = "#{item.value} #{item.link}"
+
+    # Track all clicks on recommendations and suggestions (type)
+    _gaq.push(['_trackEvent', "#{item.caller}AutoComplete#{item.type}Click", GALabel, GAValue])
+
+    setTimeout("document.location = '#{item.link}'", 200)
+
+
