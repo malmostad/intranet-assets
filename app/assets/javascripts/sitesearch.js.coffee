@@ -33,6 +33,7 @@ jQuery ($) ->
             suggestionItem(ul, item)
 
   remoteData = ($searchField, request, response) ->
+    logAcToGa($searchField, request.term.toLowerCase())
     $.ajax
       url: $searchField.attr("data-autocomplete-url")
       data:
@@ -41,9 +42,7 @@ jQuery ($) ->
       success: (data) ->
         if data.length
           response $.map data, (item) ->
-            if item.name then $.extend item, { value: item.name }
-            else $.extend item, { value: item.suggestion }
-            item
+            $.extend item, { value: item.name or item.suggestion }
         else
           $searchField.autocomplete("close")
 
@@ -82,4 +81,6 @@ jQuery ($) ->
 
     setTimeout("document.location = '#{item.link}'", 200)
 
-
+  logAcToGa = ($searchField, chars) ->
+    # Track the chars that the user entered
+    _gaq.push(['_trackEvent', "#{$searchField.attr("data-caller")}AutoCompleteChars", "enteredChars", chars])
