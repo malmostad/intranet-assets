@@ -1,6 +1,6 @@
 window.UAAccount = 'UA-331614-1'
 # Use GA test account for dev and test instances
-if $("body.test, body.development").length
+if $("body.test, body.development, body.staging").length
   window.UAAccount = 'UA-19475063-1'
 
 window._gaq = []
