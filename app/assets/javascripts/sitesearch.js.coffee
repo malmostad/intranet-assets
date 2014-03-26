@@ -83,4 +83,4 @@ jQuery ($) ->
 
   logAcToGa = ($searchField, chars) ->
     # Track the chars that the user entered
-    _gaq.push(['_trackEvent', "#{$searchField.attr("data-caller")}AutoCompleteChars", "enteredChars", chars])
+    _gaq.push(['_trackEvent', "#{$searchField.attr("data-caller")}AutoComplete", "EnteredCharacters", chars])

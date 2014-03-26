@@ -6,8 +6,8 @@ default: &default
 
 development: &development
   <<: *default
-  site_search_url: http://www.local.malmo.se:3000
-  site_search_ac_url: http://www.local.malmo.se:3000/search/autocomplete
+  site_search_url: http://161.52.82.110:3000
+  site_search_ac_url: http://161.52.82.110:3000/search/autocomplete
 
 test:
   <<: *default
