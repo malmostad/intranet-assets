@@ -19,5 +19,5 @@ production: &staging
 
 staging:
   <<: *default
-  site_search_url: http://188.226.179.132/
-  site_search_ac_url: http://188.226.179.132/search/autocomplete
+  site_search_url: http://ola.malmo.se/
+  site_search_ac_url: http://ola.malmo.se/search/autocomplete
