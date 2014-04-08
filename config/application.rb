@@ -33,6 +33,7 @@ module AssetsContainer
       google_analytics.js
       legacy/ie9.css
       legacy/ie7.css
+      portwise.css
     )
   end
 end

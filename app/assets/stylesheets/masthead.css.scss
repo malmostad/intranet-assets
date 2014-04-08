@@ -164,7 +164,7 @@
     line-height: 1;
     background: url("logo-x1.png") 10px 5px no-repeat;
     background-size: 24px;
-    a {
+    a, span {
       display: block;
       color: $mastheadColorHighlight;
       @include box-sizing(border-box);
