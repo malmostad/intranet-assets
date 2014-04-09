@@ -4,8 +4,7 @@ require "action_controller/railtie"
 require "sprockets/railtie"
 
 if defined?(Bundler)
-  # If you precompile assets before deploying to test and production, use this line
-  Bundler.require(*Rails.groups(:assets => %w(development)))
+  Bundler.require(:default, Rails.env)
 end
 
 module AssetsContainer
