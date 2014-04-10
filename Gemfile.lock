@@ -132,6 +132,6 @@ DEPENDENCIES
   net-ssh (= 2.7.0)
   rack-contrib
   rails (= 4.1.0)
-  sass-rails
+  sass-rails (~> 4.0.3)
   thin
   uglifier

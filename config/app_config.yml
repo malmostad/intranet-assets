@@ -15,7 +15,7 @@ test:
 
 production: &staging
   <<: *default
-  sv_base_url: https://www.malmo.se/
+  sv_base_url: https://www.malmo.se
 
 staging:
   <<: *default
