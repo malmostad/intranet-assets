@@ -1,4 +1,5 @@
 //= require jquery
+//= require utils
 //= require json2
 //= require jquery.cookie
 //= require jquery-ui.custom.min

@@ -5,7 +5,7 @@ gem 'thin'
 gem 'jquery-rails'
 gem 'rack-contrib'
 
-gem 'sass-rails'
+gem 'sass-rails', '~> 4.0.3'
 gem 'uglifier'
 gem 'coffee-rails'
 # gem 'therubyracer', require: 'v8'
