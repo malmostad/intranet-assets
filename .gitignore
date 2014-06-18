@@ -5,3 +5,4 @@ tmp
 doc
 _site
 .bundle
+node_modules
