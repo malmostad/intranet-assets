@@ -62,7 +62,8 @@
     font-family: $sansSerif;
     font-size: emize(15);
     font-weight: bold;
-    color: darken($boxTitleColor, 20%);
+    color: #fff;
+    @include opacity(.7);
     @include radius(3px);
   }
 
@@ -79,8 +80,15 @@
       line-height: 1.2;
       color: white;
       border: 1px solid transparent;
-      @include opacity(.5);
       @include radius(3px);
+      @include opacity(.9);
+      &.extended {
+        width: auto;
+        padding: 0px 4px;
+        .text {
+          font-size: emize(13);
+        }
+      }
     }
   }
 
