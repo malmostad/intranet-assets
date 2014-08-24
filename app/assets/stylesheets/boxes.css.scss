@@ -81,13 +81,17 @@
       color: white;
       border: 1px solid transparent;
       @include radius(3px);
-      @include opacity(.9);
       &.extended {
         width: auto;
         padding: 0px 4px 0px 6px;
-        .text {
+        .settings {
+          display: block;
+          float: left;
           font-size: emize(13);
-        }
+          line-height: emize(18, 13);
+          font-family: $sansSerif;
+          font-weight: normal;
+          padding: emize(1) .6em 0;        }
       }
     }
   }
