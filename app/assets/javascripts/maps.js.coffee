@@ -4,8 +4,8 @@ jQuery ($) ->
 
   # Used for iframe with single POI
   urlForInlineMap = (streetAddress) ->
-    encodeURI "//xyz.malmo.se/mkarta/init/map-1.00.htm?mapmode=basic&poi=#{streetAddress}&zoomlevel=3&maptype=Karta&env=#{mapEnv}"
-
+    encodeURI "//kartor.malmo.se/temakarta/?config=tema_adress.js&poi=#{streetAddress}"
+ 
   # Used for full map with single POI
   urlForFullMap = (streetAddress) ->
     encodeURI "http://www.malmo.se/karta?poi=#{streetAddress}&zoomlevel=4&maptype=karta"
