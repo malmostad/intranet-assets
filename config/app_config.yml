@@ -7,7 +7,7 @@ development:
 test: &test
   dashboard_base_url: "https://webapps06.malmo.se/dashboard-test/"
   sv_base_url: "https://komin.test.malmo.se/"
-  site_search_url: "https://webapps06.malmo.se/dashboard-test/search"
+  site_search_url: "//s2.malmo.se"
 
 staging:
   <<: *test
@@ -15,4 +15,4 @@ staging:
 production:
   dashboard_base_url: "https://webapps06.malmo.se/dashboard/"
   sv_base_url: "https://komin.malmo.se/"
-  site_search_url: "https://webapps06.malmo.se/dashboard/search"
+  site_search_url: "//s2.malmo.se"
