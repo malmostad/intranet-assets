@@ -15,11 +15,18 @@ $ ->
           success: (data) ->
             if data.length
               response $.map data, (item) ->
-                return {
-                  hits: item.nHits
-                  suggestionHighlighted: item.suggestionHighlighted
-                  value: item.suggestion
-                }
+                if item.name
+                  return {
+                    hits: 1
+                    suggestionHighlighted: item.name
+                    value: item.terms[0]
+                  }
+                else
+                  return {
+                    hits: item.nHits
+                    suggestionHighlighted: item.suggestionHighlighted
+                    value: item.suggestion
+                  }
             else
               $searchField.autocomplete("close")
       minLength: 2
