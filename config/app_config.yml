@@ -5,7 +5,7 @@ development:
   site_search_url: "http://www.local.malmo.se:3000/search"
 
 test: &test
-  dashboard_base_url: "https://webapps06.malmo.se/dashboard-test/"
+  dashboard_base_url: "https://minsidatest.malmo.se/"
   sv_base_url: "https://komin.test.malmo.se/"
   site_search_url: "//s2.malmo.se"
 
@@ -13,6 +13,6 @@ staging:
   <<: *test
 
 production:
-  dashboard_base_url: "https://webapps06.malmo.se/dashboard/"
+  dashboard_base_url: "https://minsida.malmo.se/"
   sv_base_url: "https://komin.malmo.se/"
   site_search_url: "//s2.malmo.se"
