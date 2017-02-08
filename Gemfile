@@ -1,11 +1,11 @@
 source 'https://rubygems.org'
 
-gem 'rails', '4.2.1'
+gem 'rails', '4.2.7.1'
 gem 'thin'
 gem 'jquery-rails'
 gem 'rack-contrib'
 
-gem 'sass-rails', '4.0.5'
+gem 'sass-rails', '~> 4.0.5'
 gem 'uglifier'
 gem 'coffee-rails'
 # gem 'therubyracer', require: 'v8'

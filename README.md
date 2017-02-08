@@ -17,8 +17,8 @@ For more information, contact kominteamet@malmo.se.
 Instructions for how you use the global assets in your application is documented in City of Malmö's [Web Application Guidelines](http://malmostad.github.io/wag/).
 
 ## Dependencies for Development and Deployment
-* Ruby 2.0
-* Rubygems and Bundler
+* Ruby 2.x
+* Bundler
 
 ## Dependencies for Asset Hosting
 A web server optimized to serve static files. Ruby is not needed on the server.

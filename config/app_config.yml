@@ -7,7 +7,7 @@ development:
 test: &test
   dashboard_base_url: "https://minsidatest.malmo.se/"
   sv_base_url: "https://komin.test.malmo.se/"
-  site_search_url: "//s2.malmo.se"
+  site_search_url: "//kominsok.malmo.se"
 
 staging:
   <<: *test
@@ -15,4 +15,4 @@ staging:
 production:
   dashboard_base_url: "https://minsida.malmo.se/"
   sv_base_url: "https://komin.malmo.se/"
-  site_search_url: "//s2.malmo.se"
+  site_search_url: "//kominsok.malmo.se"
